@@ -1,5 +1,4 @@
-# 由協作改善，經實驗演進 PDCA Implement feedback loops 
-(Improve collaboratively, evolve experimentally using models and the scientific method)
+# 由協作改善，經實驗演進 PDCA Implement feedback loops (Improve collaboratively, evolve experimentally using models and the scientific method)
 
 * 規劃 (Plan) 
 
