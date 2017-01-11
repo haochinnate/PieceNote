@@ -1,3 +1,5 @@
+未完成
+
 # 10 resume do’s and don’ts for developers
 source: http://www.infoworld.com/article/3141949/it-careers/10-resume-dos-and-donts-for-developers.html
 
@@ -183,6 +185,17 @@ While certifications can help, your motivations and objectives count more.
 
 Learning for learning’s sake has value, yet the learning is more compelling for an employer if you can show what you did with your new knowledge. If you earned a certification a long time ago, think carefully about whether it makes sense to include it. After all, you may be asked questions about it during an interview.
 
+### 為了證照而考試
+
+雖然證照在履歷上可以有所幫助，但你的動機與目標才是更重要的。
+"如果一個求職者有數張證照，我會問他們: 他們為了這個學問/證照付出了什麼? 證照如何幫助他們的工作或職涯? "
+ 
+learning for learning's sake
+漫無目的為了學習而學習有其價值，但對雇主來說，如果能表現出你對新知識、新學問做了哪些努力會來的更有說服力。
+ 
+如果你證照已經是很久以前拿到的，要仔細思考一下把它擺在履歷表中是否有意義。
+畢竟你可能在面試的時候被詢問到相關的問題。
+
 ## Dev resume do: Reflect
 
 The most effective resumes convey a career plan. When putting together your resume, it’s important to reflect on your career progression and whether you are meeting your needs so that you can tailor your resume toward getting to your next step.
@@ -190,3 +203,12 @@ The most effective resumes convey a career plan. When putting together your resu
 Here, having a goal that goes beyond a job description is essential, whether it’s to move to a management role, to go deeper in a more technical position, or to shift to a new domain, industry, or profession.
 
 Once you have a sense of your path, tap your network to find friends or colleagues in roles similar to your target. Their tales of how they came to be where they are will provide insights as to how you should polish your resume in service of your goal.
+
+### Reflect
+
+最有效/最令人印象深刻的履歷是能傳達你的工作計畫/生涯規劃。當把你的履歷表整合起來看時/綜觀你的履歷表全部時，顯現出你的
+職業生涯發展演進  和  你是否遇到你所需要的能讓你的履歷合適地往你下一個目標邁進是非常重要的。
+你是否找到能夠讓你的履歷合適地往你下一個目標邁進的需求是非常重要的
+ 
+在這邊，有一個除了工作描述以外的目標是必要的。
+ 
