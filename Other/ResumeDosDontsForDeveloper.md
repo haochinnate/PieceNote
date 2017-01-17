@@ -1,7 +1,8 @@
 未完成
 
 # 10 resume do’s and don’ts for developers
-source: http://www.infoworld.com/article/3141949/it-careers/10-resume-dos-and-donts-for-developers.html
+
+文章來源: http://www.infoworld.com/article/3141949/it-careers/10-resume-dos-and-donts-for-developers.html
 
 ## Pre
 
@@ -149,33 +150,111 @@ meant to 一定要 必須要
 
 ## Dev resume do: Augment with code
 
-It’s been said before, but its value is true: For some employers, open source contributions and related professional activities make a big difference. Sometimes it can even help you bypass those notorious programming tests.
+It’s been said before, but its value is true: For some employers, open source contributions and related professional activities make a big difference. 
 
-“If a candidate links to significant code contributions on GitHub, we look at that. In some cases, it may be so good that we skip the coding challenge in the hiring process,” explains Cisco’s Vince.
+Sometimes it can even help you bypass those notorious programming tests.
+
+“If a candidate links to significant code contributions on GitHub, we look at that. 
+
+In some cases, it may be so good that we skip the coding challenge in the hiring process,” explains Cisco’s Vince.
 
 Augmenting your resume with project code repositories is especially important if you are seeking to make a career change.
 
-“If a candidate is working on learning Ruby on Rails in their spare time and publishes to a code repository, I would consider that even if their day job did not involve Ruby,” explains Vince.
+“If a candidate is working on learning Ruby on Rails in their spare time and publishes to a code repository, 
+
+I would consider that even if their day job did not involve Ruby,” explains Vince.
 
 If you are looking to change your career focus, public contributions are one strategy to pursue.
 
-“Your problem solving abilities and process is highly important in addition to specific technical skills,” adds Calamera. If you overcame technical limitations or problems to ship a project, that’s a powerful message to share with employers.
+“Your problem solving abilities and process is highly important in addition to specific technical skills,” adds Calamera. 
+
+If you overcame technical limitations or problems to ship a project, that’s a powerful message to share with employers.
+
+### 用程式碼來加強你的履歷
+
+雖然前面已經有提到了, 但是它確實很重要: 對於有些雇主 開源專案的貢獻和相關專業的活動 是讓你與眾不同的
+
+有時候它甚至可以幫助你略過、跳過那些notorious程式測驗。
+
+"如果求職者在GitHub上有重要的程式貢獻，我們會特別去看???。在某些情況，有可能程式很好，讓我們能夠略過招募過程中的程式問題", Cisco's Vince
+
+當如果你要尋求生涯改變的時候，用專案的repositories來強化你的履歷會來的特別重要。
+
+"如果求職者在空閒時間還額外學習Ruby on Rails並發佈code repository，就算他每天工作內容不包含Ruby，我也會考慮雇用他。", explains Vince
+
+如果你正想改變職涯專精的領域，那麼從事為公開貢獻是你可以考慮追求的策略。
+
+"除了特定的技術專長以外，你解決問題的能力與過程也是非常重要的。", adds Calamera
+
+如果你為了完成專案克服了技術上的限制或是問題，這是非常值得與雇主分享的有力訊息。
 
 ## Dev resume don’t: Rest on your coding laurels
 
-If your resume attracts interest, you may be invited to a coding challenge to validate your technical skills. It has become a common practice because employers and candidates struggle to evaluate technical expertise. As you put together your resume, know that anything you include is subject to review. That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
+If your resume attracts interest, you may be invited to a coding challenge to validate your technical skills. 
 
-“I look at their code for a few qualities: Is it clean? Is it well documented? Did it address the requirements?” comments Calamera.
+It has become a common practice because employers and candidates struggle to evaluate technical expertise. 
 
-Your approach will also signal what you might be like to work with as a colleague. “At the end of the day, a good test for quality code is whether someone else on the team can understand it without your explaining it,” adds Oxenford.
+As you put together your resume, know that anything you include is subject to review. 
+
+That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
+
+“I look at their code for a few qualities: Is it clean? Is it well documented? 
+
+Did it address the requirements?” comments Calamera.
+
+Your approach will also signal what you might be like to work with as a colleague. 
+
+“At the end of the day, a good test for quality code is whether someone else on the team can understand it without your explaining it,” adds Oxenford.
+
+###  to stop trying because one is satisfied with one's past achievements. 
+
+to be so satisfied with your achievements that you make no effort to improve
+
+當你的履歷吸引到注意時，你可能會受邀參加coding challenge來驗證你技術上的能力。
+
+現在這變成一個常見的慣例/方式, 因為雇主與應徵者 ?? 努力 ?? 評估技術上的專業知識。
+
+你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
+
+
+"我會注意他們程式碼幾個品質項目 : 程式碼乾淨嗎? 有良好的文件說明嗎? 是否有滿足規定與需求?" commments Calamera.
+
+你的實作方法同時也會顯示出你可能喜歡 ??
+
+"到了最後, 有一個好方法來測試程式的品質就是團隊的其他成員是否可以在你沒有解釋的情況下瞭解你的程式。" adds Oxenford.
+
+ 
+
 
 ## Dev resume do: Consider getting certified
 
-Formal education and certifications play a role in setting your resume apart, and sometimes that means broadening your scope.
+Formal education and certifications play a role in setting your resume apart, 
 
-“If a software engineer is looking to work on Cisco’s security products, it helps to have Cisco certifications,” explains Vince. Certifications of note include the CCNA and CCNP. “If a developer has the CCIE certification, that’s amazing,” Vince adds. “Beyond Cisco certifications, I also take note of Network+ and Security+ certifications to demonstrate industry knowledge,” he adds.
+and sometimes that means broadening your scope.
 
-While it’s still under debate whether dev-specific certifications will give you an edge, if you are looking to work within a specific industry, going the extra mile to prove your interest and acumen can be worthwhile.
+“If a software engineer is looking to work on Cisco’s security products, 
+
+it helps to have Cisco certifications,” explains Vince. Certifications of note include the CCNA and CCNP. 
+
+“If a developer has the CCIE certification, that’s amazing,” Vince adds. 
+
+“Beyond Cisco certifications, I also take note of Network+ and Security+ certifications to demonstrate industry knowledge,” he adds.
+
+While it’s still under debate whether dev-specific certifications will give you an edge, 
+
+if you are looking to work within a specific industry, going the extra mile to prove your interest and acumen can be worthwhile.
+
+### 考慮去拿個認證吧
+
+正規的教育和證照能夠讓你的履歷更為突出，有時這代表能夠拓寬你的領域。
+
+"當一個軟體工程師在尋找一份Cisco security products的工作時，具備Cisco的認證是有幫助的", explains Vince.
+
+著名?的認證包含 CCNA 與 CCNP。
+
+"如果一個開發人員有CCIE的認證就更驚奇了。" Vince adds.
+
+"除了Cisco認證之外, "
 
 ## Dev resume don’t: Certify for the sake of certification
 
