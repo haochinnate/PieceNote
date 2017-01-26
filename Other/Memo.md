@@ -1,3 +1,6 @@
+# Coding 
+* [Dependency Inversion Principle, DIP, 依賴反轉原則](https://blog.jason.party/1/dip)
+
 # Good Articles
 * [程式不只是技能，更是滿滿的人生道理](http://mrjamie.cc/2016/12/07/life-lessons-from-coding/)
 
