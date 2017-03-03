@@ -2,7 +2,7 @@
 """
 Created on Thu Mar  2 22:16:51 2017
 
-@author: qineria
+@author: haochinnate
 """
 
 # function 宣告方式
@@ -47,8 +47,15 @@ getReturnValue = FlexibleArgsFunctioin(3, 4, 5, base = 10)
 # then declare with "global" keyword
 
 # import packageName
-#import random
+import random
+random.seed()
 
-#random.seed()
+# from packageName import *
+# (import all method in package, and use method don't have to package name)
 
+# from packageName import method1, method2, ...
+# (onlt import some method in package)
+
+# import packageName as alias
+# (use alias to call package method)
  
