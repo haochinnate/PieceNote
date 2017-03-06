@@ -39,3 +39,19 @@ print(string1)
 fr3.close()
 print()
 
+# readlines(), each line is a element of list
+with open("testFile.txt", "r") as f:
+    content = f.readlines()
+    print(type(content))
+    print(content)
+    
+
+# open file, encoding UTF-8 without BOM
+# with open("testFile.txt", "r", encoding = "UTF-8-sig") as f:
+
+# readline([size]), 
+with open("testFile.txt", "r") as f:
+    print(f.readline()) # read while line
+    print(f.readline(3)) # only read 3 character 
+    
+
