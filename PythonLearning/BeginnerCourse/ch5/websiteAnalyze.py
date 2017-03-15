@@ -26,8 +26,17 @@ import requests
 
 url2 = 'http://www.e-happy.com.tw'
 html = requests.get(url2)
-html.encoding = "UTF8"
-print(html.text)  
+html.encoding = "utf-8"
+# print(html.text)  
+
+htmlLines = html.text.splitlines()
+javascriptCount = 0
+for line in htmlLines:
+    if "javascript" in line:
+        javascriptCount += 1
+        print(line)
+    #print(line)
+print("there is {} time javascript".format(javascriptCount))
 
 
-# Beautifulsoup package?
+
