@@ -36,3 +36,8 @@ matchObject2 = pat.search(testStrStartWithNumber)
 print(matchObject2) # search() get gggtmp
 
 
+# findall() method of regex object
+matchObject3 = pat.findall(testStrStartWithNumber)
+print(matchObject3) # will get 'gggtmp' and 'testString'
+
+     
