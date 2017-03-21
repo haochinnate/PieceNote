@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 
 # use "requests" package to get the source code of webpage
-url = "https://www.tenlong.com.tw/"
+url = "http://www.cpbl.com.tw/standing/year.html"
 html = requests.get(url)
 
 # use html.parser to analyze source code
@@ -31,20 +31,22 @@ print(firstH2)
 print()
 
 # find_all (return all tags that match the condition)
-allbuttonTags = sp.find_all('button')
-for buttonTag in allbuttonTags:
-    print(buttonTag)
+allaTags = sp.find_all('a')
+for aTag in allaTags:
+    print(aTag)
     print("---")
-print(len(allbuttonTags))
+print(len(allaTags))
 
-allH2Tags = sp.find_all('h2')
-for H2Tag in allH2Tags:
-    print(H2Tag)
-    print("---")
-print(len(allH2Tags))
+#allH2Tags = sp.find_all('h2')
+#for H2Tag in allH2Tags:
+#    print(H2Tag)
+#    print("---")
+#print(len(allH2Tags))
 
 # select (return the content of CSS selector)
 titles = sp.select("title") # return a list
 print(titles)
 
+
+print(sp.find_all("a", {"class": "footer_link"}))
 
