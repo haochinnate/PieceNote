@@ -47,6 +47,22 @@ print(len(allaTags))
 titles = sp.select("title") # return a list
 print(titles)
 
-
+# find all <a> tag and class is "footer_link"
 print(sp.find_all("a", {"class": "footer_link"}))
 
+# find the <a> tag and its "href" property value is "/footer/contact/"
+contactLink = sp.find("a", {"href":"/footer/contact/"})
+print(contactLink)
+print(contactLink.text) # the text of this tag
+
+# all tag is "title" or "script"
+#print(sp.find_all(["title","script"])) 
+
+# to read the property(href) value of specific tag: get() method
+for footerLinkTag in sp.find_all("a", {"class": "footer_link"}):
+    print(footerLinkTag)
+    print("the value of href property is: " + footerLinkTag.get("href"))
+print()
+      
+      
+      
