@@ -37,4 +37,6 @@ for tableContent in allTableContents:
         for col in rows[i].find_all("td"):
             print(col.text, end='   ')
         print()
+        
+    print()
          
