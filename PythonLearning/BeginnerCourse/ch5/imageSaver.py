@@ -15,6 +15,8 @@ html.encoding = "utf-8"
 
 # use html.parser to analyze source code
 sp = BeautifulSoup(html.text, "html.parser")
+#print(sp) # for test
+
 
 # save the image in this folder
 imageFolder = r"D:\CodingWorkspace\images"
@@ -34,6 +36,10 @@ for link in allLinks:
     for attr in attrs:
         if (attr!=None) and (".jpg" in attr or ".png" in attr):
             
+            if(attr.startswith('/')):
+                attr = r"http://cpbl-elta.cdn.hinet.net" + attr
+            
+            
             # analyze and concatenate the file name
             fullPath = attr
             fileName = fullPath.split('/')[-1] # the last one is file name
@@ -47,11 +53,11 @@ for link in allLinks:
                
             # 
             try:
-                #image = urlopen(fullPath)
-                #f = open(os.path.join(imageFolder, fileName), "wb")
-                #f.write(image.read())
-                #f.close()
-                print(fullPath)
+                image = urlopen(fullPath)
+                f = open(os.path.join(imageFolder, fileName), "wb")
+                f.write(image.read())
+                f.close()
+                #print("Save success {}".format(fullPath))
             except:
                 print("Cannot save {}".format(fileName))
             
