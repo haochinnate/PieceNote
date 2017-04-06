@@ -20,4 +20,21 @@ print(md5.hexdigest())
 
 
 #---------------------------------
-#conn = sqlite3.connect()
+conn = sqlite3.connect("PM25Database.sqlite")
+cursor = conn.cursor()
+
+sqlstr = '''
+CREATE TABLE IF NOT EXISTS Table25 (
+    "no" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , 
+    "SiteName" TEXT NOT NULL,
+    "County" TEXT NOT NULL,
+    "Status" TEXT NOT NULL,
+    "PSI" INTEGER
+    "PM10" INTEGER
+    "PM25" INTEGER)
+'''
+
+url = "http://opendata.epa.gov.tw/ws/Data/REWXQA/?$orderby=SiteName&$skip=0&$top=1000&format=json"
+html = requests.get(url).text.encode('utf-8-sig')
+
+
