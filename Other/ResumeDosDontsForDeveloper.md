@@ -42,7 +42,9 @@ Your resume is meant to present you in the best light, not serve as a comprehens
 
 ## Dev resume do: Provide business context
 
-In working closely with a department or company, you become an insider. That’s helpful while you are at the company and have a shared reference point. On a resume, the insider perspective makes it difficult for hiring managers to understand your value.
+In working closely with a department or company, you become an insider. 
+That’s helpful while you are at the company and have a shared reference point. 
+On a resume, the insider perspective makes it difficult for hiring managers to understand your value.
 
 “In many cases, candidates don’t describe what the company does or how they contributed to the company’s purposes,” explains Peter Yared, CTO at Sapho, a software firm that creates business micro apps. “I’ll see people write something like ‘programmed in Java for 6 years.’ There’s no context for what that programming achieved. Adding a sentence about the company like ‘built a reservation system for a vacation travel system’ helps.”
 
@@ -68,17 +70,24 @@ Including a short explanation that gives the business context and impact of your
 
 ## Dev resume don’t: List every technology you’ve ever touched
 
-Overwhelming hiring managers with material is only one problem with an excessively detailed resume. If you list a skill or technology on your resume, expect that you may be asked questions about it.
+### 不要把你所有碰過的技術都列在履歷表上
 
-“I have seen candidates list Assembly on their resume, then struggle to answer questions about it during interviews,” explains Pablo Calamera, CTO at Vonage, a telecommunications company.
+Overwhelming hiring managers with material is only one problem with an excessively detailed resume. 
+過度詳細的履歷表只是用素材壓垮招募人員的問題之一。
+
+If you list a skill or technology on your resume, expect that you may be asked questions about it.
+
+“I have seen candidates list Assembly on their resume, then struggle to answer questions about it during interviews,” 
+explains Pablo Calamera, CTO at Vonage, a telecommunications company.
 
 Rather than listing every programming language or product you've used, limit your resume to those skills where you have significant dexterity and expertise. Otherwise, you run the risk of embarrassing yourself in the interview.
 
-“Listing numerous platforms and languages on a resume without clearly indicating your level of proficiency leads to problems. The applicant appears in a keyword search with that approach. However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
+“Listing numerous platforms and languages on a resume without clearly indicating your level of proficiency leads to problems. 
+The applicant appears in a keyword search with that approach. 
+However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” 
 
-###
+explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
 
-過度詳細的履歷表只是用素材壓垮招募人員的問題之一。
 如果你在履歷表上列了太多技能或是技術，你將會如預期的被問到很多相關的問題。
 "我曾經看過一些應徵者在他們的履歷表上有寫組合語言，但卻在面試時對於相關問題回答不出來"
  
@@ -120,29 +129,30 @@ That’s why candidates who take the extra effort stand out.
 
 ## Dev resume don’t: Try to game resume systems
 
-In today’s systems-based hiring culture, keywords on your resume will make it discoverable,
+### 別想試著要 game 履歷表系統/
 
+In today’s systems-based hiring culture, keywords on your resume will make it discoverable,
 but there is such a thing as too much optimization. 
+在現今以電腦系統為主的徵人招募文化中, 在你履歷表中增加關鍵字能讓履歷表更容易找到，....
+
+
  
 While it might seem like a good idea to create a resume meant to sparkle in the eyes of the machines, don’t.
+雖然把履歷寫的可以讓機器系統 看起來是個好主意 ，但請別這麼做。
+
 “At the end of the day, write the resume to be read by the hiring manager, not a system,” explains Calamera. 
+"到最後，你的履歷"
+
 “Some candidates go a bit crazy in loading up their resumes with acronyms – that approach obscures the individual’s true talents,” he adds.
+
+"有些應徵者 對於在履歷上寫縮寫字有點陷入走火入魔，這個方式會 真實天分"
+
 Years ago, Google’s search engine adjusted to aggressive keyword tactics. 
 Likewise, hiring managers and recruiters can tell if you are going too far.
 “If I’m searching for an iOS developer, I may search for ‘iOS’ and ‘Swift’ in a database, but that’s about it,” 
 Calamera explains. “I have seen some resumes where there are long lists of keywords. 
 I’m more interested in knowing how you overcame problems.”
 
-###
-
-在現今以電腦系統為主的徵人招募文化中, 在你履歷表中增加關鍵字能讓履歷表更容易找到，....
-
-雖然把履歷寫的可以讓機器系統 看起來是個好主意 ，但請別這麼做。
-
-把履歷寫得可以吸引電腦系統的注意雖然看起來是個好主意，但請別這麼做。
-
-"到最後，你的履歷"
-"有些應徵者 對於在履歷上寫縮寫字有點陷入走火入魔，這個方式會 真實天分"
 
 多年以前, Google的搜尋引擎
 
