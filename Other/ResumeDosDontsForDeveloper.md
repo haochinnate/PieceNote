@@ -314,10 +314,12 @@ or to shift to a new domain, industry, or profession.
 
 Once you have a sense of your path, tap your network to find friends or colleagues in roles similar to your target. 
 
-當你對你的職涯規劃有sense時，在你的人脈裡面尋找目標與你相似的朋友或同事
+當你對你的職涯規劃有方向或想法sense時，在你的人脈裡面去尋找與你願景目標中的角色相似的朋友或同事
 
 
-Their tales of how they came to be where they are will provide insights as to how you should polish your resume in service of your goal.
+Their tales of how they came to be where they are will provide insights as to 
+
+how you should polish your resume in service of your goal.
 
 
 
