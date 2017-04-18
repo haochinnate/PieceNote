@@ -238,33 +238,43 @@ to be so satisfied with your achievements that you make no effort to improve
 
 ## Dev resume do: Consider getting certified
 
+### 考慮去拿個認證吧
+
 Formal education and certifications play a role in setting your resume apart, 
 
 and sometimes that means broadening your scope.
 
+正規的教育和證照能夠讓你的履歷更為突出，有時也代表能夠拓寬你的領域與視野。
+
 “If a software engineer is looking to work on Cisco’s security products, 
 
-it helps to have Cisco certifications,” explains Vince. Certifications of note include the CCNA and CCNP. 
+it helps to have Cisco certifications,” explains Vince. 
+
+"當一名軟體工程師正在尋找一份Cisco security products的工作時，具備Cisco的認證是有幫助的", explains Vince.
+
+Certifications of note include the CCNA and CCNP. 
+
+著名的認證有 CCNA 與 CCNP。
 
 “If a developer has the CCIE certification, that’s amazing,” Vince adds. 
 
-“Beyond Cisco certifications, I also take note of Network+ and Security+ certifications to demonstrate industry knowledge,” he adds.
+"如果一個開發人員有CCIE的認證那就更令人驚奇了。" Vince adds.
+
+“Beyond Cisco certifications, I also take note of Network+ 
+
+and Security+ certifications to demonstrate industry knowledge,” he adds.
+
+"除了Cisco認證之外, 我也注意到 Network+ 和 Security+ 的認證可以證明產業知識" he adds.
 
 While it’s still under debate whether dev-specific certifications will give you an edge, 
 
-if you are looking to work within a specific industry, going the extra mile to prove your interest and acumen can be worthwhile.
+if you are looking to work within a specific industry, going the extra mile 
 
-### 考慮去拿個認證吧
+to prove your interest and acumen can be worthwhile.
 
-正規的教育和證照能夠讓你的履歷更為突出，有時這代表能夠拓寬你的領域。
+雖然對於特定的開發相關認證能否為你帶來優勢仍有爭議，但如果你正打算尋找特定產業的工作， 
 
-"當一個軟體工程師在尋找一份Cisco security products的工作時，具備Cisco的認證是有幫助的", explains Vince.
-
-著名?的認證包含 CCNA 與 CCNP。
-
-"如果一個開發人員有CCIE的認證就更驚奇了。" Vince adds.
-
-"除了Cisco認證之外, "
+那取得認證來證明你的興趣及專精、並帶給超乎別人的期待是值得的。
 
 ## Dev resume don’t: Certify for the sake of certification
 
@@ -321,6 +331,4 @@ Their tales of how they came to be where they are will provide insights as to
 
 how you should polish your resume in service of your goal.
 
-
-
-  
+他們如何一路走到現在地位的心路歷程可以做為洞察、線索，讓你知道為了達到你的目標，你該如何讓你的履歷更完美、更精煉。
