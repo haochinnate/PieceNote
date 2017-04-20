@@ -276,28 +276,32 @@ to prove your interest and acumen can be worthwhile.
 
 那取得認證來證明你的興趣及專精、並帶給超乎別人的期待是值得的。
 
-## Dev resume don’t: Certify for the sake of certification
 
-While certifications can help, your motivations and objectives count more.
+## 不要為了證照而考試
 
-“If a candidate has multiple certifications, I ask about them: What did they do with this knowledge? How does it fit with their work and career?” comments Vince.
+雖然把證照放在履歷上可以有所幫助，但你的動機與目標才是更重要的。
 
-Learning for learning’s sake has value, yet the learning is more compelling for an employer if you can show what you did with your new knowledge. If you earned a certification a long time ago, think carefully about whether it makes sense to include it. After all, you may be asked questions about it during an interview.
+"如果一個求職者有數張證照，我會問他們: 他們如何應用、使用這門學問? 
 
-### 為了證照而考試
+證照是否有與他們的工作及職涯相符合? 證照如何幫助他們的事業?" comments Vince
 
-雖然證照在履歷上可以有所幫助，但你的動機與目標才是更重要的。
-"如果一個求職者有數張證照，我會問他們: 他們為了這個學問/證照付出了什麼? 證照如何幫助他們的工作或職涯? "
- 
-learning for learning's sake
-漫無目的為了學習而學習有其價值，但對雇主來說，如果能表現出你對新知識、新學問做了哪些努力會來的更有說服力。
- 
+漫無目的為了學習而學習有其價值，但對雇主來說，如果能表現出你如何使用你的新知識、新學問會來的更有說服力。
+
 如果你證照已經是很久以前拿到的，要仔細思考一下把它擺在履歷表中是否有意義。
-畢竟你可能在面試的時候被詢問到相關的問題。
+
+畢竟你很有可能在面試的時候被詢問到相關的問題。
+
+> Dev resume don’t: Certify for the sake of certification
+
+> While certifications can help, your motivations and objectives count more.
+
+> “If a candidate has multiple certifications, I ask about them: What did they do with this knowledge? How does it fit with their work and career?” comments Vince.
+
+> Learning for learning’s sake has value, yet the learning is more compelling for an employer if you can show what you did with your new knowledge. If you earned a certification a long time ago, think carefully about whether it makes sense to include it. After all, you may be asked questions about it during an interview.
 
 ## Dev resume do: Reflect
 
-### Reflect
+### Reflect 效法反思?
 
 The most effective resumes convey a career plan. 
 
