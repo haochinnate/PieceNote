@@ -233,49 +233,30 @@ to be so satisfied with your achievements that you make no effort to improve
 
 "到了最後, 有一個好方法來測試程式的品質就是團隊的其他成員是否可以在你沒有解釋的情況下瞭解你的程式。" adds Oxenford.
 
- 
 
-
-## Dev resume do: Consider getting certified
-
-### 考慮去拿個認證吧
-
-Formal education and certifications play a role in setting your resume apart, 
-
-and sometimes that means broadening your scope.
+## 考慮去拿個認證吧
 
 正規的教育和證照能夠讓你的履歷更為突出，有時也代表能夠拓寬你的領域與視野。
 
-“If a software engineer is looking to work on Cisco’s security products, 
-
-it helps to have Cisco certifications,” explains Vince. 
-
-"當一名軟體工程師正在尋找一份Cisco security products的工作時，具備Cisco的認證是有幫助的", explains Vince.
-
-Certifications of note include the CCNA and CCNP. 
+"當一名軟體工程師正在尋找一份Cisco安全產品的工作時，具備Cisco的認證是有幫助的。", explains Vince.
 
 著名的認證有 CCNA 與 CCNP。
 
-“If a developer has the CCIE certification, that’s amazing,” Vince adds. 
-
 "如果一個開發人員有CCIE的認證那就更令人驚奇了。" Vince adds.
 
-“Beyond Cisco certifications, I also take note of Network+ 
-
-and Security+ certifications to demonstrate industry knowledge,” he adds.
-
-"除了Cisco認證之外, 我也注意到 Network+ 和 Security+ 的認證可以證明產業知識" he adds.
-
-While it’s still under debate whether dev-specific certifications will give you an edge, 
-
-if you are looking to work within a specific industry, going the extra mile 
-
-to prove your interest and acumen can be worthwhile.
+"除了Cisco認證之外, 我注意到 Network+ 和 Security+ 的認證也可以證明具有產業知識" he adds.
 
 雖然對於特定的開發相關認證能否為你帶來優勢仍有爭議，但如果你正打算尋找特定產業的工作， 
 
-那取得認證來證明你的興趣及專精、並帶給超乎別人的期待是值得的。
+藉由取得認證來超越別人的期待，並證明你的興趣及專精是值得的。
 
+> Dev resume do: Consider getting certified
+
+> Formal education and certifications play a role in setting your resume apart, and sometimes that means broadening your scope.
+
+> “If a software engineer is looking to work on Cisco’s security products, it helps to have Cisco certifications,” explains Vince. Certifications of note include the CCNA and CCNP. “If a developer has the CCIE certification, that’s amazing,” Vince adds. “Beyond Cisco certifications, I also take note of Network+ and Security+ certifications to demonstrate industry knowledge,” he adds.
+
+> While it’s still under debate whether dev-specific certifications will give you an edge, if you are looking to work within a specific industry, going the extra mile to prove your interest and acumen can be worthwhile.
 
 ## 不要為了證照而考試
 
