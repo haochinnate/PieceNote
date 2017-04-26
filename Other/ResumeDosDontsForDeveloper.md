@@ -198,15 +198,18 @@ If you overcame technical limitations or problems to ship a project, that’s a 
 
 如果你為了完成專案克服了技術上的限制或是問題，這是非常值得與雇主分享的有力訊息。
 
-## Dev resume don’t: Rest on your coding laurels
+## 不要因為滿足您過去已有的成就, 而忘記要精益求精、追求進步  
 
-If your resume attracts interest, you may be invited to a coding challenge to validate your technical skills. 
+當你的履歷吸引到注意時，你可能會受邀去參加一些程式挑戰(coding challenge)來驗證你技術上的能力。
 
-It has become a common practice because employers and candidates struggle to evaluate technical expertise. 
+由於僱主和應徵者都努力地想要評估技術上的專業知識，所以這現在已經變成一個常見的慣例方式或手法。
 
-As you put together your resume, know that anything you include is subject to review. 
+當你把你的履歷表整理組織起來時，你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
+
 
 That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
+
+這句沒翻
 
 “I look at their code for a few qualities: Is it clean? Is it well documented? 
 
@@ -216,22 +219,20 @@ Your approach will also signal what you might be like to work with as a colleagu
 
 “At the end of the day, a good test for quality code is whether someone else on the team can understand it without your explaining it,” adds Oxenford.
 
-###  to stop trying because one is satisfied with one's past achievements. 
-
-to be so satisfied with your achievements that you make no effort to improve
-
-當你的履歷吸引到注意時，你可能會受邀參加coding challenge來驗證你技術上的能力。
-
-現在這變成一個常見的慣例/方式, 因為雇主與應徵者 ?? 努力 ?? 評估技術上的專業知識。
-
-你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
-
 
 "我會注意他們程式碼幾個品質項目 : 程式碼乾淨嗎? 有良好的文件說明嗎? 是否有滿足規定與需求?" commments Calamera.
 
 你的實作方法同時也會顯示出你可能喜歡 ??
 
 "到了最後, 有一個好方法來測試程式的品質就是團隊的其他成員是否可以在你沒有解釋的情況下瞭解你的程式。" adds Oxenford.
+
+> Dev resume don’t: Rest on your coding laurels
+
+> If your resume attracts interest, you may be invited to a coding challenge to validate your technical skills. It has become a common practice because employers and candidates struggle to evaluate technical expertise. As you put together your resume, know that anything you include is subject to review. That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
+
+> “I look at their code for a few qualities: Is it clean? Is it well documented? Did it address the requirements?” comments Calamera.
+
+> Your approach will also signal what you might be like to work with as a colleague. “At the end of the day, a good test for quality code is whether someone else on the team can understand it without your explaining it,” adds Oxenford.
 
 
 ## 考慮去拿個認證吧
