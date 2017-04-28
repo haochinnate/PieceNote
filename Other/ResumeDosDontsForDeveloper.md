@@ -198,6 +198,19 @@ If you overcame technical limitations or problems to ship a project, that’s a 
 
 如果你為了完成專案克服了技術上的限制或是問題，這是非常值得與雇主分享的有力訊息。
 
+> It’s been said before, but its value is true: For some employers, open source contributions and related professional activities make a big difference. Sometimes it can even help you bypass those notorious programming tests.
+
+> “If a candidate links to significant code contributions on GitHub, we look at that. In some cases, it may be so good that we skip the coding challenge in the hiring process,” explains Cisco’s Vince.
+
+> Augmenting your resume with project code repositories is especially important if you are seeking to make a career change.
+
+> “If a candidate is working on learning Ruby on Rails in their spare time and publishes to a code repository, I would consider that even if their day job did not involve Ruby,” explains Vince.
+
+> If you are looking to change your career focus, public contributions are one strategy to pursue.
+
+> “Your problem solving abilities and process is highly important in addition to specific technical skills,” adds Calamera. If you overcame technical limitations or problems to ship a project, that’s a powerful message to share with employers.
+
+
 ## 不要因為滿足您過去已有的成就, 而忘記要精益求精、追求進步  
 
 當你的履歷吸引到注意時，你可能會受邀去參加一些程式挑戰(coding challenge)來驗證你技術上的能力。
@@ -206,6 +219,7 @@ If you overcame technical limitations or problems to ship a project, that’s a 
 
 當你把你的履歷表整理組織起來時，你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
 
+包含了你辛苦做的小程式 因為實用的軟體只是程式挑戰的其中一個小部分。
 
 That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
 
@@ -217,12 +231,14 @@ Did it address the requirements?” comments Calamera.
 
 Your approach will also signal what you might be like to work with as a colleague. 
 
-“At the end of the day, a good test for quality code is whether someone else on the team can understand it without your explaining it,” adds Oxenford.
+“At the end of the day, a good test for quality code is whether someone else 
+
+on the team can understand it without your explaining it,” adds Oxenford.
 
 
-"我會注意他們程式碼幾個品質項目 : 程式碼乾淨嗎? 有良好的文件說明嗎? 是否有滿足規定與需求?" commments Calamera.
+"我會關注他們程式碼幾個品質項目 : 程式碼乾淨嗎? 是否有清楚的文件/註解說明? 是否有滿足使用者的需求?" commments Calamera.
 
-你的實作方法同時也會顯示出你可能喜歡 ??
+你的實作方法同時也會顯示出，如果你做為同事一起工作的時候，你可能的工作方式為何。???
 
 "到了最後, 有一個好方法來測試程式的品質就是團隊的其他成員是否可以在你沒有解釋的情況下瞭解你的程式。" adds Oxenford.
 
