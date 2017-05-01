@@ -219,26 +219,19 @@ If you overcame technical limitations or problems to ship a project, that’s a 
 
 當你把你的履歷表整理組織起來時，你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
 
+
+這句沒翻
+
 包含了你辛苦做的小程式 因為實用的軟體只是程式挑戰的其中一個小部分。
 
 That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
 
-這句沒翻
-
-“I look at their code for a few qualities: Is it clean? Is it well documented? 
-
-Did it address the requirements?” comments Calamera.
-
-Your approach will also signal what you might be like to work with as a colleague. 
-
-“At the end of the day, a good test for quality code is whether someone else 
-
-on the team can understand it without your explaining it,” adds Oxenford.
+錙銖必究 鑽牛角尖  冰山一角
 
 
 "我會關注他們程式碼幾個品質項目 : 程式碼乾淨嗎? 是否有清楚的文件/註解說明? 是否有滿足使用者的需求?" commments Calamera.
 
-你的實作方法同時也會顯示出，如果你做為同事一起工作的時候，你可能的工作方式為何。???
+你的實作方法同時也會顯示出，跟你一起工作的時候你可能會是什麼樣的同事。
 
 "到了最後, 有一個好方法來測試程式的品質就是團隊的其他成員是否可以在你沒有解釋的情況下瞭解你的程式。" adds Oxenford.
 
