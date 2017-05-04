@@ -135,7 +135,6 @@ In today’s systems-based hiring culture, keywords on your resume will make it 
 but there is such a thing as too much optimization. 
 在現今以電腦系統為主的徵人招募文化中, 在你履歷表中增加關鍵字能讓履歷表更容易找到，....
 
-
  
 While it might seem like a good idea to create a resume meant to sparkle in the eyes of the machines, don’t.
 雖然把履歷寫的可以讓機器系統 看起來是個好主意 ，但請別這麼做。
@@ -158,45 +157,25 @@ I’m more interested in knowing how you overcame problems.”
 
 meant to 一定要 必須要
 
-## Dev resume do: Augment with code
+## 用程式碼來加強你的履歷
 
-It’s been said before, but its value is true: For some employers, open source contributions and related professional activities make a big difference. 
+雖然前面已經有提到了, 但是它確實很重要: 對於有些雇主來說，開源專案的貢獻和專業性相關活動的參與是影響很大的。
 
-Sometimes it can even help you bypass those notorious programming tests.
+有時候它甚至可以幫助你略過、跳過那些惡名昭彰的程式測驗。
 
-“If a candidate links to significant code contributions on GitHub, we look at that. 
+"如果求職者在GitHub上有重要的程式貢獻，我們會認真地看待它。在某些情況程式有可能非常好，好到讓我們能夠略過招募過程中的程式測驗", explains Cisco's Vince
 
-In some cases, it may be so good that we skip the coding challenge in the hiring process,” explains Cisco’s Vince.
+當如果你在尋求生涯改變的時候，用專案程式庫(code repositories)來強化你的履歷會來的特別重要。
 
-Augmenting your resume with project code repositories is especially important if you are seeking to make a career change.
+"如果求職者在空閒時間還額外學習Ruby on Rails並發佈code repository，就算他每天的工作內容不包含Ruby，我也會考慮雇用他。", explains Vince
 
-“If a candidate is working on learning Ruby on Rails in their spare time and publishes to a code repository, 
-
-I would consider that even if their day job did not involve Ruby,” explains Vince.
-
-If you are looking to change your career focus, public contributions are one strategy to pursue.
-
-“Your problem solving abilities and process is highly important in addition to specific technical skills,” adds Calamera. 
-
-If you overcame technical limitations or problems to ship a project, that’s a powerful message to share with employers.
-
-### 用程式碼來加強你的履歷
-
-雖然前面已經有提到了, 但是它確實很重要: 對於有些雇主 開源專案的貢獻和相關專業的活動 是讓你與眾不同的
-
-有時候它甚至可以幫助你略過、跳過那些notorious程式測驗。
-
-"如果求職者在GitHub上有重要的程式貢獻，我們會特別去看???。在某些情況，有可能程式很好，讓我們能夠略過招募過程中的程式問題", Cisco's Vince
-
-當如果你要尋求生涯改變的時候，用專案的repositories來強化你的履歷會來的特別重要。
-
-"如果求職者在空閒時間還額外學習Ruby on Rails並發佈code repository，就算他每天工作內容不包含Ruby，我也會考慮雇用他。", explains Vince
-
-如果你正想改變職涯專精的領域，那麼從事為公開貢獻是你可以考慮追求的策略。
+如果你正想改變職涯專精的領域，那麼從事為公開貢獻是你可以考慮採取的策略。
 
 "除了特定的技術專長以外，你解決問題的能力與過程也是非常重要的。", adds Calamera
 
-如果你為了完成專案克服了技術上的限制或是問題，這是非常值得與雇主分享的有力訊息。
+如果你為了完成專案，克服了技術上的限制或是問題，這是非常值得與雇主分享的有力資訊。
+
+> Dev resume do: Augment with code
 
 > It’s been said before, but its value is true: For some employers, open source contributions and related professional activities make a big difference. Sometimes it can even help you bypass those notorious programming tests.
 
@@ -225,6 +204,8 @@ If you overcame technical limitations or problems to ship a project, that’s a 
 包含了你辛苦做的小程式 因為實用的軟體只是程式挑戰的其中一個小部分。
 
 That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
+
+這包含了任何細微的小東西，
 
 錙銖必究 鑽牛角尖  冰山一角
 
