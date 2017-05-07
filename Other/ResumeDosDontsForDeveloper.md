@@ -17,27 +17,28 @@ They may not have heard of your current and past employers or products you have 
 but if you present your accomplishments and skills in the right way, 
 you can maximize your career opportunities in a hot job market.
 
+Here’s a look at what you should -- and shouldn’t -- do when crafting your resume.
 
-## Dev resume don’t: Drown hiring managers in your details
-
-Attention to detail is an essential trait for programmers, but it’s best not to overdo it on your resume.
-
-“This year, I have seen multiple candidates with resumes over 10 pages long that are filled with technical details. 
-Those resumes take a lot of work to understand. 
-Unfortunately, some candidates list every technology they have ever interacted with on their resume,” 
-explains Brandon Vince, ‎who works on strategic talent acquisition at Cisco.
-
-In addition to losing hiring managers in your details, 
-you also risk coming off as someone who can’t weigh the importance of your own work—a nonstarter for companies looking for programmers who can make a difference in prioritizing business goals. 
-Your resume is meant to present you in the best light, not serve as a comprehensive transcript.
-
-### 別用細節淹沒了人資 (Don't Drown hiring managers in your details)
+## 不要讓召募人員淹沒在你的細節中 
 
 專注於細節對於程式開發人員來說是個必要的特質，但在履歷表上最好不要表現得太過頭。
 
-履歷表上放太多的技術面細節或所有接觸過的科技、技術，會使人資迷失在你的細節中，而且提高別人無法衡量你在工作上所占重要性的風險。
+"這些年我看過太多求職者寫了超過10頁的履歷表，裡面寫滿了技術細節。
+看懂這些履歷表需要耗費大量的精力。不幸地，有些求職者將他所有曾經接觸過的技術都列在他們的履歷表上", explains Brandon Vince, ‎who works on strategic talent acquisition at Cisco.
 
-你的履歷表應該是要將你最好的部分表現出來，而非只是當作什麼無所不包的文字記錄/考試的成績報告單。
+除了會使召募人員迷失在你的細節以外，你也提高了別人無法評估你工作重要程度的風險-
+
+對於在尋找程式人員的公司來說，一個(非新手的程式人員)會影響如何排列企業目標的優先順序。
+
+你的履歷表一定要將你最好的部分表現出來，而不是當作無所不包的流水帳抄寫記錄。
+
+> Dev resume don’t: Drown hiring managers in your details
+
+> Attention to detail is an essential trait for programmers, but it’s best not to overdo it on your resume.
+
+> “This year, I have seen multiple candidates with resumes over 10 pages long that are filled with technical details. Those resumes take a lot of work to understand. Unfortunately, some candidates list every technology they have ever interacted with on their resume,” explains Brandon Vince, ‎who works on strategic talent acquisition at Cisco.
+
+> In addition to losing hiring managers in your details, you also risk coming off as someone who can’t weigh the importance of your own work—a nonstarter for companies looking for programmers who can make a difference in prioritizing business goals. Your resume is meant to present you in the best light, not serve as a comprehensive transcript.
 
 
 ## Dev resume do: Provide business context
@@ -50,7 +51,7 @@ On a resume, the insider perspective makes it difficult for hiring managers to u
 
 Including a short explanation that gives the business context and impact of your development work helps hiring managers fully understand your achievements, giving them not only a better view of your value but also insight as to how your efforts can help them achieve their own business goals.
 
-### 
+### 請提供一些職業/商業背景
 
 在一個部門或公司深入密切工作後，你會變成公司內部的人，非常了解內部的事情。當你在公司
 
@@ -67,6 +68,17 @@ Including a short explanation that gives the business context and impact of your
 增加一些有關公司的句子，例如: "製作假期旅遊系統的預定功能"可以幫助多些了解。
  
 為你的業務背景和開發工作對公司的影響增加簡短的解說，可以幫助人資、召募人員對你的成就有全盤的了解，這樣不僅讓他們可以對於你的價值有更好的觀點，也能從你的貢獻洞見出對他們達成經營目標將有什麼幫助。
+
+
+> Dev resume do: Provide business context
+
+> In working closely with a department or company, you become an insider. That’s helpful while you are at the company and have a shared reference point. On a resume, the insider perspective makes it difficult for hiring managers to understand your value.
+
+> “In many cases, candidates don’t describe what the company does or how they contributed to the company’s purposes,” explains Peter Yared, CTO at Sapho, a software firm that creates business micro apps. “I’ll see people write something like ‘programmed in Java for 6 years.’ There’s no context for what that programming achieved. Adding a sentence about the company like ‘built a reservation system for a vacation travel system’ helps.”
+
+> Including a short explanation that gives the business context and impact of your development work helps hiring managers fully understand your achievements, giving them not only a better view of your value but also insight as to how your efforts can help them achieve their own business goals.
+
+
 
 ## Dev resume don’t: List every technology you’ve ever touched
 
@@ -93,6 +105,17 @@ explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm base
  
 與其把每個你使用過的程式語言或產品列出來，不如將你的履歷表著重在那些你非常熟練而且專精的技能。
 不然你可能有在面試時陷入尷尬的危機。
+
+> Dev resume don’t: List every technology you’ve ever touched
+
+> Overwhelming hiring managers with material is only one problem with an excessively detailed resume. If you list a skill or technology on your resume, expect that you may be asked questions about it.
+
+> “I have seen candidates list Assembly on their resume, then struggle to answer questions about it during interviews,” explains Pablo Calamera, CTO at Vonage, a telecommunications company.
+
+> Rather than listing every programming language or product you've used, limit your resume to those skills where you have significant dexterity and expertise. Otherwise, you run the risk of embarrassing yourself in the interview.
+
+> “Listing numerous platforms and languages on a resume without clearly indicating your level of proficiency leads to problems. The applicant appears in a keyword search with that approach. However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
+
 
 ## Dev resume do: Calibrate your resume to the role 
 
@@ -190,7 +213,7 @@ meant to 一定要 必須要
 > “Your problem solving abilities and process is highly important in addition to specific technical skills,” adds Calamera. If you overcame technical limitations or problems to ship a project, that’s a powerful message to share with employers.
 
 
-## 不要因為滿足您過去已有的成就, 而忘記要精益求精、追求進步  
+### 不要因為滿足您過去已有的成就, 而忘記要精益求精、追求進步  
 
 當你的履歷吸引到注意時，你可能會受邀去參加一些程式挑戰(coding challenge)來驗證你技術上的能力。
 
