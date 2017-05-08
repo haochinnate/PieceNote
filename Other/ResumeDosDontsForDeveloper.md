@@ -41,34 +41,23 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 > In addition to losing hiring managers in your details, you also risk coming off as someone who can’t weigh the importance of your own work—a nonstarter for companies looking for programmers who can make a difference in prioritizing business goals. Your resume is meant to present you in the best light, not serve as a comprehensive transcript.
 
 
-## Dev resume do: Provide business context
+## 請提供一些職業、商業上的背景脈絡
 
-In working closely with a department or company, you become an insider. 
-That’s helpful while you are at the company and have a shared reference point. 
-On a resume, the insider perspective makes it difficult for hiring managers to understand your value.
+你在一個部門或公司深入密切工作後，你會變成公司內部的人，非常熟悉了解內部專業的事情。
 
-“In many cases, candidates don’t describe what the company does or how they contributed to the company’s purposes,” explains Peter Yared, CTO at Sapho, a software firm that creates business micro apps. “I’ll see people write something like ‘programmed in Java for 6 years.’ There’s no context for what that programming achieved. Adding a sentence about the company like ‘built a reservation system for a vacation travel system’ helps.”
-
-Including a short explanation that gives the business context and impact of your development work helps hiring managers fully understand your achievements, giving them not only a better view of your value but also insight as to how your efforts can help them achieve their own business goals.
-
-### 請提供一些職業/商業背景
-
-在一個部門或公司深入密切工作後，你會變成公司內部的人，非常了解內部的事情。當你在公司
-
-熟悉內部的人
+當你在公司裡面時，這是有幫助的，而且有共同的參考標準。
+  
+但在履歷表上面，用內部員工的觀點可能會使召募人員難以知道你的價值、重要性。
+   
+"在許多案例中，應徵者沒有描述公司在做什麼或他們如何為公司的目標做出貢獻", explains Peter Yared, CTO at Sapho, a software firm that creates business micro apps. 
  
-當你在公司裡面而且have a shared reference point參考標準是有幫助的。
- 
-但在履歷表上面，用內部員工的觀點可能會使召募人員難以知道你的價值。
- 
-"在許多案例中，應徵者沒有描述公司在做什麼或他們如何為公司的目標做出貢獻"
- 
-有些人會寫 "寫Java程式經驗6年"，但並沒有脈絡描述你寫的程式達成了什麼。
- 
-增加一些有關公司的句子，例如: "製作假期旅遊系統的預定功能"可以幫助多些了解。
- 
-為你的業務背景和開發工作對公司的影響增加簡短的解說，可以幫助人資、召募人員對你的成就有全盤的了解，這樣不僅讓他們可以對於你的價值有更好的觀點，也能從你的貢獻洞見出對他們達成經營目標將有什麼幫助。
+"我會看到有些人會寫一些類似「Java程式設計經驗6年」之類的文字，但並沒有背景脈絡描述你寫的程式達成了什麼。
 
+增加一些有關公司的句子，例如: "製作一個假期旅遊系統的預約制度功能"可以幫助召募人員能夠有多些了解。
+
+為你的業務背景和開發工作對公司的影響增加簡短的解說，可以幫助人資、召募人員對你的成就有全盤的了解，
+
+這樣不僅讓他們可以對於你的價值、重要性有更好的觀點及看法，也能從你的貢獻洞見出對他們達成經營目標將有什麼幫助。
 
 > Dev resume do: Provide business context
 
@@ -77,7 +66,6 @@ Including a short explanation that gives the business context and impact of your
 > “In many cases, candidates don’t describe what the company does or how they contributed to the company’s purposes,” explains Peter Yared, CTO at Sapho, a software firm that creates business micro apps. “I’ll see people write something like ‘programmed in Java for 6 years.’ There’s no context for what that programming achieved. Adding a sentence about the company like ‘built a reservation system for a vacation travel system’ helps.”
 
 > Including a short explanation that gives the business context and impact of your development work helps hiring managers fully understand your achievements, giving them not only a better view of your value but also insight as to how your efforts can help them achieve their own business goals.
-
 
 
 ## Dev resume don’t: List every technology you’ve ever touched
