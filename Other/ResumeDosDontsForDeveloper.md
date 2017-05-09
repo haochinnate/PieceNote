@@ -68,31 +68,28 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 > Including a short explanation that gives the business context and impact of your development work helps hiring managers fully understand your achievements, giving them not only a better view of your value but also insight as to how your efforts can help them achieve their own business goals.
 
 
-## Dev resume don’t: List every technology you’ve ever touched
+## 不要把你所有碰過的技術都列在履歷表上 Dev resume don’t: List every technology you’ve ever touched
 
-### 不要把你所有碰過的技術都列在履歷表上
+### 
 
 Overwhelming hiring managers with material is only one problem with an excessively detailed resume. 
-過度詳細的履歷表只是用素材壓垮招募人員的問題之一。
+過度詳細的履歷表只是用素材壓垮召募人員的問題之一。
 
 If you list a skill or technology on your resume, expect that you may be asked questions about it.
+如果你在履歷表上列了某項技能或是技術，一如預期地你將會被問到很多相關的問題。
 
 “I have seen candidates list Assembly on their resume, then struggle to answer questions about it during interviews,” 
 explains Pablo Calamera, CTO at Vonage, a telecommunications company.
 
+"我曾經看過一些應徵者在他們履歷表的專業上有寫組合語言，但卻在面試時無法回答相關問題", explains Pablo Calamera, CTO at Vonage, a telecommunications company.
+
 Rather than listing every programming language or product you've used, limit your resume to those skills where you have significant dexterity and expertise. Otherwise, you run the risk of embarrassing yourself in the interview.
+與其把每個你使用過的程式語言或產品列出來，不如將你的履歷表著重在那些你非常熟練而且專精的技能。不然你可能會在面試時陷入令你自己尷尬的危機。
 
 “Listing numerous platforms and languages on a resume without clearly indicating your level of proficiency leads to problems. 
 The applicant appears in a keyword search with that approach. 
-However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” 
-
-explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
-
-如果你在履歷表上列了太多技能或是技術，你將會如預期的被問到很多相關的問題。
-"我曾經看過一些應徵者在他們的履歷表上有寫組合語言，但卻在面試時對於相關問題回答不出來"
- 
-與其把每個你使用過的程式語言或產品列出來，不如將你的履歷表著重在那些你非常熟練而且專精的技能。
-不然你可能有在面試時陷入尷尬的危機。
+However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
+"在履歷表上列舉了許多平台、語言但沒有表明你精通熟練的程度會帶來一些問題。在關鍵字搜尋時，這些應徵者可能會因為列了很多技能而出現在系統上。但是，只要人資或召募人員和公司裡的開發人員聯繫時，不用花多少時間就會發現 技能與專門技術方面是不符合的。"explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
 
 > Dev resume don’t: List every technology you’ve ever touched
 
