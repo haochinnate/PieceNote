@@ -19,6 +19,7 @@ you can maximize your career opportunities in a hot job market.
 
 Here’s a look at what you should -- and shouldn’t -- do when crafting your resume.
 
+
 ## 不要讓召募人員淹沒在你的細節中 
 
 專注於細節對於程式開發人員來說是個必要的特質，但在履歷表上最好不要表現得太過頭。
@@ -68,28 +69,18 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 > Including a short explanation that gives the business context and impact of your development work helps hiring managers fully understand your achievements, giving them not only a better view of your value but also insight as to how your efforts can help them achieve their own business goals.
 
 
-## 不要把你所有碰過的技術都列在履歷表上 Dev resume don’t: List every technology you’ve ever touched
+## 不要把你所有碰過的技術都列出來 
 
-### 
+過度詳細的履歷表所帶來的一個問題就是召募人資會被你所附的資料素材給壓垮淹沒。
 
-Overwhelming hiring managers with material is only one problem with an excessively detailed resume. 
-過度詳細的履歷表只是用素材壓垮召募人員的問題之一。
-
-If you list a skill or technology on your resume, expect that you may be asked questions about it.
 如果你在履歷表上列了某項技能或是技術，一如預期地你將會被問到很多相關的問題。
 
-“I have seen candidates list Assembly on their resume, then struggle to answer questions about it during interviews,” 
-explains Pablo Calamera, CTO at Vonage, a telecommunications company.
+"我曾經看過一些應徵者在他們履歷表的專業上有寫組合語言，但卻在面試時無法回答相關的問題", explains Pablo Calamera, CTO at Vonage, a telecommunications company.
 
-"我曾經看過一些應徵者在他們履歷表的專業上有寫組合語言，但卻在面試時無法回答相關問題", explains Pablo Calamera, CTO at Vonage, a telecommunications company.
+與其把每個你使用過的程式語言或產品列出來，不如將你的履歷表著重於那些你非常熟練而且專精的技能。不然你可能會在面試時陷入令你自己尷尬的危機。
 
-Rather than listing every programming language or product you've used, limit your resume to those skills where you have significant dexterity and expertise. Otherwise, you run the risk of embarrassing yourself in the interview.
-與其把每個你使用過的程式語言或產品列出來，不如將你的履歷表著重在那些你非常熟練而且專精的技能。不然你可能會在面試時陷入令你自己尷尬的危機。
-
-“Listing numerous platforms and languages on a resume without clearly indicating your level of proficiency leads to problems. 
-The applicant appears in a keyword search with that approach. 
-However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
-"在履歷表上列舉了許多平台、語言但沒有表明你精通熟練的程度會帶來一些問題。在關鍵字搜尋時，這些應徵者可能會因為列了很多技能而出現在系統上。但是，只要人資或召募人員和公司裡的開發人員聯繫時，不用花多少時間就會發現 技能與專門技術方面是不符合的。"explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
+"在履歷表上列舉了許多平台、語言但沒有表明你精通熟練的程度會帶來一些問題。在關鍵字搜尋時，這些應徵者可能會因為列了很多技能而出現在系統上。
+但是，只要人資或召募人員和公司裡的開發人員聯繫時，不用花多少時間就會發現技能與專門技術方面是不符合的。"explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
 
 > Dev resume don’t: List every technology you’ve ever touched
 
@@ -134,6 +125,15 @@ Communicating this type of accomplishment on a resume is harder than compiling a
 在履歷表上傳達這類領導方面的成就比條列出你所會的技術要來的難，這也是為什麼有花額外努力的求職者能夠脫穎而出。
 That’s why candidates who take the extra effort stand out.
 
+> Dev resume do: Calibrate your resume to the role
+
+> Tailoring your resume to the tech prerequisites of a job listing is important, but so too is targeting the role. After all, the difference between a junior and senior developer often goes beyond years of experience.
+
+> “A senior developer at our agency likely only spends about 20 percent of their time directly writing code. The rest of the time, a typical day may include mentoring junior staff, working with project managers, and working with software architecture,” explains Jim Oxenford, mobile development manager at Tonic Design, a digital agency in Pennsylvania.
+
+> In other organizations, “senior iOS developer” may mean you have been on staff the longest. The best way to find out what these terms mean in various organizations is to read the job posting closely and reach out to your network for advice.
+
+> Your resume also needs to align with your career goals, such as whether you want to move to management. “If a person is searching for a management position, I’m looking for evidence they have tackled tough challenges, collaborated with other departments to solve complex problems, and otherwise shown leadership,” adds Silicon Beach Talent’s Peretz. Communicating this type of accomplishment on a resume is harder than compiling a list of technologies. That’s why candidates who take the extra effort stand out.
 
 ## Dev resume don’t: Try to game resume systems
 
