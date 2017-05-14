@@ -103,18 +103,21 @@ In other organizations, “senior iOS developer” may mean you have been on sta
 
 Your resume also needs to align with your career goals, such as whether you want to move to management. “If a person is searching for a management position, I’m looking for evidence they have tackled tough challenges, collaborated with other departments to solve complex problems, and otherwise shown leadership,” adds Silicon Beach Talent’s Peretz. Communicating this type of accomplishment on a resume is harder than compiling a list of technologies. That’s why candidates who take the extra effort stand out.
 
-### 讓你的履歷表與應徵職務相匹配
+### 讓你的履歷表與應徵職務相匹配,  修改、校準你的履歷表 使其與  職場角色 
+
+修改你的履歷表 必備技術 職務工作 是重要的 但 目標 的職務也同樣的重要
 
 Tailoring your resume to the tech prerequisites of a job listing is important, but so too is targeting the role.
-After all, the difference between a junior and senior developer often goes beyond years of experience.
-畢竟，資淺與資深的開發人員的差異不僅僅是年資而已。
-“A senior developer at our agency likely only spends about 20 percent of their time directly writing code. The rest of the time, a typical day may include mentoring junior staff, working with project managers, and working with software architecture,” explains Jim Oxenford, mobile development manager at Tonic Design, a digital agency in Pennsylvania.
-在我們部門裡面，資深開發人員大概只花他們百分之二十的時間再直接撰寫程式上面。一般日子其他時間可能包括指導資淺人員、與PM專案經理合作、以及處理軟體架構。
 
-In other organizations, “senior iOS developer” may mean you have been on staff the longest. 
-The best way to find out what these terms mean in various organizations is to read the job posting closely and reach out to your network for advice.
-在其他組織裡面，資深iOS開發人員可能代表你是該組織裡工作最久的。
-辨別這個職務在不同公司代表的意義最好的辦法就是仔細地閱讀此份工作的描述，並從你的人脈中詢問建議或打聽消息。
+
+畢竟，資淺與資深的開發人員之間的差異不僅僅是年資經歷而已。
+
+
+"在我們部門裡面，資深的開發人員大概只花他們百分之二十的時間在直接撰寫程式上面。
+一般日子的其他時間資深人員的工作可能包括指導資淺人員、與PM專案經理合作、以及處理軟體架構等等。", explains Jim Oxenford, mobile development manager at Tonic Design, a digital agency in Pennsylvania.
+
+在其他組織裡面，"資深iOS開發人員"可能代表你是該組織裡工作最久的。
+想要辨別這個職務名稱在不同公司代表的意義，最好的辦法就是仔細地閱讀此份工作的描述，並從你的人脈中詢問建議或打聽消息。
 
 Your resume also needs to align with your career goals, such as whether you want to move to management. 
 你的履歷表也必須要與你的職涯目標相吻合，例如你是否想要變成管理職。
