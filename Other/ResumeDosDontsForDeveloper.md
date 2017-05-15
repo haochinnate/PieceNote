@@ -93,40 +93,22 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 > “Listing numerous platforms and languages on a resume without clearly indicating your level of proficiency leads to problems. The applicant appears in a keyword search with that approach. However, once a hiring manager or recruiter connects with the developer, it doesn’t take long to find out there is a mismatch in terms of skills and expertise,” explains Marissa Peretz, founder of Silicon Beach Talent, a recruiting firm based in California.
 
 
-## Dev resume do: Calibrate your resume to the role 
+## 修改、校準你的履歷表，使其與職務角色的標準相同 
 
-Tailoring your resume to the tech prerequisites of a job listing is important, but so too is targeting the role. After all, the difference between a junior and senior developer often goes beyond years of experience.
+將你的履歷表修改到符合工作列表上的必備技術是重要的，但除此之外，符合職務角色也是同樣的重要。
 
-“A senior developer at our agency likely only spends about 20 percent of their time directly writing code. The rest of the time, a typical day may include mentoring junior staff, working with project managers, and working with software architecture,” explains Jim Oxenford, mobile development manager at Tonic Design, a digital agency in Pennsylvania.
-
-In other organizations, “senior iOS developer” may mean you have been on staff the longest. The best way to find out what these terms mean in various organizations is to read the job posting closely and reach out to your network for advice.
-
-Your resume also needs to align with your career goals, such as whether you want to move to management. “If a person is searching for a management position, I’m looking for evidence they have tackled tough challenges, collaborated with other departments to solve complex problems, and otherwise shown leadership,” adds Silicon Beach Talent’s Peretz. Communicating this type of accomplishment on a resume is harder than compiling a list of technologies. That’s why candidates who take the extra effort stand out.
-
-### 讓你的履歷表與應徵職務相匹配,  修改、校準你的履歷表 使其與  職場角色 
-
-修改你的履歷表 必備技術 職務工作 是重要的 但 目標 的職務也同樣的重要
-
-Tailoring your resume to the tech prerequisites of a job listing is important, but so too is targeting the role.
-
-
-畢竟，資淺與資深的開發人員之間的差異不僅僅是年資經歷而已。
-
+畢竟，資淺與資深開發人員之間的差異不僅僅是年資經歷而已。
 
 "在我們部門裡面，資深的開發人員大概只花他們百分之二十的時間在直接撰寫程式上面。
-一般日子的其他時間資深人員的工作可能包括指導資淺人員、與PM專案經理合作、以及處理軟體架構等等。", explains Jim Oxenford, mobile development manager at Tonic Design, a digital agency in Pennsylvania.
+一般日子的其他時間，資深人員的工作可能包括指導資淺人員、與PM專案經理合作、以及處理軟體架構等等。", explains Jim Oxenford, mobile development manager at Tonic Design, a digital agency in Pennsylvania.
 
 在其他組織裡面，"資深iOS開發人員"可能代表你是該組織裡工作最久的。
-想要辨別這個職務名稱在不同公司代表的意義，最好的辦法就是仔細地閱讀此份工作的描述，並從你的人脈中詢問建議或打聽消息。
+想要辨別這個職務名稱在不同公司所代表的意義，最好的辦法就是仔細地閱讀此份工作的描述，並從你的人脈中詢問建議或打聽消息。
 
-Your resume also needs to align with your career goals, such as whether you want to move to management. 
-你的履歷表也必須要與你的職涯目標相吻合，例如你是否想要變成管理職。
-“If a person is searching for a management position, I’m looking for evidence they have tackled tough challenges, collaborated with other departments to solve complex problems, and otherwise shown leadership,” 
-如果有人在尋求一個管理位置的職缺，我會找尋他是否有處理困難挑戰、與其他部門合作解決複雜問題、或其他可以顯示、證明領導才能的跡象或證據。
-adds Silicon Beach Talent’s Peretz. 
-Communicating this type of accomplishment on a resume is harder than compiling a list of technologies. 
-在履歷表上傳達這類領導方面的成就比條列出你所會的技術要來的難，這也是為什麼有花額外努力的求職者能夠脫穎而出。
-That’s why candidates who take the extra effort stand out.
+你的履歷表也必須要與你的職涯目標相吻合，例如你是否想要轉變為管理職。
+"如果有人在尋求一個管理位置的職缺，我會找尋他是否有處理困難挑戰、與其他部門合作解決複雜問題、或其他可以顯示、證明領導才能的跡象或證據。",adds Silicon Beach Talent’s Peretz. 
+
+在履歷表上傳達這類領導方面的成就，比條列出你所會的技術要來的難。這也是為什麼有花額外努力的求職者能夠脫穎而出的原因。
 
 > Dev resume do: Calibrate your resume to the role
 
@@ -164,9 +146,24 @@ Calamera explains. “I have seen some resumes where there are long lists of key
 I’m more interested in knowing how you overcame problems.”
 
 
-多年以前, Google的搜尋引擎
+多年以前, Google的搜尋引擎 aggressive 關鍵字 手段/策略
+同樣的，人資與召募人員也可以告訴你 如果你做得太過火了
+"如果我正在尋找一名iOS開發人員，我可能會在資料庫裡面用'iOS'及'Swift'來尋找，但... ", Calamera explains.
+"我曾經看過"
+
 
 meant to 一定要 必須要
+
+> Dev resume don’t: Try to game resume systems
+
+> In today’s systems-based hiring culture, keywords on your resume will make it discoverable, but there is such a thing as too much optimization. While it might seem like a good idea to create a resume meant to sparkle in the eyes of the machines, don’t.
+
+> “At the end of the day, write the resume to be read by the hiring manager, not a system,” explains Calamera. “Some candidates go a bit crazy in loading up their resumes with acronyms – that approach obscures the individual’s true talents,” he adds.
+
+> Years ago, Google’s search engine adjusted to aggressive keyword tactics. Likewise, hiring managers and recruiters can tell if you are going too far.
+
+> “If I’m searching for an iOS developer, I may search for ‘iOS’ and ‘Swift’ in a database, but that’s about it,” Calamera explains. “I have seen some resumes where there are long lists of keywords. I’m more interested in knowing how you overcame problems.”
+
 
 ## 用程式碼來加強你的履歷
 
@@ -284,11 +281,11 @@ That includes sweating the small stuff, as functional software is only part of t
 
 ## Dev resume do: Reflect
 
-### Reflect 效法反思?
+### Reflect 效法反思? 思考反省
 
 The most effective resumes convey a career plan. 
 
-最有效/最令人印象深刻的履歷是能傳達你的工作計畫/生涯規劃。
+最有效、最令人印象深刻的履歷是能夠傳達你的職涯規劃。
 
 When putting together your resume, it’s important to reflect on your career progression 
 
@@ -305,9 +302,9 @@ whether it’s to move to a management role, to go deeper in a more technical po
 
 or to shift to a new domain, industry, or profession.
 
-在這部分，有一個超越工作描述以外的目標是必要的。
+在這部分，有一個超越描述工作以外的目標是必要、不可或缺的。
 
-無論是朝管理職邁進、精進為更資深的技術人員、轉換到新的領域、產業或專業。
+無論你將來是要朝管理職邁進、或精進為更資深的技術人員、或轉換到新的領域、產業或專業。
 
 Once you have a sense of your path, tap your network to find friends or colleagues in roles similar to your target. 
 
@@ -319,3 +316,11 @@ Their tales of how they came to be where they are will provide insights as to
 how you should polish your resume in service of your goal.
 
 他們如何一路走到現在地位的心路歷程可以做為洞察、線索，讓你知道為了達到你的目標，你該如何讓你的履歷更完美、更精煉。
+
+> Dev resume do: Reflect
+
+> The most effective resumes convey a career plan. When putting together your resume, it’s important to reflect on your career progression and whether you are meeting your needs so that you can tailor your resume toward getting to your next step.
+
+> Here, having a goal that goes beyond a job description is essential, whether it’s to move to a management role, to go deeper in a more technical position, or to shift to a new domain, industry, or profession.
+
+> Once you have a sense of your path, tap your network to find friends or colleagues in roles similar to your target. Their tales of how they came to be where they are will provide insights as to how you should polish your resume in service of your goal.
