@@ -126,11 +126,11 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 
 In today’s systems-based hiring culture, keywords on your resume will make it discoverable,
 but there is such a thing as too much optimization. 
-在現今以電腦系統為主的徵人招募文化中, 在你履歷表中增加關鍵字能讓履歷表更容易找到，....
-
+在現今以電腦系統為主的徵人召募文化中, 在你履歷表中增加關鍵字能夠讓履歷表更容易被找到，但請不要最佳化的太過頭。
  
 While it might seem like a good idea to create a resume meant to sparkle in the eyes of the machines, don’t.
-雖然把履歷寫的可以讓機器系統 看起來是個好主意 ，但請別這麼做。
+雖然把履歷寫的 一定可以讓機器系統可以找到看起來是個好主意 ，但請別這麼做。
+雖然你可以把履歷寫的一定讓機器系統從大海撈針裡面
 
 “At the end of the day, write the resume to be read by the hiring manager, not a system,” explains Calamera. 
 "到最後，你的履歷"
