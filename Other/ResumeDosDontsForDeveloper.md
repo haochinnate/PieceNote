@@ -129,15 +129,14 @@ but there is such a thing as too much optimization.
 在現今以電腦系統為主的徵人召募文化中, 在你履歷表中增加關鍵字能夠讓履歷表更容易被找到，但請不要最佳化的太過頭。
  
 While it might seem like a good idea to create a resume meant to sparkle in the eyes of the machines, don’t.
-雖然把履歷寫的 一定可以讓機器系統可以找到看起來是個好主意 ，但請別這麼做。
-雖然你可以把履歷寫的一定讓機器系統從大海撈針裡面
+雖然把履歷寫的百分之百可以吸引系統的目光、讓系統可以找到，或許看起來是個好主意 ，但請別這麼做。
 
 “At the end of the day, write the resume to be read by the hiring manager, not a system,” explains Calamera. 
-"到最後，你的履歷"
+"畢竟到最後，你所寫的履歷是要給人資召募人員看的，而不是給系統看", explains Calamera. 
 
-“Some candidates go a bit crazy in loading up their resumes with acronyms – that approach obscures the individual’s true talents,” he adds.
-
-"有些應徵者 對於在履歷上寫縮寫字有點陷入走火入魔，這個方式會 真實天分"
+“Some candidates go a bit crazy in loading up their resumes with acronyms – 
+that approach obscures the individual’s true talents,” he adds.
+"有些應徵者會瘋狂地在他們的履歷表上加上許多的縮寫關鍵字，但這個方法會讓其個人的真正的天分與優點反而變得不顯著。", he adds.
 
 Years ago, Google’s search engine adjusted to aggressive keyword tactics. 
 Likewise, hiring managers and recruiters can tell if you are going too far.
@@ -146,13 +145,11 @@ Calamera explains. “I have seen some resumes where there are long lists of key
 I’m more interested in knowing how you overcame problems.”
 
 
-多年以前, Google的搜尋引擎 aggressive 關鍵字 手段/策略
-同樣的，人資與召募人員也可以告訴你 如果你做得太過火了
-"如果我正在尋找一名iOS開發人員，我可能會在資料庫裡面用'iOS'及'Swift'來尋找，但... ", Calamera explains.
-"我曾經看過"
+多年以前, Google的搜尋引擎對於這種侵略式的關鍵字手段做了些調整。 
+同樣的，如果你做得太過火了，人資與召募人員也可以分辨得出來。 
+"如果我正在尋找一名iOS開發人員，我可能會在資料庫裡面用'iOS'及'Swift'來尋找，但也就僅止於此", Calamera explains.
+"我曾經看過一些履歷表有一長串的關鍵字。但我更感興趣的是: 你是如何克服、如何解決問題的。"
 
-
-meant to 一定要 必須要
 
 > Dev resume don’t: Try to game resume systems
 
