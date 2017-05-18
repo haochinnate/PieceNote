@@ -120,36 +120,19 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 
 > Your resume also needs to align with your career goals, such as whether you want to move to management. “If a person is searching for a management position, I’m looking for evidence they have tackled tough challenges, collaborated with other departments to solve complex problems, and otherwise shown leadership,” adds Silicon Beach Talent’s Peretz. Communicating this type of accomplishment on a resume is harder than compiling a list of technologies. That’s why candidates who take the extra effort stand out.
 
-## Dev resume don’t: Try to game resume systems
+## 別想試著要玩弄履歷表系統
 
-### 別想試著要 game 履歷表系統/
-
-In today’s systems-based hiring culture, keywords on your resume will make it discoverable,
-but there is such a thing as too much optimization. 
-在現今以電腦系統為主的徵人召募文化中, 在你履歷表中增加關鍵字能夠讓履歷表更容易被找到，但請不要最佳化的太過頭。
- 
-While it might seem like a good idea to create a resume meant to sparkle in the eyes of the machines, don’t.
+在現今以電腦系統為主的徵人召募文化中，在你履歷表中增加關鍵字能夠讓履歷表更容易被找到，但請不要把關鍵字加的太多，優化的太過頭。 
 雖然把履歷寫的百分之百可以吸引系統的目光、讓系統可以找到，或許看起來是個好主意 ，但請別這麼做。
 
-“At the end of the day, write the resume to be read by the hiring manager, not a system,” explains Calamera. 
 "畢竟到最後，你所寫的履歷是要給人資召募人員看的，而不是給系統看", explains Calamera. 
+"有些應徵者會瘋狂地在他們的履歷表上加上許多的縮寫關鍵字，但這個方法反而會讓其個人的真正的天分與優點變得不顯著。", he adds.
 
-“Some candidates go a bit crazy in loading up their resumes with acronyms – 
-that approach obscures the individual’s true talents,” he adds.
-"有些應徵者會瘋狂地在他們的履歷表上加上許多的縮寫關鍵字，但這個方法會讓其個人的真正的天分與優點反而變得不顯著。", he adds.
-
-Years ago, Google’s search engine adjusted to aggressive keyword tactics. 
-Likewise, hiring managers and recruiters can tell if you are going too far.
-“If I’m searching for an iOS developer, I may search for ‘iOS’ and ‘Swift’ in a database, but that’s about it,” 
-Calamera explains. “I have seen some resumes where there are long lists of keywords. 
-I’m more interested in knowing how you overcame problems.”
-
-
-多年以前, Google的搜尋引擎對於這種侵略式的關鍵字手段做了些調整。 
+多年以前，Google的搜尋引擎對於這種侵略式的關鍵字手段做了些調整。 
 同樣的，如果你做得太過火了，人資與召募人員也可以分辨得出來。 
+
 "如果我正在尋找一名iOS開發人員，我可能會在資料庫裡面用'iOS'及'Swift'來尋找，但也就僅止於此", Calamera explains.
 "我曾經看過一些履歷表有一長串的關鍵字。但我更感興趣的是: 你是如何克服、如何解決問題的。"
-
 
 > Dev resume don’t: Try to game resume systems
 
@@ -289,7 +272,7 @@ When putting together your resume, it’s important to reflect on your career pr
 and whether you are meeting your needs so that you can tailor your resume toward getting to your next step.
 
 
-當把你的履歷表整合起來看時/綜觀你的履歷表全部時，顯現出你的
+當把你的履歷表整合起來看時/綜觀你的履歷表全部時，履歷表能否 顯現/反映出你的
 職業生涯發展演進  和  你是否遇到你所需要的能讓你的履歷合適地往你下一個目標邁進是非常重要的。
 你是否找到能夠讓你的履歷合適地往你下一個目標邁進的需求是非常重要的
 
