@@ -264,38 +264,26 @@ That includes sweating the small stuff, as functional software is only part of t
 ### Reflect 效法反思? 思考反省
 
 The most effective resumes convey a career plan. 
-
 最有效、最令人印象深刻的履歷是能夠傳達你的職涯規劃。
 
 When putting together your resume, it’s important to reflect on your career progression 
-
 and whether you are meeting your needs so that you can tailor your resume toward getting to your next step.
 
-
-當把你的履歷表整合起來看時/綜觀你的履歷表全部時，履歷表能否 顯現/反映出你的
-職業生涯發展演進  和  你是否遇到你所需要的能讓你的履歷合適地往你下一個目標邁進是非常重要的。
+當把你的履歷表整合起來看時/綜觀你的履歷表全部時，和  你是否遇到你所需要的能讓你的履歷合適地往你下一個目標邁進是非常重要的。
 你是否找到能夠讓你的履歷合適地往你下一個目標邁進的需求是非常重要的
 
+當整合、綜觀你履歷表的全部時，履歷表能否反映、表現出你的職業生涯發展演進和 
+
 Here, having a goal that goes beyond a job description is essential, 
-
 whether it’s to move to a management role, to go deeper in a more technical position, 
-
 or to shift to a new domain, industry, or profession.
-
-在這部分，有一個超越描述工作以外的目標是必要、不可或缺的。
-
-無論你將來是要朝管理職邁進、或精進為更資深的技術人員、或轉換到新的領域、產業或專業。
+無論你將來是要朝管理職邁進、或精進為更資深的技術人員、或轉換到新的領域、產業或專業，在這邊有一個超越工作職務說明以外的目標是必要、不可或缺的。
 
 Once you have a sense of your path, tap your network to find friends or colleagues in roles similar to your target. 
+當你對你的職涯規劃有方向或想法時，在你的人脈裡面去尋找那些職位、角色與你的目標相似的朋友或同事，
 
-當你對你的職涯規劃有方向或想法sense時，在你的人脈裡面去尋找與你願景目標中的角色相似的朋友或同事
-
-
-Their tales of how they came to be where they are will provide insights as to 
-
-how you should polish your resume in service of your goal.
-
-他們如何一路走到現在地位的心路歷程可以做為洞察、線索，讓你知道為了達到你的目標，你該如何讓你的履歷更完美、更精煉。
+Their tales of how they came to be where they are will provide insights as to how you should polish your resume in service of your goal.
+他們如何一路走到現在地位的心路歷程可以做為你的洞察線索或啟發，讓你知道，為了達到你的目標，你該如何讓你的履歷更完美、更精煉。
 
 > Dev resume do: Reflect
 
