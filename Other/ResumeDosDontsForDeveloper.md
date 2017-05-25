@@ -178,25 +178,15 @@ Here’s a look at what you should -- and shouldn’t -- do when crafting your r
 > “Your problem solving abilities and process is highly important in addition to specific technical skills,” adds Calamera. If you overcame technical limitations or problems to ship a project, that’s a powerful message to share with employers.
 
 
-### 不要因為滿足您過去已有的成就, 而忘記要精益求精、追求進步  
+## 不要因為滿足您過去已有的成就, 而忘記要精益求精、追求進步  
 
 當你的履歷吸引到注意時，你可能會受邀去參加一些程式挑戰(coding challenge)來驗證你技術上的能力。
 
 由於僱主和應徵者都努力地想要評估技術上的專業知識，所以這現在已經變成一個常見的慣例方式或手法。
 
-當你把你的履歷表整理組織起來時，你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
+除此之外，當你把你的履歷表整理組織起來時，你需要意識到任何你在履歷上所提到的都將變成檢視的目標。
 
-
-這句沒翻
-
-包含了你辛苦做的小程式 因為實用的軟體只是程式挑戰的其中一個小部分。
-
-That includes sweating the small stuff, as functional software is only part of the picture with a coding challenge.
-
-這包含了任何細微的小東西，
-
-錙銖必究 鑽牛角尖  冰山一角
-
+錙銖必較而且包含了所有細微的小東西，因為功能性的軟體只是程式挑戰的其中一個小部分。
 
 "我會關注他們程式碼幾個品質項目 : 程式碼乾淨嗎? 是否有清楚的文件/註解說明? 是否有滿足使用者的需求?" commments Calamera.
 
