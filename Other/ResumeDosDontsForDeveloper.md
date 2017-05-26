@@ -4,13 +4,20 @@
 
 文章來源: http://www.infoworld.com/article/3141949/it-careers/10-resume-dos-and-donts-for-developers.html
 
-## Pre
+## 前言
 
 Landing that dream developer job is hard work, but it all starts with the resume. 
+錄取夢想中的開發工作是一件困難的事情，但這一切都是從履歷表開始。 
 Your code may be tight and you may have a wide range of deep experience, 
 but if you shortchange the time spent on your resume, 
 you may not get recognized in the job marketplace for your true worth. 
+
+你的程式碼可能很嚴謹整潔、你可能有廣泛資深的經歷，但如果你沒有用心花時間在你的履歷表上的話，你真正的價值可能無法在工作市場中得到認可。
+(可能會埋沒在人力市場中)
+
 You might even sabotage your chance of being invited for interviews.
+
+甚至，你可能在破壞你被邀去面試的機會。
 
 We spoke with recruiters and hiring managers to get a sense of what makes candidates break through the slush. 
 They may not have heard of your current and past employers or products you have worked on, 
@@ -19,6 +26,13 @@ you can maximize your career opportunities in a hot job market.
 
 Here’s a look at what you should -- and shouldn’t -- do when crafting your resume.
 
+以下是你在製作你的履歷時，你應該做與不該做的事項。
+
+> Landing that dream developer job is hard work, but it all starts with the resume. Your code may be tight and you may have a wide range of deep experience, but if you shortchange the time spent on your resume, you may not get recognized in the job marketplace for your true worth. You might even sabotage your chance of being invited for interviews.
+
+> We spoke with recruiters and hiring managers to get a sense of what makes candidates break through the slush. They may not have heard of your current and past employers or products you have worked on, but if you present your accomplishments and skills in the right way, you can maximize your career opportunities in a hot job market.
+
+>Here’s a look at what you should -- and shouldn’t -- do when crafting your resume.
 
 ## 不要讓召募人員淹沒在你的細節中 
 
