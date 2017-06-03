@@ -7,7 +7,7 @@
 ## 前言
 
 Landing that dream developer job is hard work, but it all starts with the resume. 
-錄取夢想中的開發工作是一件困難的事情，但這一切都是從履歷表開始。 
+從事夢想中的開發工作是一件困難的事情，但這一切都是從履歷表開始。 
 Your code may be tight and you may have a wide range of deep experience, 
 but if you shortchange the time spent on your resume, 
 you may not get recognized in the job marketplace for your true worth. 
@@ -23,6 +23,13 @@ We spoke with recruiters and hiring managers to get a sense of what makes candid
 They may not have heard of your current and past employers or products you have worked on, 
 but if you present your accomplishments and skills in the right way, 
 you can maximize your career opportunities in a hot job market.
+
+我們與人資、招聘經理  
+ 
+他們可能不曾聽過你目前、過去所合作的夥伴或你曾參與的產品，
+
+但如果你用正確的方式來表現你的成就
+你可以在熱絡的職缺工作市場中，最大化你職涯的機會
 
 Here’s a look at what you should -- and shouldn’t -- do when crafting your resume.
 
