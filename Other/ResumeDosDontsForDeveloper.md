@@ -8,32 +8,31 @@
 
 Landing that dream developer job is hard work, but it all starts with the resume. 
 從事夢想中的開發工作是一件困難的事情，但這一切都是從履歷表開始。 
+
 Your code may be tight and you may have a wide range of deep experience, 
 but if you shortchange the time spent on your resume, 
 you may not get recognized in the job marketplace for your true worth. 
 
-你的程式碼可能很嚴謹整潔、你可能有廣泛資深的經歷，但如果你沒有用心花時間在你的履歷表上的話，你真正的價值可能無法在工作市場中得到認可。
-(可能會埋沒在人力市場中)
+你的程式碼可能寫得很嚴謹整潔、你可能有廣泛資深的經歷，但如果你沒有用心花時間在你的履歷表上的話，
+你真正的價值可能會埋沒在人力市場中，無法得到認可。
 
 You might even sabotage your chance of being invited for interviews.
-
-甚至，你可能在破壞你被邀去面試的機會。
+甚至，你可能在破壞你被邀約去面試的機會。
 
 We spoke with recruiters and hiring managers to get a sense of what makes candidates break through the slush. 
 They may not have heard of your current and past employers or products you have worked on, 
 but if you present your accomplishments and skills in the right way, 
 you can maximize your career opportunities in a hot job market.
 
-我們與人資、招聘經理  
+我們與人資、招聘經理談論，得到了是甚麼讓應徵者脫穎而出
+為了瞭解是什麼讓應徵者脫穎而出的觀念，
  
-他們可能不曾聽過你目前、過去所合作的夥伴或你曾參與的產品，
-
-但如果你用正確的方式來表現你的成就
-你可以在熱絡的職缺工作市場中，最大化你職涯的機會
+ 
+他們可能不曾聽過你目前、過去一起合作的夥伴或你參與的產品，
+但如果你用正確的方式來表現你的成就與技能，你就可以在熱絡的職缺工作市場中，最大化你職涯的機會
 
 Here’s a look at what you should -- and shouldn’t -- do when crafting your resume.
-
-以下是你在製作你的履歷時，你應該做與不該做的事項。
+以下是你在製作你的履歷時，你應該做與不該做的事項：
 
 > Landing that dream developer job is hard work, but it all starts with the resume. Your code may be tight and you may have a wide range of deep experience, but if you shortchange the time spent on your resume, you may not get recognized in the job marketplace for your true worth. You might even sabotage your chance of being invited for interviews.
 
