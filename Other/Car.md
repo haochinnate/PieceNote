@@ -2,6 +2,7 @@
 ## 更新log
 * 2017.06.14: 更新 Octavia(Combi)油耗, RAV4 車偏
 * 2017.06.21: 更新 CX-9, ColtPlus, Vitara
+* 2017.07.02: 更新 CR-V, Impreza, XV, X-Trail, S3, U6 
 
 > Fit 1.5S 17.4
 > Kodiaq 1.4 14.9
