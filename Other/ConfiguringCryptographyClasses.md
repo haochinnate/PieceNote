@@ -15,7 +15,7 @@
 利用Windows SDK, 開發人員有4種方式可以建立 cryptography object
 1. 用 **new** operator 來建立 object
 2. 呼叫該演算法 abstract class 的 **Create** 方法, 來建立有實作特定 cryptography algorithm 的 object
-3. 呼叫 [CryptoConfig.CreateFromName](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/map-algorithm-names-to-cryptography-classes)方法, 來建立有實作特定 cryptography algorithm 的 object
+3. 呼叫 [CryptoConfig.CreateFromName](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.cryptoconfig.createfromname?view=netframework-4.7)方法, 來建立有實作特定 cryptography algorithm 的 object
 4. 呼叫該類型的演算法(例如 [SymmetricAlgorithm](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.symmetricalgorithm))abstract class 的**Create** 方法, 來建立實作 a class of cryptographic algorithms (例如 symmetric block cipher)的物件
 
 例如, 假設開發人員想要 compute the SHA1 hash of a set of bytes.
@@ -44,6 +44,8 @@ result = shaM.ComputeHash(data);
 
 根據預設, 4種情況都會回傳 [SHA1CryptoServiceProvider](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.sha1cryptoserviceprovider?view=netframework-4.7)的物件。
 但是 machine administrator 可以改變後面兩個情況的 method 要回傳的object 型別。要達成這個目標，你要在machine configuration file(**Machine.config**)中建立friendly algorithm name 與 你想要使用的 class 之間的對應。
+
+Machine.config 放在 %windir%\Microsoft.NET\Framework64\[version]\config\machine.config 裡面
 
 以下的範例展示了如何設定在 runtime 時, 讓以下三個方法回傳自己建立的 MySHA1HashClass 物件。 
 * **System.Security.Cryptography.SHA1.Create**
