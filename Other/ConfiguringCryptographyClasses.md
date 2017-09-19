@@ -84,7 +84,59 @@ Machine.config 放在 %windir%\Microsoft.NET\Framework64\[version]\config\machin
 For a list of default names and the classes they map to, see [CryptoConfig](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.cryptoconfig).
 
 ### [Mapping Object Identifiers to Cryptography Algorithms](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms)
+
 **描述如何用 object identifier 去對應到 cryptography algorithm**
+
+Digital signatures ensure that data is not tampered with when it is sent from one program to another. 
+數位簽章(Digital signatures) 確保資料從程式之間傳遞時不會被竄改。
+
+Typically the digital signature is computed by applying a mathematical function to the hash of the data to be signed. 
+典型的數位簽章，是藉由對欲簽署的資料雜湊值，做數學函數計算來達成。
+
+When formatting a hash value to be signed, some digital signature algorithms append an ASN.1 Object Identifier (OID) as part of the formatting operation. 
+當要對簽署的雜湊值格式化時，有些數位簽章演算法會附加一個 ASN.1[(Abstract Syntax Notation One)](https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One) Object Identifier (OID) 作為格式化運算時的一部分。
+
+
+The OID identifies the algorithm that was used to compute the hash. 
+OID 可以辨識之前是使用哪一個演算法來計算雜湊值。
+
+You can map algorithms to object identifiers to extend the cryptography mechanism to use custom algorithms. 
+你可以藉由演算法和OID的對應來擴充cryptography mechanism，以使用客製演算法。
+
+The following example shows how to map an object identifier to a new hash algorithm.
+以下的範例展示了如何將object identifier 對應到新的雜湊演算法。
+
+~~~~~
+<configuration>  
+   <mscorlib>  
+      <cryptographySettings>  
+         <cryptoNameMapping>  
+            <cryptoClasses>  
+               <cryptoClass MyNewHash="MyNewHashClass, MyAssembly  
+                  Culture='en', PublicKeyToken=a5d015c7d5a0b012,  
+                  Version=1.0.0.0"/>  
+            </cryptoClasses>  
+            <nameEntry name="NewHash" class="MyNewHash"/>  
+         </cryptoNameMapping>  
+         <oidMap>  
+            <oidEntry OID="1.3.14.33.42.46"  name="NewHash"/>  
+         </oidMap>  
+      </cryptographySettings>  
+   </mscorlib>  
+</configuration>
+~~~~~
+
+The **\<oidEntry\>** element contains two attributes. 
+ **\<oidEntry\>** element 包含兩個 attributes。
+
+The OID attribute is the object identifier number. 
+**OID** 這個attribute 是 object identifier number。
+
+The name attribute is the value of the name attribute from the **\<nameEntry\>** element. 
+**name** 這個attribute 是來自 **\<nameEntry\>** element 其 name attribute 的值。
+
+There must be a mapping from an algorithm name to a class before an object identifier can be mapped to a simple name.
+必須要先建立演算法名稱到類別的對應，才可以將 object identifier 對應到 simple 的演算法名稱。
 
 
 ## Related Sections 
