@@ -87,23 +87,16 @@ For a list of default names and the classes they map to, see [CryptoConfig](http
 
 **描述如何用 object identifier 去對應到 cryptography algorithm**
 
-Digital signatures ensure that data is not tampered with when it is sent from one program to another. 
 數位簽章(Digital signatures) 確保資料從程式之間傳遞時不會被竄改。
 
-Typically the digital signature is computed by applying a mathematical function to the hash of the data to be signed. 
 典型的數位簽章，是藉由對欲簽署的資料雜湊值，做數學函數計算來達成。
 
-When formatting a hash value to be signed, some digital signature algorithms append an ASN.1 Object Identifier (OID) as part of the formatting operation. 
 當要對簽署的雜湊值格式化時，有些數位簽章演算法會附加一個 ASN.1[(Abstract Syntax Notation One)](https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One) Object Identifier (OID) 作為格式化運算時的一部分。
 
-
-The OID identifies the algorithm that was used to compute the hash. 
 OID 可以辨識之前是使用哪一個演算法來計算雜湊值。
 
-You can map algorithms to object identifiers to extend the cryptography mechanism to use custom algorithms. 
 你可以藉由演算法和OID的對應來擴充cryptography mechanism，以使用客製演算法。
 
-The following example shows how to map an object identifier to a new hash algorithm.
 以下的範例展示了如何將object identifier 對應到新的雜湊演算法。
 
 ~~~~~
@@ -126,18 +119,17 @@ The following example shows how to map an object identifier to a new hash algori
 </configuration>
 ~~~~~
 
-The **\<oidEntry\>** element contains two attributes. 
- **\<oidEntry\>** element 包含兩個 attributes。
+ [**\<oidEntry\>**](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/cryptography/oidentry-element) element 包含兩個 attributes。
 
-The OID attribute is the object identifier number. 
 **OID** 這個attribute 是 object identifier number。
 
-The name attribute is the value of the name attribute from the **\<nameEntry\>** element. 
-**name** 這個attribute 是來自 **\<nameEntry\>** element 其 name attribute 的值。
+**name** 這個attribute 是來自 [**\<nameEntry\>**](https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/cryptography/nameentry-element) element 其 name attribute 的值。
 
-There must be a mapping from an algorithm name to a class before an object identifier can be mapped to a simple name.
 必須要先建立演算法名稱到類別的對應，才可以將 object identifier 對應到 simple 的演算法名稱。
 
+**object identifier (OID)**: In the context of a directory service, a number identifying an object class or attribute. Object identifiers are issued by the ITU and form a hierarchy. An OID is represented as a dotted decimal string (for example, "1.2.3.4"). For more information on OIDs, see [X660] and [RFC3280] Appendix A. OIDs are used to uniquely identify certificate templates available to the certification authority (CA). Within a certificate, OIDs are used to identify standard extensions, as described in [RFC3280] section 4.2.1.x, as well as non-standard extensions.
+
+[ASN.1学习笔记](https://www.mianbaoban.cn/blog/post/71483), [ASN.1介绍(转载)](http://www.cppblog.com/smagle/archive/2011/05/10/146088.html), [OBJECT IDENTIFIER](https://msdn.microsoft.com/en-us/library/bb540809(v=vs.85).aspx),[OID search](http://www.alvestrand.no/objectid/top.html),[Object Identifier-wiki](https://en.wikipedia.org/wiki/Object_identifier)
 
 ## Related Sections 
 ### [Cryptographic Services](https://docs.microsoft.com/en-us/dotnet/standard/security/cryptographic-services)
