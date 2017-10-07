@@ -8,7 +8,7 @@
 * 2017.08.12: 更新 Kodiaq油耗, CX-9, Verna, Mazda 3, Grand C4 Picasso
 * 2017.09.09: 更新 Tiguan, Sportsvan, Touran, PriusC, Kodiaq
 * 2017.09.24: 更新 Stavic, Tivoli, U5, Fit, Altis, Forester 
-* 2017.10.07: 更新 
+* 2017.10.07: 更新 Fabia(Combi), Grand Lancer, X-Trail, Focus
 
 > SantaFe 柴 2.2 14.9
 > Kodiaq 柴 17.7
