@@ -12,6 +12,7 @@
 * 2017.10.21: 更新 City, Focus, Jimny, Outlander
 * 2017.10.28: 更新 RAV4, Swift, Passat(Variant)
 * 2017.11.11: 更新 U6, Golf(Variant), Sportsvan, Citigo, Fiesta, 301, 3008
+* 2017.11.28: 更新 Sentra, Escort
 
 > SantaFe 柴 2.2 14.9
 > Kodiaq 柴 17.7
@@ -134,11 +135,10 @@
 * 1.6豪    63.5  2具       X                        後鼓.無isofix
 * 1.6旗    66.5  2具       X                        後鼓.無isofix
 
-### Super Sentra(仙草)
-* 1.8傳    67.9  2具 定    X            15.5        無isofix
-* 1.8豪    70.9  2具 定    X                        無isofix
-* 1.8影    73.5  2具 定    X                        無isofix
-* 1.8旗    76.5  4具 定    X            15.0        無isofix
+### Sentra(仙草)
+* 1.8豪華  69.9  2具 定  車穩.斜坡      15.5        無isofix
+* 1.8旗艦  74.5  2具 定  車穩.斜坡.盲點 15.5        無isofix
+* 1.8尊爵  79.9  6具 定  車穩.斜坡.盲點 15.0        無isofix
 
 ### Juke 進口
 * 1.6NA英  89.9  4具 定  車穩           16.4
@@ -323,6 +323,10 @@
 ### Fiesta(小肥)
 * 1.5運動  64.8  6具     車穩.斜坡      16.6        後鼓
 * 1.0Eco   69.8  6具     車穩.斜坡      18.4        後鼓
+
+### Escort
+* 1.5雅緻  57.9  4具     X              14.2
+* 1.5時尚  67.9  6具 定  車穩.斜坡      14.2
 
 ### EcoSport 進口
 * 1.5尚    69.9  6具     車穩.斜坡      14.9        後鼓
