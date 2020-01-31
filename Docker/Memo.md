@@ -14,6 +14,8 @@
 
 ## 18. Check Our Docker Install and Config 
 
+> docker info 
+
 ## 19. Starting a Nginx Web Server 
 
 ## 21. Container VS. VM: It's Just a Process
@@ -180,4 +182,58 @@
 ## 39. Building Images: The Dockerfile Basics
 
 > reference: https://docs.docker.com/engine/reference/builder/
+
+> docker file: recipe to create your images
+
+> GOTO: \Github\udemy-docker-mastery\dockerfile-sample-1\Dockerfile
+
+> docker build -f some-dockerfileName
+(用 -f 指定Dockerfile檔案名稱, 預設是 Path/Dockerfile)
+
+> FROM COMMAND
+> FROM debian:stretch-slim
+(此 image 要把哪個image當作base來建立)
+(all images must have a 'FROM', 一定要有)
+(usually from a minimal Linux distribution like debian or (even better) alpine)
+(if you truly want to start with an empty container, use FROM scratch)
+
+> Package Manager 
+(PM's like apt and yum are one of the reasons to build containers FROM 
+Debian, Ubuntu, Fedora or CentOS)
+
+> ENV COMMAND
+> ENV NGINX_VERSION 1.13.6-1~stretch
+  ENV NJS_VERSION   1.13.6.0.1.14-1~stretch
+(設定環境變數, dockerfile下面可以用, 且 container在執行的時候換設定成 envvar也可以用)
+(key/value, work evenywhere, on every OS and config)
+
+
+> RUN COMMAND
+(optional commands to run at shell inside container at build time)
+(this one adds package repo for nginx from nginx.org and installs it)
+(docker file 內部是照順序執行下來的, 每一步驟都是layer
+所以前後順序放不一樣會有差)
+
+> log 的內容在 docker file 處理
+在container裡面的log 不要存到log file裡面, 只要確保有輸出到 stdout, stderr
+其他的由docker log collector 處理
+避免存在container裡面, 會造成access log 的麻煩
+
+> EXPOSE COMMAND
+(expose these ports on the docker virtual network)
+(you still need to use -p or -P to open/forward these ports on host)
+
+> CMD COMMAND
+(一定要有的, 當從image run起container後, 最後會執行的指令
+ 或是 restart stopped container後會執行的指令)
+(only one CMD allowed, so if there are multiple, last one wins)
+
+## 40. Building Images: Running Docker Builds
+
+> docker image ls 
+
+> docker image build -t <imageName:imageTag> <PATH>
+(ex: 'docker image build -t customnginx .')
+
+> 每一個 step 會有一個 cache, 如果沒有改變的話會拿cache 所以才會快
 
