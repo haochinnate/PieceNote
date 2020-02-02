@@ -230,6 +230,8 @@ Debian, Ubuntu, Fedora or CentOS)
 
 ## 40. Building Images: Running Docker Builds
 
+> GOTO: \Github\udemy-docker-mastery\dockerfile-sample-1\Dockerfile
+
 > docker image ls 
 
 > docker image build -t <imageName:imageTag> <PATH>
@@ -237,3 +239,34 @@ Debian, Ubuntu, Fedora or CentOS)
 
 > 每一個 step 會有一個 cache, 如果沒有改變的話會拿cache 所以才會快
 
+> 盡量讓 前面步驟是較少改變, 後面步驟是較常改變, 這樣build 速度才會比較快
+
+## 41. Building Images: Extending Official Images
+
+> GOTO: \Github\udemy-docker-mastery\dockerfile-sample-2\Dockerfile
+
+> 使用 FROM command 時, 最好都在image name 後面指定版本 
+(ex: FROM nginx:latest)
+
+> WORKDIR COMMAND
+(用來修改工作路徑, 相當於 cd, 但是比較prefer 用 WORKDIR)
+(ex: 'WORKDIR /usr/share/nginx/html')
+
+> COPY COMMAND
+(將本機的檔案 複製到 image當中)
+(ex: COPY index.html index.html)
+
+> docker container run -p 80:80 --rm nginx
+
+> docker image build -t nginx-with-html 
+(build dockerfile-sample-2 範例的 docker file)
+
+> docker container run -p 80:80 --rm nginx-with-html
+(localhost 看首頁會變為 \dockerfile-sample-2\index.html的內容)
+
+> docker image tag nginx-with-html:latest haochinnate/ nginx-with-html:latest
+
+> docker push haochinnate/nginx-with-html:latest
+(重新tag然後把新的image上船上去)
+
+## 42. Build Your Own Dockerfile and Run Containers From it 
