@@ -264,9 +264,86 @@ Debian, Ubuntu, Fedora or CentOS)
 > docker container run -p 80:80 --rm nginx-with-html
 (localhost 看首頁會變為 \dockerfile-sample-2\index.html的內容)
 
-> docker image tag nginx-with-html:latest haochinnate/ nginx-with-html:latest
+> docker image tag nginx-with-html:latest haochinnate/nginx-with-html:latest
 
 > docker push haochinnate/nginx-with-html:latest
-(重新tag然後把新的image上船上去)
+(重新tag然後把新的image傳上去 docker hub)
 
 ## 42. Build Your Own Dockerfile and Run Containers From it 
+
+> Dockerfiles are part process workflow and part art
+
+> base on Node.js 
+
+> GOTO: \Github\udemy-docker-mastery\dockerfile-assignment-1\Dockerfile
+
+> docker container run -p 80:3000 --rm node-assignment
+(或是不先 pull image, 直接 container run 裡面 用 haochinnate/node-assignment 也可以)
+
+## 44. Using Prune to Keep Your Docker System Clean 
+
+> docker image prune 
+(remove dangling images)
+
+> docker system prune 
+(remove unused data)
+
+> docker system df 
+(可以觀看有多少 image/container/volumes 還有容量)
+
+
+### Section 5: Container Lifetime & Persistent Data: Volumes
+
+> References 
+* An introduction to immutable infrastructure(https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure/)
+
+* THE TWELVE-FACTOR APP(https://12factor.net/) 
+
+* 12 Fractured Apps(https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c)
+
+* Manage data in Docker(https://docs.docker.com/storage/)
+
+## 45. Container Lifetime & Persistent Data
+
+* Containers are usually immutable (一成不變的) & ephemeral (短暫的)
+
+* "immutable infrastructure": only re-deploy containers, never change
+
+* Two ways for "persistent data": Volumes & Bind Mounts
+
+* Volumes: make special location outside of container UFS(Unit File System)
+
+* Bind Mounts: link container path to host path
+
+## 46. Persistent Data: Data Volumes
+
+* VOLUME COMMAND in Dockerfile
+(example in mysql: VOLUME /var/lib/mysql)
+
+* docker image inspect mysql
+(["Config"].["Volumes"] 可以看到設定)
+
+* docker container inspect <containerName> 
+(同上, 也可看到 Volumes的值)
+(還有一個 ["Mounts"] 的參數, 裡面有 ["Source"] 和 ["Destination"])
+
+
+* docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+
+* docker volume ls 
+(列出所有 volumes)
+
+* docke volume inspect <VOLUME>
+(觀看 volume資訊, 要完整打出 VOLUME NAME)
+
+* 移除 container 後, volume 仍會保留
+
+* named volumes, readable name
+docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
+(在執行的時候指定 volume 名稱, 或開一個volume)
+
+* docker volume create
+(Create a volume)
+
+
+
