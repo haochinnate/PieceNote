@@ -347,3 +347,34 @@ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql
 
 
 
+
+## 47. Persistent Data: Bind Mounting
+
+* Maps a HOST file/directory to a CONTAINER file/directory
+
+* Can't use in Dockerfile, must be at "container run"
+(windows ex: ... run -v //c/Users/somepath:/path/container)
+
+* docker container run -d --name nginx -p 80:80 -v ${pwd}:/usr/share/nginx/html nginx
+($pwd for shell shortcut to print working directory)
+
+* docker container exec -it nginx bash
+(bash 進入container看檔案結構, 看是否真的有bind)
+
+* 兩個路徑會指到同一位置, 新增/刪除檔案都會同步
+  "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/host_mnt/d/CodingWorkspace/Github/udemy-docker-mastery/dockerfile-sample-2",
+                "Destination": "/usr/share/nginx/html",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+
+## 48. Database Upgrades with Named Volumes
+
+* Dockerfile of postgres: VOLUME /var/lib/postgresql/data
+
+* 
