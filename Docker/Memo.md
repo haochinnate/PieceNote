@@ -377,4 +377,26 @@ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql
 
 * Dockerfile of postgres: VOLUME /var/lib/postgresql/data
 
-* 
+* docker container run -d --name psql -v psql:/var/lib/postgresql/data postgres:9.6.1
+
+* docker container logs -f psql
+
+* docker volume ls 可以看到新 volume: psql
+
+* 先把 psql 停止, 再跑一個 psql2, 是用 9.6.2 版本跑
+
+* 就可以讓 psql 和 psql2 使用到同一個 volume
+
+## 50. Edit Code Running in Containers With Bind Mounts
+
+* GOTO: \udemy-docker-mastery\bindmount-sample-1
+
+* docker run -p 80:4000 -v ${pwd}:/site bretfisher/jekyll-serve
+(跑起來即有網頁可瀏覽, 編輯 bindmount-sample-1\_posts\ 內的檔案就會連動網頁內容)
+(KEYPOINT: '-v ${pwd}:/site')
+
+
+### Section 6: Making It Easier with Docker Compose: The Multi-Container Tool
+
+
+
