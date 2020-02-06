@@ -398,5 +398,63 @@ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql
 
 ### Section 6: Making It Easier with Docker Compose: The Multi-Container Tool
 
+Reference:
+
+* YAML get started(https://yaml.org/start.html)
+
+* YAML reference card(https://yaml.org/refcard.html)
+
+* Compose file versions(https://docs.docker.com/compose/compose-file/compose-versioning/)
+
+## 52. Docker Compose and The docker-compose.yml File
+
+Introduction:
+
+* Docker compose: combination of command line tool and configuration files
+
+* WHY
+  1. configure relationships between containers
+  2. save docker container run settings(options) in easy-to- read file
+  3. create one-linear developer environment startups
+
+* TWO parts:
+  1. YAML-formatted file that describes solution options
+    * containers
+    * networks
+    * volumes
+    * environment variables, images, etc...
+  2. CLI tool docker-compose used for local develop/test automation 
+
+* Compose YAML format has own versions
+
+* "docker-compose --help"
+
+* 預設名稱: docker-compose.yml, 也可使用 docker-compose -f 指定名稱
+
+* GOTO: \udemy-docker-mastery\compose-sample-1\template.yml
+  有解釋名稱
+
+## 53. Trying Out Basic Compose Commands
+
+* docker-compose CLI: not a production-grade tool but ideal for local development and test
+
+* "docker-compose up" # setup volumes/networks and start all containers
+
+* "docker-compose down" # stop all containers and remove container/volume/netowrk
+
+* 如果你的專案有 "Dockerfile" 和 "docker-compose.yml", 那當有新的開發人員來時, 就是需要做
+  1. git clone github.com/some/software
+  2. docker-compose up 
+
+* GOTO: \udemy-docker-mastery\compose-sample-2
+
+* "docker-compose up -d" # -d for detach, run containers in the background
+
+* "docker-compose ps" same as "docker container ps"
+
+* "docker-compose top" # Display the running processes
+
+## 55. Build a Compose File for a Multi-Container Service
+
 
 
