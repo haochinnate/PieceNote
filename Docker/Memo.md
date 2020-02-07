@@ -456,5 +456,9 @@ Introduction:
 
 ## 55. Build a Compose File for a Multi-Container Service
 
+* GOTO: \PieceNote\Docker\assignment\055-compose-assignment-1
 
+* 編輯完成後, 再下 "docker-compose up" 指令
+
+* "docker-compose down -v", 移除container外, 也會移除 volume
 
