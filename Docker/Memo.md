@@ -1,4 +1,4 @@
-### Section 2: The Best Way to Setup Docker for your OS   
+# Section 2: The Best Way to Setup Docker for your OS   
 > docker version 
 (觀看 docker 版本)
 
@@ -10,7 +10,7 @@
 > Windows 10 Pro/Enterprise -> Docker Desktop for Windows 
 
 
-### Section 3: Creating and Using Containers Like a Boss
+# Section 3: Creating and Using Containers Like a Boss
 
 ## 18. Check Our Docker Install and Config 
 
@@ -122,7 +122,9 @@
 > docker container rm -f 640 5d6
 (強制刪除container)
 
-### Section 4: Container Images, Where to Find Them and How To Build Them
+# Section 4: Container Images, Where to Find Them and How To Build Them
+
+seection 4
 
 ## 35. What's In An Image(and What Isn't)
 
@@ -292,7 +294,7 @@ Debian, Ubuntu, Fedora or CentOS)
 (可以觀看有多少 image/container/volumes 還有容量)
 
 
-### Section 5: Container Lifetime & Persistent Data: Volumes
+# Section 5: Container Lifetime & Persistent Data: Volumes
 
 > References 
 * An introduction to immutable infrastructure(https://www.oreilly.com/radar/an-introduction-to-immutable-infrastructure/)
@@ -396,7 +398,7 @@ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql
 (KEYPOINT: '-v ${pwd}:/site')
 
 
-### Section 6: Making It Easier with Docker Compose: The Multi-Container Tool
+# Section 6: Making It Easier with Docker Compose: The Multi-Container Tool
 
 Reference:
 
@@ -461,4 +463,50 @@ Introduction:
 * 編輯完成後, 再下 "docker-compose up" 指令
 
 * "docker-compose down -v", 移除container外, 也會移除 volume
+
+## 56. Adding Image Building to Compose Files
+
+* 前面如果image不存在, 是會下載 image
+
+* 如果在執行 "docker-compose up"時, 在cache沒有找到image才會build
+
+* 或是執行 "docker-compose build" 也會 rebuild
+
+* GOTO: \udemy-docker-mastery\compose-sample-3
+
+* docker-compose.yml 裡面 
+  原本是 image:<IMAGE_NAME>
+  改成 build: ...
+  如果再加上 image: nginx-custom, 會把build的結果存起來tag為 nginx-custom
+
+* "docker-compose up -d", -d for detached
+
+* "docker-compose down --rmi local/all", 移除container外, 也會移除 images 
+
+## 57. Compose For Run-Time Image Building and Multi-Container Development
+
+* building custom drupal image 
+
+* RUN apt-get update && apt-get install -y git \
+      && rm -rf /var/lib/apt/lists/* 
+
+* drupal 裡面 database 設定
+  資料庫名稱: postgres, 使用者: postgres
+  主機: localhost -> postgres
+
+# Section 7: Swarm Intro and Creating a 3-Node Swarm Cluster
+
+Reference:
+
+* [Docker 1.12 Swarm Mode Deep Dive Part 1: Topology](https://www.youtube.com/watch?v=dooPhkXT9yI)
+
+* [Docker 1.12 Swarm Mode Deep Dive Part 2: Orchestration](https://www.youtube.com/watch?v=_F6PSP-qhdA)
+
+* [Heart of the SwarmKit: Topology Management](https://speakerdeck.com/aluzzardi/heart-of-the-swarmkit-topology-management)
+
+* [Heart of the SwarmKit: Store, Topology & Object Model](https://www.youtube.com/watch?v=EmePhjGnCXY)
+
+* [Raft Consensus Visualization (Our Swarm DB and how it stays in sync across nodes)](http://thesecretlivesofdata.com/raft/)
+
+## 59. Swarm Mode: Built-In Orchestration
 
