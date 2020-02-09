@@ -510,3 +510,108 @@ Reference:
 
 ## 59. Swarm Mode: Built-In Orchestration
 
+* new commands:
+
+```powershell
+docker swarm 
+docker node
+docker service
+docker stack
+docker secret
+```
+
+* Manager Node: 
+  1. API
+    *  從client端接收command
+    * 產生 service object
+  2. Orchestrator
+    * Reconciliation loop for service objects 
+    * 產生 tasks
+  3. Allocator 
+    * Allocates IP addresses to tasks
+  4. Scheduler
+    * Assigns nodes to tasks
+  5. Dispatcher
+    * Checks in on workers
+* Worker Node
+  1. Worker
+    * Connects to dispatcher to check on assigned tasks
+  2. Executor 
+    * Executes the tasks assigned to worker node 
+
+## 60. Create Your First Service and Scale It Locally
+
+* References: [Deploy services to a swarm](https://docs.docker.com/engine/swarm/services/)
+
+* 確認 Swarm 的狀態, Swarm: inactive
+```powershell
+docker info 
+```
+
+* 開啟 Swarm
+```powershell
+docker swarm init 
+```
+
+* 提示
+```powershell
+Swarm initialized: current node (dej9tdo8lo3ggukfyrz0n8vwr) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-0jw57hk7cq1081o83cpinefc1mb0w2ch31qqhnlt5zcfesy1un-8c7op4sjb4v303zx3200carke 192.168.65.3:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+```
+
+* 列出 swarm 裡面的 nodes 
+```powershell
+docker node ls 
+```
+
+* service in swarm replace the docker run 
+
+
+* 建立一個service, 會回傳一個 service ID, 此時 docker container ps 也會有一個在run的 container
+```powershell
+docker service create alpine ping 8.8.8.8 
+```
+
+* 列出 services 
+```powershell
+docker service ls 
+```
+
+* 列出 1個或多個service 內的 tasks/container
+```powershell
+docker service ps <SERVICE>
+```
+
+* update the attribute of service (ex: replica), 
+執行完後, 再執行 "docker service ls" 及 "docker service ps <SERIVCE>" 可以看到變化, "docker container ps" 也可以看到變化
+```powershell
+docker service update <SERVICE>
+docker service update <ID> --replicas 3
+```
+
+* "docker container update" 可以更新 containers 的 configurations, 
+  但通常用"docker service update"?, 利用service管理, 只update/替換 某些container, 讓服務/網頁不中斷?
+
+* 強制關掉某個 container, 再執行 "docker service ls" 可以看到 REPLICAS 變成 2/3, 但過不久又會再開一個, 變回 3/3
+```powershell
+docker container rm -f <CONTAINER>
+docker service ls
+```
+
+* 觀看service詳細資訊可以看到 history
+```powershell
+docker service ps <SERVICE>
+```
+
+* 移除 1個或多個 service, 也會移除 container(但可能要等幾秒)
+```powershell
+docker service rm <SERVICE>
+```
+
+
+
