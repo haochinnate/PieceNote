@@ -1,3 +1,7 @@
+# Section 1: Course Introduction and Docker Intro
+
+
+
 # Section 2: The Best Way to Setup Docker for your OS   
 > docker version 
 (觀看 docker 版本)
@@ -613,5 +617,22 @@ docker service ps <SERVICE>
 docker service rm <SERVICE>
 ```
 
+## 63. Create a 3-Node Swarm Cluster
 
+* use multiple hosts/nodes/instances
+
+* Host options:
+  1. [Play-with-docker](https://labs.play-with-docker.com/)
+  2. docker-machine + VirtualBox
+  3. Digital Ocean + Docker install
+  4. Roll your own docker machin: AWS, GCP, Azure, DigitalOcean
+  
+* [Install docker anywhere](https://get.docker.com/)
+
+* docker machine, (create a machine) 
+```powershell
+docker-machine create <NODE> 
+docker-machine ssh <NODE>
+docker-machine env <NODE>
+```
 
