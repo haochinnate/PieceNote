@@ -305,6 +305,14 @@ Debian, Ubuntu, Fedora or CentOS)
 
 * THE TWELVE-FACTOR APP(https://12factor.net/) 
 
+  3. Config
+    * NEVER hard coded setting in images or apps, which would be different for each environment(environment: local machine, dev test server, staging server, production server)
+    * __strict separation of config from code__
+    * Using everying abour config in _environment variables_
+    * [3 Docker Compose features for improving team development workflow](https://www.oreilly.com/ideas/3-docker-compose-features-for-improving-team-development-workflow)
+    * 密碼等等的事後再透過 ENV 內的路徑去取得
+
+
 * 12 Fractured Apps(https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c)
 
 * Manage data in Docker(https://docs.docker.com/storage/)
@@ -625,14 +633,63 @@ docker service rm <SERVICE>
   1. [Play-with-docker](https://labs.play-with-docker.com/)
   2. docker-machine + VirtualBox
   3. Digital Ocean + Docker install
-  4. Roll your own docker machin: AWS, GCP, Azure, DigitalOcean
+  4. Roll your own docker machine: AWS, GCP, Azure, DigitalOcean
   
 * [Install docker anywhere](https://get.docker.com/)
 
-* docker machine, (create a machine) 
+* docker machine, (create a machine, 需要安裝virtual box)
 ```powershell
 docker-machine create <NODE> 
-docker-machine ssh <NODE>
+docker-machine ssh <NODE> // 進入該machine
 docker-machine env <NODE>
 ```
+
+* Digital Ocean 的話, 要產生 SSH key. [參考連結](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/)
+* 用 Digital Ocean 裡面的 Droplets 服務
+```powershell
+ssh root at IPADDRESS
+```
+
+```powershell
+docker swarm init --advertise-addr <IP Address>
+docker swarm join --token <TOKEN> <HOST:PORT>
+```
+
+* worker 不能使用 "docker swarm" 的指令, manager 才可以
+
+```powershell
+docker node update --role manager <NODE>
+```
+
+```powershell
+docker swarm join-token manager
+```
+
+```powershell
+docker service create --replicas 3 alpine ping 8.8.8.8 
+```
+
+```powershell
+docker service ps <SERIVCE>
+```
+
+# Section 8: Swarm Basic Features and How to Use Them In Your Workflow
+
+## 65. Scaling Out with Overlay Networking 
+
+* '--driver overlay', swarm-wide bridge network where the containers across hosts
+```powershell
+docker network create --driver overlay mydrupal
+```
+
+* 'docker network ls' 裡面 NAME 為 ingress 的 overlay network 是 swarm預設建立的
+
+* 每個service 可以連接到多個 networks
+
+
+```powershell
+docker service inspect <SERIVCE>
+```
+
+## 66. Scaling Out with Routing Mesh
 
