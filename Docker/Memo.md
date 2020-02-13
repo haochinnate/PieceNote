@@ -647,30 +647,40 @@ docker-machine env <NODE>
 * Digital Ocean 的話, 要產生 SSH key. [參考連結](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/)
 * 用 Digital Ocean 裡面的 Droplets 服務
 ```powershell
-ssh root at IPADDRESS
+ssh root at IPADDRESS # 連進去該台機器
+
+# 執行這兩個指令來安裝docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 ```
 
 ```powershell
-docker swarm init --advertise-addr <IP Address>
-docker swarm join --token <TOKEN> <HOST:PORT>
+docker swarm init --advertise-addr <IP Address> # 在 node 1 執行 init 
+docker swarm join --token <TOKEN> <HOST:PORT> # node 2 利用 join 加入
 ```
 
 * worker 不能使用 "docker swarm" 的指令, manager 才可以
 
 ```powershell
-docker node update --role manager <NODE>
+docker node update --role manager <NODE> # 在 node1中 將 node2 設為 manager
 ```
 
 ```powershell
-docker swarm join-token manager
+docker swarm join-token manager # 在 node1 執行, 取得已manager 為身份加入的 token
+# 再把列印出的 command 貼到 node3 上去執行
 ```
 
 ```powershell
-docker service create --replicas 3 alpine ping 8.8.8.8 
+docker service create --replicas 3 alpine ping 8.8.8.8  # 在 node1 建立 service
 ```
 
 ```powershell
-docker service ps <SERIVCE>
+docker node ps # 當下跑的 node狀態
+docker node ps <NODE> # 特定 node 的狀態
+```
+
+```powershell
+docker service ps <SERIVCE> # 列出 service 的 task, 在各個node都可執行, 結果一樣
 ```
 
 # Section 8: Swarm Basic Features and How to Use Them In Your Workflow
@@ -679,17 +689,27 @@ docker service ps <SERIVCE>
 
 * '--driver overlay', swarm-wide bridge network where the containers across hosts
 ```powershell
-docker network create --driver overlay mydrupal
+# 建立 driver 為 overlay 的 network
+docker network create --driver overlay mydrupal 
 ```
 
 * 'docker network ls' 裡面 NAME 為 ingress 的 overlay network 是 swarm預設建立的
 
 * 每個service 可以連接到多個 networks
 
-
+* 建立新的 postgreSQL & drupal service, 指定 name, network
 ```powershell
-docker service inspect <SERIVCE>
+docker service create --name <NAME> --network <NETWORK> -e POSTGRES_PASSWORD=xxxx postgres 
+
+docker service create --name <NAME> --network <NETWORK> -p 80:80 drupal
+
+docker service ps <SERVISE> # 建立完後看service
+docker service inspect <SERIVCE> # service 詳細資訊
 ```
+
+* 在 drupal 設定的時候, Database 的 Host 名稱是用 service 名稱
+
+* 就算 drupal service 是在node 3上面跑, 但是 node1, node2, node3的IP都可以連到
 
 ## 66. Scaling Out with Routing Mesh
 
