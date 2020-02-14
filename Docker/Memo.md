@@ -1,6 +1,19 @@
 # Section 1: Course Introduction and Docker Intro
 
-
+1. Getting Requirements
+2. Docker Install
+3. Container Basics
+4. Image Basics
+5. Docker Networking
+6. Docker Volumes
+7. Docker Compose
+8. Orchestration
+9. Docker Swarm
+10. Kubermetes 
+11. Swarm vs. K8s
+12. Q&A
+13. File Reviews
+14. References Galore
 
 # Section 2: The Best Way to Setup Docker for your OS   
 > docker version 
@@ -713,3 +726,33 @@ docker service inspect <SERIVCE> # service 詳細資訊
 
 ## 66. Scaling Out with Routing Mesh
 
+* References: [Use swarm mode routing mesh](https://docs.docker.com/engine/swarm/ingress/)
+
+* Routing Mesh: Routes ingress packets for a Service to proper Task
+  1. Container-to-container in a Overlay network (uses VIP)
+  2. External traffic incoming to published ports (all nodes listen)
+
+
+```powershell
+docker service create --name search --replicas 3 -p 9200:9200 elasticsearch:2 # 建立 service 
+docker service ps <SERVICE:search> # 觀看 service 在各node情形
+curl localhost:9200  # 可以得到回傳的 json 資料
+curl <IP ADDRESS>:9200 
+```
+
+* Load balancer 是在 OSI 第三層(TCP), 而非第四層(DNS)
+
+* 如果想要在同個 server 相同 IP, 相同port跑不同 website可以用兩個方式解決
+  1. Nginx or HAProxy or LB Proxy
+  2. Docker EE, 內建 layer for web proxy (UCP/Docker Data Center, is a web interface), 可以就丟一個 DNS name 到 swarm service的 web config
+
+
+## 68. Create A Multi-Service Multi-Node Web App
+
+* GOTO: \udemy-docker-mastery\swarm-app-1
+
+* 建立 1 volume, 2 networks, 5 services
+
+* 使用 docker hub的 images, 這樣swarm就不需要data。在 production swarm裡面 不要去 build. 這不是 production swarm 通常該處理的事情。
+
+## 69. Swarm Stacks and Production Grade Compose
