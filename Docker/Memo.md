@@ -755,4 +755,41 @@ curl <IP ADDRESS>:9200
 
 * 使用 docker hub的 images, 這樣swarm就不需要data。在 production swarm裡面 不要去 build. 這不是 production swarm 通常該處理的事情。
 
+
+```powershell
+# 可以先清掉前面的 service 
+docker service rm <SERVICE>
+
+# 先建立 2個 network
+docker network create -d overlay backend
+docker network create -d overlay frontend
+
+# 建立 vote service 
+docker service create --name vote -p 80:80 --network frontend --replicas 2 bretfisher/examplevotingapp_vote
+
+# 建立 redis service 
+docker service create --name redis --network frontend --replicas 1 redis:3.2
+
+# 建立 worker service
+docker service create --name worker --network frontend --network backend bretfisher/examplevotingapp_worker:java
+
+# 建立 db service and a volume
+docker service create --name db --network backend -e POSTGRES_PASSWORD=xxxxx -e POSTGRES_HOST_AUTH_METHOD=trust --mount type=volume,source=db-data,target=/var/lib/postgresql/data postgres:9.4
+
+# 建立 result service
+docker service create --name result --network backend -p 5001:80 bretfisher/examplevotingapp_result
+
+# 看一下建立的結果
+docker service ls
+docker service ps <SERVICE>
+docker service logs <SERVICE>
+```
+
+
 ## 69. Swarm Stacks and Production Grade Compose
+
+* References: [NOT SUPPORTED FOR 'DOCKER STACK DEPLOY'](https://docs.docker.com/compose/compose-file/#not-supported-for-docker-stack-deploy)
+
+* Production 環境只有一個host, 應該使用 docker-compose 還是 single node swarm?
+  A: single-node swarm, [原因](https://github.com/BretFisher/ama/issues/8)
+
