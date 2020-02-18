@@ -793,3 +793,34 @@ docker service logs <SERVICE>
 * Production 環境只有一個host, 應該使用 docker-compose 還是 single node swarm?
   A: single-node swarm, [原因](https://github.com/BretFisher/ama/issues/8)
 
+* Stacks 
+  1. Production Grade Compose
+  2. is a new layer of abstraction to swarm 
+  3. accept __Compose files__ as their declarative definition for services, networks, and volumes
+
+```powershell
+docker stack deploy # 取代 docker service create
+# stacks manager 會幫忙管理所有我們需要的 objects, 包含 overlay network
+```
+
+* 新的compose file關鍵字: __deploy:__, 而不是使用 'build:'
+
+* docker-compose 會 忽略 __deploy__, swarm 會忽略 __build__
+
+* swarm server 不需要 docker-compose CLI, 因為 docker compose 不是設計成 production tool。
+
+* stack contains: services, volumes and overlay networks.
+  And one service may have some tasks and each task is one container. See the image
+
+* 68節建立service 的指令, 都可以改由 yml 來完成
+
+* GOTO: \udemy-docker-mastery\swarm-stack-1\example-voting-app-stack.yml
+
+* yml 的 version 至少要 3
+
+* deploy 範例 
+```powershell
+docker stack deploy -c example-voting-app-stack.yml voteapp
+# -c, Path to a Compose file 
+```
+
