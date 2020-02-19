@@ -786,7 +786,7 @@ docker service logs <SERVICE>
 ```
 
 
-## 69. Swarm Stacks and Production Grade Compose
+## 70. Swarm Stacks and Production Grade Compose
 
 * References: [NOT SUPPORTED FOR 'DOCKER STACK DEPLOY'](https://docs.docker.com/compose/compose-file/#not-supported-for-docker-stack-deploy)
 
@@ -815,6 +815,7 @@ docker stack deploy # 取代 docker service create
 * 68節建立service 的指令, 都可以改由 yml 來完成
 
 * GOTO: \udemy-docker-mastery\swarm-stack-1\example-voting-app-stack.yml
+  在node1 git clone 一份
 
 * yml 的 version 至少要 3
 
@@ -823,4 +824,19 @@ docker stack deploy # 取代 docker service create
 docker stack deploy -c example-voting-app-stack.yml voteapp
 # -c, Path to a Compose file 
 ```
+
+* 其他指令
+```powershell
+docker stack ls # List stacks
+docker stack ps <STACK> # List the tasks in the stack ex: <STACK>:voteapp
+docker stack services <STACK> # # List the services in the stack ex: <STACK>:voteapp
+
+# 執行完後 再去 <IP>:5000, <IP>:5001 檢查
+
+# 如果有更新, 再執行一次 docker stack deploy 會變成是 update 
+docker stack deploy -c example-voting-app-stack.yml voteapp
+```
+
+## 71. Secrets Storage for Swarm: Protecting Your Environment Variables
+
 
