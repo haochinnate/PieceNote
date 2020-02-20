@@ -839,4 +839,45 @@ docker stack deploy -c example-voting-app-stack.yml voteapp
 
 ## 71. Secrets Storage for Swarm: Protecting Your Environment Variables
 
+* Easiest "secure" solution for storing secrets in Swarm. 
+  1. version > 1.30.1
+  2. only stored on disk on "Manager" nodes
+  3. Secrets are first stored in Swarm, then assigned to Service(s)
+  4. Only containers in assigned services can see them
+  5. "look like" files in container but are actually in-memory file system
+  6. use them by: /run/secrets/<secret_name> or /run/secrets/<secret_alias>
+
+* Secret ex:
+  - Usernames, passwords
+  - TLS certificates and keys
+  - SSH keys
+  - any data prefer not ne "on front page of news"
+
+
+## 72. Using Secrets in Swarm Services
+
+* GOTO: \udemy-docker-mastery\secrets-sample-1
+
+* 在swarm裡面建立 secret有兩種方式
+  1. 使用檔案
+  2. 利用command line 傳進去 (STDIN)
+  
+
+```powershell
+# 1. 使用檔案, 資料存在txt file中
+docker secret create psql_user psql_user.txt
+
+# 2. 用 command line 
+echo "xxxxxpwd" | docker secret create psql_pass - # "-": read from standard input 
+
+# 第一種的缺點, 有存檔案在host中, 可能要用 remote API, 使用local電腦中的檔案
+# 第二種的缺點, root user 可以看 logs  
+
+docker secret ls # 列出 secrets
+docker secret inspect <SECRET> # display secrets detailed information
+```
+
+```powershell
+
+```
 
