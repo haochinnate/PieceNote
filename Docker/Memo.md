@@ -829,7 +829,7 @@ docker stack deploy -c example-voting-app-stack.yml voteapp
 ```powershell
 docker stack ls # List stacks
 docker stack ps <STACK> # List the tasks in the stack ex: <STACK>:voteapp
-docker stack services <STACK> # # List the services in the stack ex: <STACK>:voteapp
+docker stack services <STACK> # List the services in the stack ex: <STACK>:voteapp
 
 # 執行完後 再去 <IP>:5000, <IP>:5001 檢查
 
@@ -840,7 +840,7 @@ docker stack deploy -c example-voting-app-stack.yml voteapp
 ## 71. Secrets Storage for Swarm: Protecting Your Environment Variables
 
 * Easiest "secure" solution for storing secrets in Swarm. 
-  1. version > 1.30.1
+  1. version > 1.13
   2. only stored on disk on "Manager" nodes
   3. Secrets are first stored in Swarm, then assigned to Service(s)
   4. Only containers in assigned services can see them
@@ -856,13 +856,15 @@ docker stack deploy -c example-voting-app-stack.yml voteapp
 
 ## 72. Using Secrets in Swarm Services
 
+* References: [Manage sensitive data with Docker secrets](https://docs.docker.com/engine/swarm/secrets/)
+
 * GOTO: \udemy-docker-mastery\secrets-sample-1
 
 * 在swarm裡面建立 secret有兩種方式
   1. 使用檔案
   2. 利用command line 傳進去 (STDIN)
   
-
+* 建立 secrets
 ```powershell
 # 1. 使用檔案, 資料存在txt file中
 docker secret create psql_user psql_user.txt
@@ -877,7 +879,68 @@ docker secret ls # 列出 secrets
 docker secret inspect <SECRET> # display secrets detailed information
 ```
 
+* 使用 secrets
 ```powershell
+docker service create --name psql --secret psql_user --secret psql_pass
+-e POSTGRES_PASSWORD_FILE=/run/secrets/psql_pass -e POSTGRES_USER_FILE=/run/secrets/psql_user postgres
+# --secret, Specify secrets to expose to the service, 指定此 service 可以使用那些 secret, 
+# 然後用 /run/secrets/<SECRET_NAME> 的方式來存取 secret, how to use the secrets
+
+
+docker exec -it <CONTAINER> <COMMAND:bash> # 進入 container bash
+ls /run/secrets # 可以看到 psql_pass 和 psql_user 兩個 secret(像是檔案的方式呈現)
+
+cat /run/secrets/psql_user # 可以看到裡面的值..., 看完再跳出
+
+docker service update --secret-rm # remove the secrets, 執行這個會 re-deploy container, 所以不能 update password, update 的時候會 重開 container
 
 ```
+
+## 73. Using Secrets with Swarm stacks
+
+* References: [compose file-secrets configuration reference](https://docs.docker.com/compose/compose-file/#secrets-configuration-reference)
+
+* GOTO: \udemy-docker-mastery\secrets-sample-2
+
+```yaml
+# docker-compose.yml
+version: "3.1" # stack 要 3以上, stack + secrets 要 3.1 以上
+
+services:
+  psql:
+    image: postgres
+    secrets:
+      - psql_user
+      - psql_password
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/psql_password
+      POSTGRES_USER_FILE: /run/secrets/psql_user
+
+secrets: # root secret key, define our secrets
+  # 可以使用 file, 或是 事先建立好 secret, 然後在裡面使用
+  # 用 external: 關鍵字, 可以看 此節 references
+  psql_user:
+    file: ./psql_user.txt # 跟 docker-compose.yml 同一層
+  psql_password:
+    file: ./psql_password.txt
+
+```
+
+```powershell
+docker stack deploy -c docker-compose.yml sampleDB # deploy stack 的內容
+# secret 的名稱會變為 sampleDB_psql_user, sampleDB_psql_password
+
+# deploy 後, 應該要移除裡面的 secret 檔案?
+
+docker stack rm sampleDB # 移除 stack, 也會移除 secret
+
+```
+
+* secret 相關疑慮問題與解答
+ 1. [Why is a Swarm Secret more secure than a clear text file?](https://github.com/BretFisher/ama/issues/86)
+ 2. [Is Docker secrets actually used in production scenarios?](https://github.com/BretFisher/ama/issues/35)
+ 3. [What security concerns should I have with Docker? How should I go about locking it down?](https://github.com/BretFisher/ama/issues/17)
+
+
+## 74. Create A Stack with Secrets and Deploy
 
