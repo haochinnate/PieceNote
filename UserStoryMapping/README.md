@@ -1,4 +1,4 @@
-# 使用者故事對照 User Story Mappin
+# 使用者故事對照 User Story Mapping
 
 
 ## 其他
