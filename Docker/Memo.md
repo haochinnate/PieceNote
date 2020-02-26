@@ -944,3 +944,77 @@ docker stack rm sampleDB # 移除 stack, 也會移除 secret
 
 ## 74. Create A Stack with Secrets and Deploy
 
+* GOTO: \udemy-docker-mastery\secrets-assignment-1
+
+* 從 Docker\assignment\058-compose-assignment-2 修改 放到 \Docker\assignment\074-secrets-assignment-1
+
+* docker-compose.yml 
+
+```yaml
+version: '3.1' # 修改為 3.1
+
+services:
+  drupal:
+    image: drupal:8.8.2 # swarm 不build, 所以移除 build, 使用 official drupal image
+    ports:
+      - "8080:80"
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles       
+      - drupal-sites:/var/www/html/sites      
+      - drupal-themes:/var/www/html/themes
+  postgres:
+    image: postgres:12.1
+    environment:
+      # - POSTGRES_PASSWORD=mypasswd # 改為使用 secret
+      - POSTGRES_PASSWORD_FILE=/run/secrets/psql-pw
+    secrets:
+      - psql-pw # 表示此 service要使用此 secret
+    volumes:
+      - drupal-data:/var/lib/postgresql/data
+
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
+  drupal-data:
+
+# 新增加 secrets
+secrets:
+  psql-pw:
+    extenal: true # 使用外部 secret, 需要先 command line create secret
+
+```
+
+```powershell
+# 切到上面 docker-compose.yml 的路徑
+
+# 先建立 secret 
+echo "<STRING>" | docker secret create psql-pw -
+
+# 在 deploy 
+docker stack deploy -c docker-compose.yml drupal
+
+# 查看stack 的 tasks執行狀況
+docker stack ps drupal
+
+```
+
+# Section 9: Swarm App Lifecycle
+
+## 76. Using Secrets With Local Docker Compose
+
+* compose is not production tool, is design for development 
+
+* 在 development 環境如果沒有swarm, 仍然可以使用同樣的 docker-compose.yml。也可以使用環境變數
+
+```powershell
+# 在相同的目錄 secrets-sample-2 or secrets-assignment-1
+
+docker-compose up -d
+
+
+```
+
+
