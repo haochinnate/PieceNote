@@ -1010,11 +1010,48 @@ docker stack ps drupal
 * 在 development 環境如果沒有swarm, 仍然可以使用同樣的 docker-compose.yml。也可以使用環境變數
 
 ```powershell
-# 在相同的目錄 secrets-sample-2 or secrets-assignment-1
+# 在相同的目錄 secrets-sample-2
 
 docker-compose up -d
 
+docker-compose exec psql cat /run/secrets/psql_user
+# 仍然可以看到值, 但其實不是用 secret 的方式做
+# 是在 background 用 -v argument 做 bind mount 
+# 所以其實不安全, 只是為了 模擬 production environment 
+# 只有 file based secret 可以, external 不行
 
 ```
+
+## 77. Full App Lifecycle: Dev, Build, and Deploy With a Single Compose Design 
+
+* References: 
+  * [Share Compose configurations between files and projects-Multiple Compose files](https://docs.docker.com/compose/extends/#multiple-compose-files)
+  * [Use Compose in production](https://docs.docker.com/compose/production/)
+
+
+```powershell
+
+docker-compose up # 在 local 的 development environment 使用
+
+docker-compose up # 在 reomote 的 CI environment 使用, to do integration test 
+
+docker stack deploy # 在 remote 的 production environment 使用, 
+
+```
+
+* GOTO: \udemy-docker-mastery\swarm-stack-3
+
+1. docker-compose.yml 
+  * default compose file
+  * sets the defaults that are the same across all environments
+2. docker-compose.override.yml
+  * 當執行 "docker compose up" 時, 自動帶入這個 override 的內容
+  * 執行 "docker compose up" 時, 會取代 docker-compose.yml
+3. docker-compose.prod.yml 
+  * 要在 "docker-compose up -f" 明確使用這個檔案
+4. docker-compose.test.yml
+  * 要在 "docker-compose up -f" 明確使用這個檔案
+
+
 
 
