@@ -1045,13 +1045,31 @@ docker stack deploy # 在 remote 的 production environment 使用,
   * default compose file
   * sets the defaults that are the same across all environments
 2. docker-compose.override.yml
-  * 當執行 "docker compose up" 時, 自動帶入這個 override 的內容
-  * 執行 "docker compose up" 時, 會取代 docker-compose.yml
+  * 當執行 "docker-compose up" 時, 自動帶入這個 override 的內容, 來取代 docker-compose.yml
 3. docker-compose.prod.yml 
   * 要在 "docker-compose up -f" 明確使用這個檔案
+  * 但在 production server 中, 沒有 docker-compose up 的指令, 所以要使用 docker-compose config 這個指令
 4. docker-compose.test.yml
   * 要在 "docker-compose up -f" 明確使用這個檔案
+  * 結合 CI solution (ex: Jenkins), 在每次commit code的時候, 去build image
+  
+```powershell
 
+# 切到 \udemy-docker-mastery\swarm-stack-3 目錄下
+
+docker-compose up # 執行此命令會先使用 docker-compose.yml, 然後在top 用 override.yml 覆蓋上去
+
+docker-compose -f docker-compose.yml -f docker-compose.test.yml up -d # -f 的順序有差, base file 要在前面. 就會去使用 test 的設定
+
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml config # 會把兩個檔案結合起來成一個 compose file 
+
+# 所以可以再輸出這個結合資訊到另一個檔案, 在 production 環境就是使用這個檔案
+
+```
+
+## 78. Service Updates: Changing Things In Flight
+
+* References: [docker service update 指令](https://docs.docker.com/engine/reference/commandline/service_update/)
 
 
 
