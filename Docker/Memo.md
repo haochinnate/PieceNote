@@ -1072,4 +1072,47 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml config # 會把�
 * References: [docker service update 指令](https://docs.docker.com/engine/reference/commandline/service_update/)
 
 
+* 提供 service 中 tasks/containers 的 rolling replacement 
+* limits downtime ("prevents" downtime 是 test 時候該做的, 不是 Orchestration 該處理的)
+* 大部分的改變 (changes), 都會取代 containers
+* 現在有 'scale' 和 'rollback' subcommand 可以更快取用
+* 如果是執行 'stack deploy', 如果前一個版本存在, 那就是會當作 service update. 沒有 'stack update'
+
+
+```powershell
+
+# 更新 service 成新的 image 
+docker service update --image <Image:version> <SERVICE>
+
+# 新增環境變數 & 移除 port 
+docker service update --env-add NODE_ENV=production --publish-rm 8080
+
+# 同時改變多個 service 的 replicas 數量
+docker service scale web=8 api=6
+
+# 直接修改 yaml file, 然後再執行 stack deploy
+docker stack deploy -c file.yml <STACK>
+
+# 先建立一個 service 
+docker service create -p 8088:80 --name web nginx:1.13.7
+
+# 修改 replicas 數量
+docker service scale web=5
+
+# 修改 image 版本, 可以是舊版, 多個 replica 會一個一個修改
+docker service update --image nginx:1.13.6 web
+
+# 修改port, 需要同時 add 和 remove
+docker service update --publish-rm 8088 --publish-dd 9090:80 web
+
+# rebalance node (tips), 沒有更改任何東西, 但是強制執行 service update, 讓他重新分配 tasks 到 node上
+docker service update --force web
+```
+
+## 79. Healthchecks in Dockerfiles
+
+* References: 
+  * [HEALTHCHECK in dockerfile](https://docs.docker.com/engine/reference/builder/#healthcheck)
+  * [HEALTHCHECK in composefile](https://docs.docker.com/compose/compose-file/#healthcheck)
+
 
