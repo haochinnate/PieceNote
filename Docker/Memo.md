@@ -1115,4 +1115,67 @@ docker service update --force web
   * [HEALTHCHECK in dockerfile](https://docs.docker.com/engine/reference/builder/#healthcheck)
   * [HEALTHCHECK in composefile](https://docs.docker.com/compose/compose-file/#healthcheck)
 
+* Docker Healthchecks
+  * 有支援 Dockerfile, compose yaml, docker run, swarm services
+  * docker engine 會在 container 裡面 'exec' 指令
+  * 預期的回傳是 exit 0 (OK) 或 exit 1 (Error)
+  * 會有三種 states: starting, healthy, unhealthy
+  * 並不是用來取代其他外部/第三方的 monitoring solution
+  * 檢查 container basic level of healthy
+
+
+```powershell
+
+# 觀看 healthcheck status: docker container ls 
+
+# 確認最近的5個 healthcheck: docker container inspect
+
+# service will replace tasks if thay fail healthcheck
+
+# service update 會等 healthcheck 結束才繼續
+
+docker run \
+  --health-cmd="curl -f localhost:9200/_cluster/health || false" \ # 為了回傳是 0/1
+  --health-interval=5s \
+  --health-retries=3 \
+  --health-timeout=2s \
+  --health-start-period=15s \
+  elasticsearch:2
+
+# 基本的使用預設選項的命令
+HEALTHCHECK curl -f http://localhost/ || false
+
+# 自行設定選項的命令
+HEALTHCHECK --timeout=2s --interval=3s --retries=3 CMD curl -f http://localhost/ || exit 1  # exit 1 跟 false 一樣意思
+
+
+```
+
+```dockerfile
+
+# Healthcheck in postgres Dockerfile
+
+FROM postgres
+
+HEALTHCHECK --interval=5s --timeout=3s \ 
+  CMD pg_isready -U postgres || exit 1
+
+
+```
+
+```yaml
+# Healthcheck in Compose/Stack Files
+version: "2.1" # 至少要 2.1以上
+
+services:
+  web:
+    image: nginx
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 1m
+
+```
 
