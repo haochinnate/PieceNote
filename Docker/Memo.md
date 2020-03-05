@@ -1179,3 +1179,32 @@ services:
 
 ```
 
+```powershell
+# run two containers, with and without healthcheck
+docker container run --name p1 -d postgres
+
+docker container run --name p2 -d --health-cmd="pg_isready -U postgres || exit 1" postgres
+
+docker container ls
+
+docker container inspect p2
+
+# run two service, with and without healthcheck
+
+docker service create --name p1 postgres
+
+docker service create --name p2 --health-cmd="pg_isready -U postgres || exit 1" postgres
+
+```
+
+# Section 10: Container Registries: Image Storage and Distribution
+
+## 81. Docker Hub: Digging Deeper
+
+* Container Registries: 在 不是app server, 不是開發人員 workstations 的地方來存放 images
+
+* 如果使用 GitHub or BitBucket 來放 code, 那不要直接按 "Create Repository". 也不要在 create 之前直接執行 "docker push". 選擇 AutomatedBuild. (現在好像直接整合在 "Create Repository" 裡面) 然後要連到 GitHub or BitBucket
+
+* 如果有相依的 image, 可以設定 該image 的 links. 當該image 有變更的時候, 自己的image也會 rebuild. 
+
+## 82. 
