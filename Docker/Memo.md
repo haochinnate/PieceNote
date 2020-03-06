@@ -1207,4 +1207,32 @@ docker service create --name p2 --health-cmd="pg_isready -U postgres || exit 1" 
 
 * 如果有相依的 image, 可以設定 該image 的 links. 當該image 有變更的時候, 自己的image也會 rebuild. 
 
-## 82. 
+## 82. Understanding Docker Registry
+
+* References: 
+  * [Configuring a registry](https://docs.docker.com/registry/configuration/)
+  * [Garbage collection](https://docs.docker.com/registry/garbage-collection/)
+  * [Mirror(Registry as a pull through cache)](https://docs.docker.com/registry/recipes/mirror/)
+
+
+* Docker Registry 
+  * 不像 docker hub很多功能, 沒有 web UI, 只有簡單的 auth 系統
+  * core: 用 Go 寫的 a web API 和 storage system
+  * storage 支援: local, S3, Azure, Alibaba, Google Cloud 和 OpenStack Swift
+  * Running Registry with 'TLS'
+
+## 83. Run a Private Docker Registry
+
+```powershell
+# 在 port 5000 跑 registry image 
+
+# re-tag 現有的 image, 並 push 到 自己建立的新 registry
+
+# 從 local cache 移除 image, 並再從新的 registry pull 下來
+
+# 重新建立 registry 並使用 bind mount, 看 registry 如何儲存 data
+
+
+
+
+```
