@@ -1223,16 +1223,40 @@ docker service create --name p2 --health-cmd="pg_isready -U postgres || exit 1" 
 
 ## 83. Run a Private Docker Registry
 
+* "Secure by Default": docker won't talk to registry without HTTPS
+
 ```powershell
+
 # 在 port 5000 跑 registry image 
+docker container run -d -p 5000:5000 --name registry registry
 
 # re-tag 現有的 image, 並 push 到 自己建立的新 registry
+docker pull hello-world
+
+docker tag hello-world 127.0.0.1:5000/helloworld
+
+docker push 127.0.0.1:5000/helloworld
 
 # 從 local cache 移除 image, 並再從新的 registry pull 下來
 
+docker image rm hello-world
+
+docker image rm 127.0.0.1:5000/helloworld
+
+docker pull 127.0.0.1:5000/helloworld
+
 # 重新建立 registry 並使用 bind mount, 看 registry 如何儲存 data
 
+docker container kill registry
 
+docker container rm registry
 
+# GOTO: \udemy-docker-mastery\registry-sample-1
+
+docker container run -d -p 5000:5000 --name registry -v ${pwd}\registry-data:/var/lib/registry registry 
+
+docker push 127.0.0.1:5000/helloworld
 
 ```
+## 84. Secure Docker Registry with TLS and Authentication 
+
