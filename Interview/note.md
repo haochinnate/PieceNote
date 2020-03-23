@@ -26,8 +26,32 @@
 
 ### class vs. interface 
 
+* References:
+   * [WHEN TO USE ABSTRACT CLASSES AND WHEN INTERFACES.](https://www.codementor.io/@vipinc/when-to-use-abstract-classes-and-when-interfaces-c-interview-questions-jtzll1sn7)
+
 * 介面是否可繼承介面? 抽象類是否可實現(implements)介面? 抽象類是否可繼承實體類(concrete class)?
 答：介面可以繼承介面。抽象類可以實現(implements)介面，抽象類是否可繼承實體類，但前提是實體類必須有明確的建構函式。
+
+* Why Interface
+   * You don't have default or shared code implementation
+   * You want to share data contracts (web services, SOA)
+   * You have different implementations for each interface implementer (IDbCommand has SqlCommand and OracleCommand which implement the interface in specific ways)
+   * You want to support multiple inheritance.
+   * the functionality you are creating will be useful across a wide range of disparate objects, interfaces are best suited for providing common functionality to unrelated classes.
+   * When creating a standalone project which can be changed at will, use an interface in preference to an abstract class; because, it offers more design flexibility.
+   * Use interfaces to introduce polymorphic behavior without subclassing and to model multiple inheritance—allowing a specific type to support numerous behaviors.
+   * Use an interface to design a polymorphic hierarchy for value types.
+   * Use an interface when an immutable contract is really intended.
+   * A well-designed interface defines a very specific range of functionality. Split up interfaces that contain unrelated functionality.
+   
+* Why Abstract
+   * You have default or shared code implementation
+   * You want to minimize code duplication
+   * You want to easily support versioning(multiple version): By updating the base class, all inheriting classes are automatically updated with the change.
+   * When creating a class library which will be widely distributed or reused—especially to clients, use an abstract class in preference to an interface; because, it simplifies versioning. This is the practice used by the Microsoft team which developed the Base Class Library. (COM was designed around interfaces.)
+   * Use an abstract class to define a common base class for a family of types.
+   * Use an abstract class to provide default behavior.
+   * Subclass only a base class in a hierarchy to which the class logically belongs.
 
 ### functional programming 
 
