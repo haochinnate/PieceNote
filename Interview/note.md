@@ -1,3 +1,5 @@
+# Interview
+
 ### struct vs. class
 
 * struct is value type, not reference type
@@ -67,3 +69,27 @@
 
 * declarative paradigm(宣告式程式設計): 藉由自然語言直觀的理解該行程式碼想要達到什麼樣子結果。描述在哪做什麼(what to do)以及資料流程(data flow)
 
+## Stack vs. Heap
+* References: 
+   * [Stack and heap](https://dev.to/tyrrrz/interview-question-heap-vs-stack-c-5aae)
+   * [C# Heap(ing) Vs Stack(ing) In .NET - Part One](https://www.c-sharpcorner.com/article/C-Sharp-heaping-vs-stacking-in-net-part-i/)
+
+* C# 有兩個地方可以來存放object: stack, heap 
+
+* Allocated 在 stack 中的物件只能在stack frame(execution of a method)裡面存取。 
+* Aloocated 在 heap  中的物件可以在任何地方存取。
+* 錯誤分類:  reference types 被分配在heap, 而 value types被分配在stack
+* Reference types (classes, interfaces, delegates) 永遠被分配在heap
+* 當把reference object 當作參數傳入或是 assign 到變數時, 是在傳送"參考"(reference)。參考(reference, 而非 referenced object)可以被分配在 stack 或是 heap上。
+* 每一次物件被當作reference傳遞時, reference本身會被複製, 代表你可以改變reference 讓他指到不同物件. 就不會影響到前一個物件.
+* Value types (derived from System.ValueType, e.g. int, bool, char, enum and any struct), 可以被分配在heap 或 stack上. 取決於他們是在哪裡被宣告的。
+    * 如果是當作 method裡的變數, 那就是存在 stack 裡面。
+	* 如果是當作 method 的參數, 那就是存在 stack 裡面。
+	* 如果是class的 member, 那就是存在 heap 裡面, 跟隨他的parent。
+	* 如果是struct的 member, 那就是存在 heap 裡面, 跟隨他的parent。
+	
+* While the objects stored on the stack are gone when the containing stack frame is popped, memory used by objects stored on the heap needs to be freed up by the garbage collector.  
+* The Stack is more or less responsible for keeping track of what's executing in our code (or what's been "called").
+* The Heap is more or less responsible for keeping track of our objects (our data, well... most of it - we'll get to that later.).  
+* The Stack is self-maintaining, meaning that it basically takes care of its own memory management. When the top box is no longer used, it's thrown out.  
+* The Heap, on the other hand, has to worry about Garbage collection (GC) - which deals with how to keep the Heap clean (no one wants dirty laundry laying around... it stinks!).
