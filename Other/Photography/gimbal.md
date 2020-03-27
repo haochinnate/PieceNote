@@ -60,3 +60,23 @@
 | V      | Lock | Auto | Auto | 按 POV 紐 兩次 |
 | F      | Auto | Auto | Lock | 按下 板機紐 |
 | Go     | Auto | Auto | Lock | 按下 Fn 紐 |
+
+## 拍車子
+
+* References:
+    * [Gimbal Moves To Make ANY Car Look EPIC!](https://www.youtube.com/watch?v=Zdxdzgy2FjI)
+
+* 拍攝手法
+    1. Establisher: push in 接近車子
+    2. Crane/Tilt: 由下往上
+    3. Orbit: 低角度繞一圈
+    4. Badge Slider: 接近車頭由左往右拍, 然後可以慢動作
+    5. Interior pull out: 拍攝內裝往窗戶外拉, 也可以慢動作
+    6. Front interior pull back: 從副駕往駕駛座往後拉出車門
+    7. The epic broomstick interior pull back: 黏著掃把從中控台往後座, 往後車箱拉
+    8. Top-down crane: 舉高, 由上往下拍, 斜角度 從前往後拉
+    9. The through the passenger & side window broomstick pull back: 從前面一邊窗戶拉到另一邊窗戶
+    10. The fake drone pull back: 舉高 從上往下穿越車身 往後拉
+    11. The low rider push forward crane through window broomstick shot: 從低角度開始然後進入窗戶, 在斜方向往另一邊後座前進
+
+

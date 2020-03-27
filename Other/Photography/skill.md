@@ -22,3 +22,23 @@
 ## 對焦
 
 - [Mastering Sony AutoFocus 2019](https://www.youtube.com/watch?v=dRmX2q_DmZ4)
+
+## Timelapse
+
+* References:
+	* [How to make a Timelapse Video on a Sony Camera](https://www.youtube.com/watch?v=gfLKqjqQYtM) 
+
+* Equipment
+	1. Tripod
+	2. Camera
+	3. Wide angle lens(optional)
+	4. ND filter(optional)
+	5. Gimbal or Slider(optional)
+
+* 兩種方式: S&Q mode, 
+	* 時間間格拍攝功能(Intvl. Shoot. Func.)--page 1.3最後一項
+		1. Interval Shooting (時間間隔拍攝): On
+		2. Shooting Start Time (拍攝開始時間): 1秒 or 2秒
+		3. Shooting Interval (拍攝間隔): 快門0.8秒, 間隔設定1秒
+		4. Number of Shots (拍攝次數): 240次,
+		5. 在LR修圖完, export sequence, 再到Premiere 變成影片
