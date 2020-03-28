@@ -42,3 +42,27 @@
 		3. Shooting Interval (拍攝間隔): 快門0.8秒, 間隔設定1秒
 		4. Number of Shots (拍攝次數): 240次,
 		5. 在LR修圖完, export sequence, 再到Premiere 變成影片
+
+## Long Exposure
+
+* References:
+	* [How to take Long Exposure Photos](https://www.youtube.com/watch?v=Bxzc7a9WaHs)
+
+* Equipment
+	1. Tripod
+	2. Any Camera
+	3. Any Lens
+	4. ND filter(optional)
+	
+* Process
+	1. Place Tripod
+	2. Setup Camera
+		* Go to 'M' mode
+		* Set ISO to 100
+		* Set shutter/aperature
+	3. Set a Timer
+	4. Take Test Shots
+	5. Put on ND Filter
+	6. Play around with settings and have fun
+
+
