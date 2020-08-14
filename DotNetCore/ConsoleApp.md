@@ -50,10 +50,20 @@ static void Main(string[] args)
     // configuring everything
     var host = Host.CreateDefaultBuilder()
         .ConfigureServices((context, services) => {
-
+            // Transient 是指每次要使用的時候都給一個新的 instance
+            // 這邊用 GreetingService, 也可以用 interface(如果有實作的話)
+            // services.AddTransient<GreetingService>();
+            services.AddTransient<IGreetingService, GreetingService>();
         })
         .UseSerilog()
         .Build();
+
+    // call GreetingService to use dependency injection system
+    // svc will be the type of IGreetingService
+    var svc = ActivatorUtilities.CreateInstance<IGreetingService>(host.Services);
+
+    svc.Run(); // Run in GreetingService
+
 }
 
 
@@ -73,23 +83,37 @@ static void BuildConfig(IConfigurationBuilder builder)
 ```
 
 ```csharp
-// 建立一個新類別, 用來處理configure, 而不要放在 main裡面
-public class GreetingService
+
+public interface IGreetingService
 {
+    Run();
+}
+
+// 建立一個新類別, 用來處理configure, 而不要放在 main裡面
+public class GreetingService : IGreetingService
+{
+    // you don't modify the _log & _config, just use them
     private readonly ILogger<GreetingService> _log;
+    private readonly IConfiguration _config;
+
     public GreetingService(ILogger<GreetingService> log, IConfiguration config)
     {
-
+        _log = log;
+        _config = config;
     }
 
     public void Run()
     {
-        for (int = 0; i < 10; i++>)
+        // get the LoopTimes from configuration
+        for (int = 0; i < _config.GetValue<int>("LoopTimes"); i++)
         {
-            // This is 
+            // Serilog 不只會記錄 下方的 text, 還會以 runNumber 為名另外記錄 i 的數值
+            // 這樣 log 的時候比較好找
+            _log.LogInformation("Run number { runNumber }", i);
         }
     }
 }
+
 ```
 
 
