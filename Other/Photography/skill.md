@@ -65,4 +65,9 @@
 	5. Put on ND Filter
 	6. Play around with settings and have fun
 
-
+## 寵物
+1. 尋找自然光
+2. 連續對焦AF-C + 近拍
+3. 高速快門, 可考慮 1/500s 以上
+4. 改變拍攝視角
+5. 培養默契, 或捕捉互動的瞬間
