@@ -3,7 +3,7 @@
 
 * [Entity Framework Best Practices - Should EFCore Be Your Data Access of Choice?](https://www.youtube.com/watch?v=qkJ9keBmQWo)
 
-### 建立專案
+### 建立web app project
 
 1. 建立 ASP.NET Core Web Application
 2. Project Name: EFDemoWeb
@@ -67,4 +67,31 @@
     }
 }
 ```
+
+### Create migration scripts and database
+
+1. 打開 Package Manager Console(套件管理器主控台)
+2. 輸入 "Add-Migration InitialDBCreation", 會有錯誤, 因為還沒有加 tooling
+3. 在 EFDemoWeb project 中, Dependecies 按右鍵, 選擇 "Manage NuGet Packages..."
+4. 安裝 "Microsoft.EntityFrameworkCore.Tools"
+5. 再輸入一次 "Add-Migration InitialDBCreation", 會有紅字, 要將預設專案改成 EFDataAccessLibrary, 再跑一次
+6. Migration 的code是根據我們建立的PeopleContext class 自動產生的
+7. Up migration: allows you to go from where we're at to where wants to take us
+8. Down migration: rollback, undo what you did
+9. Person class 中有 List<Address>, 所以Addresses table 有一欄 PersonId, 但預設是 nullable, EmailAddresses table 也有相同問題
+
+```csharp
+     columns: table => new
+     {
+        Id = table.Column<int>(nullable: false)
+            .Annotation("SqlServer:Identity", "1, 1"),
+        StreetAddress = table.Column<string>(nullable: true),
+        City = table.Column<string>(nullable: true),
+        State = table.Column<string>(nullable: true),
+        ZipCode = table.Column<string>(nullable: true),
+        PersonId = table.Column<int>(nullable: true)
+    }
+```
+
+10. 
 
