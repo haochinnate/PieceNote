@@ -93,5 +93,8 @@
     }
 ```
 
-10. 
+10. 在Person 中, 增加一個 property, 再增加一個migrations: "Add-Migration AddAgeColumn"
+11. PeopleContextModelSnapshot 類別 nvarchar(max), Unicode variable length character field, two bytes per character, 一般是 1~4000多個 bytes, nvarchar(max)可以放 2G? 8060 bytes 是 SQL 限制? 如果過長, 會存在disk, 而非DB.
+　　* 如果有一些資料很常被query, 會另外create index, 但 non-clustered index 有限制:1700 bytes,  nvarchar(max) 超過很多, 所以不能在這上面用 index, 所以可能有 optimization 問題, 不能從columns 建立 lookups?
+　　*　
 
