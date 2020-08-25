@@ -11,7 +11,6 @@
 4. 選擇一般的 .NET Core -> ASP.NET Core 3.1 -> Web Application
 5. 執行後, 會跳出網頁 
 
-
 ### 建立 class library
 
 1. 建立新 project, 選擇 "Class Library (.NET Standard)" (不是 .NET Core, 也不是 .NET Framework)
@@ -68,7 +67,7 @@
 }
 ```
 
-### Create migration scripts and database
+### Create migration scripts
 
 1. 打開 Package Manager Console(套件管理器主控台)
 2. 輸入 "Add-Migration InitialDBCreation", 會有錯誤, 因為還沒有加 tooling
@@ -96,5 +95,37 @@
 10. 在Person 中, 增加一個 property, 再增加一個migrations: "Add-Migration AddAgeColumn"
 11. PeopleContextModelSnapshot 類別 nvarchar(max), Unicode variable length character field, two bytes per character, 一般是 1~4000多個 bytes, nvarchar(max)可以放 2G? 8060 bytes 是 SQL 限制? 如果過長, 會存在disk, 而非DB.
 　　* 如果有一些資料很常被query, 會另外create index, 但 non-clustered index 有限制:1700 bytes,  nvarchar(max) 超過很多, 所以不能在這上面用 index, 所以可能有 optimization 問題, 不能從columns 建立 lookups?
-　　*　
+　　* varchar 和 nvarchar columns are assumed to be half full, [nvarchar performance](https://www.sqlservercentral.com/forums/topic/nvarchar4000-and-performance)
+12. By default, Entity Framework does not create the ideal table design for U, 因為在宣告property 的時候, 型別是 string, 而且沒有設定 limitation
+13. One-To-Many relationship
 
+```csharp     
+modelBuilder.Entity("EFDataAccessLibrary.Models.Address", b =>
+    {
+        b.HasOne("EFDataAccessLibrary.Models.Person", null)
+        .WithMany("Addresses")
+        .HasForeignKey("PersonId");
+    });
+```
+
+### Create Database
+
+1. 打開 Package Manager Console(套件管理器主控台), Default Project 選擇 EFDataAceessLibrary
+
+2. 輸入 "Update-database", 會根據 Startup 類別的內容建立資料庫(appsettings.json 的 Default)
+
+```cmd
+Update-Database
+```
+
+3. 在 "SQLServer Object Explorer" 視窗底下就可以看到新建立的 EFDemoDB, 裡面已有四個 tables 
+
+4. 接下來要修改 Model 的部分, 加入 DataAnnotations, 讓 EF 不要使用 nvarchar(max)
+
+```csharp
+using System.ComponentModel.DataAnnotations;
+
+[Required]
+[MaxLength(200)]
+
+```
