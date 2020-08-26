@@ -94,9 +94,12 @@
 
 10. 在Person 中, 增加一個 property, 再增加一個migrations: "Add-Migration AddAgeColumn"
 11. PeopleContextModelSnapshot 類別 nvarchar(max), Unicode variable length character field, two bytes per character, 一般是 1~4000多個 bytes, nvarchar(max)可以放 2G? 8060 bytes 是 SQL 限制? 如果過長, 會存在disk, 而非DB.
-　　* 如果有一些資料很常被query, 會另外create index, 但 non-clustered index 有限制:1700 bytes,  nvarchar(max) 超過很多, 所以不能在這上面用 index, 所以可能有 optimization 問題, 不能從columns 建立 lookups?
-　　* varchar 和 nvarchar columns are assumed to be half full, [nvarchar performance](https://www.sqlservercentral.com/forums/topic/nvarchar4000-and-performance)
-12. By default, Entity Framework does not create the ideal table design for U, 因為在宣告property 的時候, 型別是 string, 而且沒有設定 limitation
+　　  
+* 如果有一些資料很常被query, 會另外create index, 但 non-clustered index 有限制:1700 bytes,  nvarchar(max) 超過很多, 所以不能在這上面用 index, 所以可能有 optimization 問題, 不能從columns 建立 lookups?
+* varchar 和 nvarchar columns are assumed to be half full, [nvarchar performance](https://www.sqlservercentral.com/forums/topic/nvarchar4000-and-performance)
+
+12. By default, Entity Framework does not create the ideal table design for U, 因為在宣告property 的時候, 型別是 string, 而且沒有設定 limitation, 所以是 nvarchar(max)
+
 13. One-To-Many relationship
 
 ```csharp     
@@ -124,8 +127,29 @@ Update-Database
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+// data annotation example
 [Required]
 [MaxLength(200)]
+[MaxLength(10)]
+[Column(TypeName = "varchar(10)")]
 
 ```
+
+5. 每個 model 加完 data annotation 後, 回到 Package Manager Console, 增加新的 migrations
+
+```cmd
+Add-Migration AddedValidation
+```
+
+6. 修改之前, 要小心這個 schema 是不是會造成資料遺失, 再執行一次 update-database
+
+```cmd
+Update-Database
+```
+
+### Use Database
+
+1. 在 EFDemoWeb\Pages\Index.cshtml.cs 中, 加入 import data 的 code
+
