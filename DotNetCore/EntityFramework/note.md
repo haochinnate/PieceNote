@@ -153,3 +153,39 @@ Update-Database
 
 1. 在 EFDemoWeb\Pages\Index.cshtml.cs 中, 加入 import data 的 code
 
+2. 使用json file 產生器來產生一些資料 generated.json
+
+3. 建一個 function 來讀取, 只有當 database 沒資料的時候才 call?
+
+```csharp
+using System.Text.Json;
+
+
+```
+
+4. IndexModel 的 constructor 中, 增加 PeopleContext 參數, 因為在Startup 的 ConfigureServices 有用AddDbContext 做 DI 輸入, 所以會自動帶入
+
+```csharp
+public IndexModel(ILogger<IndexModel> logger, PeopleContext db)
+{
+    _logger = logger;
+    _db = db;
+}
+```
+
+5. 打開 SQL Server Management Studio (SSMS), 因為要 monitor DB. 在XEvent Profiler\Standard 設定 要聽的 sql server event, 來看 EF 對 database 做了什麼事情.
+
+```sql
+select * from dbo.People
+```
+
+6. EF C# Code 和 實際 SQL command 對應
+
+```sql
+/* _db.People.Count() */
+select COUNT(*) from [People] AS [p]
+
+/* */
+insert 0 TABLE ([Id] int, [_Position] [int]);
+MERGE [People]
+```
