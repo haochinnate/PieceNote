@@ -179,7 +179,7 @@ public IndexModel(ILogger<IndexModel> logger, PeopleContext db)
 select * from dbo.People
 ```
 
-6. EF C# Code 和 實際 SQL command 對應
+6. EF C# Code(LoadSample function) 和 實際 SQL command 對應
 
 ```sql
 /* _db.People.Count() */
@@ -188,4 +188,30 @@ select COUNT(*) from [People] AS [p]
 /* */
 insert 0 TABLE ([Id] int, [_Position] [int]);
 MERGE [People]
+```
+
+7. SSMS 中 monitor 到的 command 上面按右鍵, 選擇 "Copy", 然後在文字編輯器上可以看到一堆 sql command 
+
+8. EF 沒有建立 i store procefure for it, 一般會建立 store procedure 來處理insert 一堆資料. 而且不應該使用 "sp_executesql", DANGER!!, 會讓 app 有很多權限可以控制DB?
+
+9. load People Table, including Address & Email
+
+```csharp
+
+var people = _db.People
+    .Include(a => a.Addresses)
+    .Include(e => e.EmailsAddresses)
+    .ToList();
+
+```
+
+```sql
+/* 對應 sql command */
+
+/* duration 89533*/
+/* logical reads 331 */
+/* row count 1204: # of records that returns to our EF */
+
+
+
 ```
