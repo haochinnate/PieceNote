@@ -211,7 +211,77 @@ var people = _db.People
 /* duration 89533*/
 /* logical reads 331 */
 /* row count 1204: # of records that returns to our EF */
+-- 100 筆資料 但是 row count 是 1204, 因為
 
+
+SELECT [p].[Id], [p].[Age], [p].[FirstName], [p].[LastName], 
+    [a].[Id] [a].[City], [a].[PersonId], [a].[State], [a].[StreetAddress], [a].[ZipCode], 
+    [e.Id], [e].[EmailAddress], [e].[PersonId]
+FROM [People] AS [p] 
+LEFT JOIN [Address] AS [a] ON [p].[Id] = [a].[PersonId]
+LEFT JOIN [EmailAddress] AS [e] ON [p].[Id] = [e].[PersonId]
+ORDER BY [p].[Id], [a].[Id], [e].[Id]
+
+-- give me everything from the People table, and if you find matches in Address Table, then give those values
+
+-- Person 對 Address 的關係是 One-To-Many, 當在Address 找到三個Address 都有相同 PersonId時, 會找到重複的 Person(duplicate records), 造成 row count 是 1204
+
+-- C# 那邊沒有顯示是因為 會 eliminate duplicate 
+
+```
+
+10. 如果C#那邊不使用 Include, People 的 property 不會有 Addresses 和 EmailAddresses 的資料, 不會 load 進來
+
+```csharp
+
+var people = _db.People
+    // .Include(a => a.Addresses)
+    // .Include(e => e.EmailsAddresses)
+    .ToList();
+
+```
+
+```sql
+/* 對應 sql command */
+
+/* row count 100: # of records that returns to our EF */
+
+SELECT [p].[Id], [p].[Age], [p].[FirstName], [p].[LastName]
+FROM [People] AS [p] 
+
+```
+
+11. filter command in WHERE 的處理方式會不同 , can be converted into TSQL? and run on SQL server
+
+```csharp
+
+// 這行在執行的時候會發生錯誤
+var people = _db.People
+    .Include(a => a.Addresses)
+    .Include(e => e.EmailsAddresses)
+    .Where(x => ApprovedAge(x.Age))
+    .ToList();
+
+// 要改成下面這樣
+var people = _db.People
+    .Include(a => a.Addresses)
+    .Include(e => e.EmailsAddresses)
+    .ToList()
+    .Where(x => ApprovedAge(x.Age));
+    
+// SQL command: row count 是 1200
+
+// 1.
+// 這個會先 download 所有資料(ex:100筆), 再來跑這行 code
+.Where(x => ApprovedAge(x.Age)) 
+
+// 2. 
+.Where(x => x.Age >=18 && x.Age <=65) // 
+
+private bool ApprovedAge(int age)
+{
+    return (age >= 18 && age <= 65);
+}
 
 
 ```

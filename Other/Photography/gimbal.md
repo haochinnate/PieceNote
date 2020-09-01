@@ -36,6 +36,18 @@
 9. The Look Up, Crane Shot
 10. The Push Forward Crane
 
+## [8 smartphone gimbal moves without moving your feet](https://www.youtube.com/watch?v=Iphs8jwsOwc)
+
+1. Push Through, ex: doorway, 往前穿過門口
+2. The Slider/Reveal, ex: find a focal point, 利用其他東西當作前景, 由左往右 or 由右往左
+3. The Look Up Slider, 鏡頭向上, 然後往一個方向平移
+4. The Fake Crane, 裝上獨腳架 or 其他東西, 從低處縱向移動, 可以配上 reveal
+5. The Low Rider, 在低處接近地面往前移動
+6. The Stretch Out/Lean Back, 從面向前面開始到往上後仰, 或是反過來
+7. The Cinematic Orbit, 貼近小物體, 用慢動作錄影, Lock focus, 然後以物體為中心畫圓移動. 或是從遠一點的地方往前接近物體
+8. The Look Up, Crane Shot, 鏡頭向上 貼緊牆壁, 蹲下然後開始往上站起
+
+
 ## [20 WAYS to use your GIMBAL](https://www.youtube.com/watch?v=k-x5OoRIsBI)
 
 1. push in, pull out, 也可以配合低角度 
