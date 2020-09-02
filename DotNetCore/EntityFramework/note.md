@@ -255,6 +255,8 @@ FROM [People] AS [p]
 
 ```csharp
 
+// 範例1
+
 // 這行在執行的時候會發生錯誤
 var people = _db.People
     .Include(a => a.Addresses)
@@ -269,14 +271,12 @@ var people = _db.People
     .ToList()
     .Where(x => ApprovedAge(x.Age));
     
-// SQL command: row count 是 1200
-
-// 1.
-// 這個會先 download 所有資料(ex:100筆), 再來跑這行 code
+// 但是ToList 在前面 1.這個會先 download 所有資料(ex:100筆), 再來跑這行 code
+// 造成效率比較差
 .Where(x => ApprovedAge(x.Age)) 
 
-// 2. 
-.Where(x => x.Age >=18 && x.Age <=65) // 
+// SQL command: row count 是 1200
+
 
 private bool ApprovedAge(int age)
 {
@@ -285,3 +285,32 @@ private bool ApprovedAge(int age)
 
 
 ```
+
+```csharp
+
+// 範例2
+var people = _db.People
+    .Include(a => a.Addresses)
+    .Include(e => e.EmailsAddresses)
+    .Where(x => x.Age >=18 && x.Age <=65)
+    .ToList();
+
+// SQL command: row count 是 673
+
+// 2. 這樣比較節省時間, 由 db serve 去做 filter & query
+// filter before download 
+.Where(x => x.Age >=18 && x.Age <=65) 
+
+```
+
+### Benefit of Entity Framework Core
+
+1. Faster development speed. But it may be slow down if you want to make sure it's performance
+2. You don't have to know SQL. Actually not..., you have to learn SQL to optimize
+
+### Benefits of Dapper
+
+1. Faster in production
+2. Easier to work with for SQL developer
+
+
