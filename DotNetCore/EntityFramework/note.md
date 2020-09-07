@@ -312,5 +312,5 @@ var people = _db.People
 
 1. Faster in production
 2. Easier to work with for SQL developer
-
+3. Designed for loose coupling
 

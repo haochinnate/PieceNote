@@ -19,6 +19,8 @@ using Microsoft.Extensions.Logging;
 // Benefits of Dapper
 // 1. Faster in production
 // 2. Easier to work with for SQL developer
+// 3. Designed for loose coupling
+
 
 namespace EFDemoWeb.Pages
 {
