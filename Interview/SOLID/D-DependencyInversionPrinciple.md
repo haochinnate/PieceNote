@@ -282,3 +282,14 @@ public static IMessageSender CreateMessageSender()
 * SOLID takes us as a whole, it takes us into having lots of really tiny little parts, things that do only one thing, things that don't have dependencies, things that are just self-contained tiny and against an interface
 
 * So we can unplug and plug in something new without problem
+
+
+## Dependency Injection 
+
+* 取代掉 Factory Create 物件的部分, 或 建立 Factory 的部分
+
+* Dependency Injection 看到 contructor 需要兩個 classes, 就會去取得對應的物件
+
+* Dependency Injection 帶來了 IOC (inversion of control) container, can dynamically change the instance
+
+* if you ever see a __new__ somewhere, you've got tight coupling, and we don't want tight coupling.
