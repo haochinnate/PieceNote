@@ -1,4 +1,4 @@
-# (SQL Tutorial)[https://www.w3schools.com/sql/default.asp]
+# [SQL Tutorial](https://www.w3schools.com/sql/default.asp)
 
 ## Intro and Syntax
 
