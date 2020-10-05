@@ -1,0 +1,345 @@
+# (SQL Tutorial)[https://www.w3schools.com/sql/default.asp]
+
+## Intro and Syntax
+
+- SQL: Structured Query Language
+- lets you access and manipulate databases
+
+```sql
+SELECT * FROM Customers;
+```
+
+- SQL keywords are __NOT__ case sensitive: select is the name as SELECT
+
+- Some of the most important SQL commands
+    - SELECT: extracts data
+    - UPDATE: updates data
+    - DELETE: deletes data
+    - INSERT INTO: inserts new data
+    - CREATE DATABASE: creates a new database
+    - ALTER DATABASE: modifies a database
+    - CREATE TABLE: creates a new table
+    - ALTER TABLE: modifies a table
+    - DROP TABLE: deletes a table 
+    - CREATE INDEX: creates an index (search key)
+    - DROP INDEX: deletes an index
+
+
+## SELECT
+
+- data returned is stored in a result table, called the result-set
+
+```sql
+-- syntax
+SELECT column1, column2 FROM table_name;
+
+-- example
+SELECT * FROM table_name;
+```
+- column are the __field__ names of the table you want to select data from
+
+### SELECT DISTINCT
+
+- used to return only __distinct (different)__ values
+
+```sql
+-- syntax
+SELECT DISTINCT column1, column2 FROM table_name; 
+
+-- 沒有DISTINCT 的話, 會有91筆資料, 加了DISTINCT 回傳結果剩 21筆資料
+SELECT DISTINCT Country FROM Customers;
+
+-- 搭配 COUNT 直接計算數字, 結果是 21
+SELECT COUNT(DISTINCT Country) FROM Customers;
+```
+
+## WHERE
+
+- used to __filter__ records
+- to extract those records that fulfill a specified condition
+
+```sql
+-- syntax
+SELECT column1, column2 FROM table_name WHERE condition;
+
+-- example text fields
+SELECT * FROM Customers WHERE Country='Mexico';
+
+-- example numeric fields
+SELECT * FROM Customers WHERE CustomerID=1;
+
+```
+
+-- __WHERE__ 不只可以用在 SELECT, 也可以用在 UPDATE, DELETE 等等statement
+
+### operators in WHERE
+
+- =: Equal
+- <>: Not equal, or !=
+- BETWEEN: Between a certain range
+- LIKE: Search for a pattern
+- IN: To specify multiple possible values for a column
+
+```sql
+-- = example
+SELECT * FROM Products WHERE Price = 18;
+
+-- <> example
+SELECT * FROM Products WHERE Price <> 18;
+
+-- BETWEEN example
+SELECT * FROM Products WHERE Price BETWEEN 50 AND 70;
+
+-- LIKE example, start with 's'
+SELECT * FROM Customers WHERE City LIKE 's%';
+
+-- IN example, City 是 Paris 或 London
+SELECT * FROM Customers WHERE City IN ('Paris','London');
+```
+
+### Logical operators(AND, OR and NOT)
+
+```sql
+-- AND syntax
+SELECT column1, column2
+FROM table_name
+WHERE condition1 AND condition2 AND condition3;
+
+-- OR syntax
+WHERE condition1 OR condition2 OR condition3;
+
+-- NOT syntax
+WHERE NOT condition;
+
+-- example
+SELECT * FROM Customers WHERE City = 'Berlin' 
+    AND PostalCode = 12209;
+
+
+SELECT * FROM Customers 
+    WHERE City='Berlin' OR City='London';
+
+SELECT * FROM Customers WHERE NOT City = 'Berlin';
+
+```
+
+## ORDER BY
+
+- used to __sort__ the result-set in ascending or descending order
+- 預設是 ascending 遞增, 用 __DESC__ 關鍵字來遞減
+
+```sql
+-- syntax
+SELECT column1, column2 FROM table_name
+ORDER BY column1, column2 ASC|DESC;
+
+-- example
+SELECT * FROM Customers ORDER BY Country;
+
+SELECT * FROM Customers ORDER BY Country DESC;
+
+SELECT * FROM Customers ORDER BY Country, CustomerName;
+
+```
+
+## INSERT INTO
+
+- insert new records in a table
+
+```sql
+-- syntax 
+INSERT INTO table_name (column1, column2, column3)
+VALUES (value1, value2, value3)
+
+-- example
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+-- 如果所有table 中columns 都有加入新值, 就不用指定 column, 但要確保順序是對的
+INSERT INTO table_name
+VALUES (value1, value2, value3)
+
+-- example
+INSERT INTO Customers (CustomerName, City, Country)
+VALUES ('Cardinal', 'Stavanger', 'Norway');
+
+```
+
+## NULL Values
+
+- A field with a NULL value is a field __with no value__
+- 如果 field 是 optional的, 在 new 或 update 的時候就可以不指定值, 此時就是存 NULL Value
+
+### test for NULL values
+
+```sql
+-- IS NULL syntax 
+SELECT columns_names FROM table_name WHERE column_name IS NULL;
+
+-- IS NOT NULL syntax
+SELECT columns_names FROM table_name WHERE column_name IS NOT NULL;
+
+-- example
+SELECT CustomerName, ContactName, Address FROM Customers WHERE Address IS NULL;
+
+```
+
+## UPDATE
+
+- used to modify the existing records in a table
+
+```sql
+-- syntax, 如果沒有使用 WHERE, 所有的data都會更新
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+
+-- example
+UPDATE Customers SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+WHERE CustomerID = 1;
+
+
+```
+
+## DELETE FROM
+
+- used to delete existing records in a table
+
+```sql
+-- syntax, 如果沒有使用 WHERE, 所有的data都會刪除
+DELETE FROM table_name WHERE condition;
+
+-- example
+DELETE FROM Customers WHERE CustomerName = 'Alfreds Futterkiste';
+
+-- delete all records
+DELETE FROM Customers;
+
+```
+
+## Functions
+
+### SELECT TOP, LIMIT, ROWNUM
+
+- SELECT TOP, used to specify the number of records to return
+- 不是所有的 db 都支援 SELECT TOP, 有些用 LIMIT, 有些用ROWNUM
+
+```SQL
+-- syntax
+SELECT TOP number|percent column_name(s)
+FROM table_name
+WHERE condition;
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+LIMIT number;
+
+SELECT column_name(s)
+FROM table_name
+WHERE ROWNUM <= number;
+
+-- example 
+SELECT TOP 3 * FROM Customers;
+SELECT * FROM Customers LIMIT 3;
+SELECT * FROM Customers WHERE ROWNUM <= 3;
+
+-- TOP PERCENT example
+SELECT TOP 50 PERCENT * FROM Customers;
+
+-- 搭配 WHERE 條件
+SELECT TOP 3 * FROM Customers WHERE Country = 'Germany';
+
+```
+
+### MIN() and MAX()
+
+- returns the smallest/largest value of the selected column
+
+```SQL
+-- syntax
+SELECT MIN(column_name) FROM table_name WHERE condition;
+SELECT MAX(column_name) FROM table_name WHERE condition;
+
+-- example, 只會回傳一個值
+SELECT MIN(Price) AS SmallestPrice FROM Products;
+SELECT MAX(Price) AS LargestPrice FROM Products;
+```
+
+### COUNT(), AVG(), SUM()
+
+- COUNT(): returns the number of rows that matches a specified criterion
+- AVG(): returns the average value of a numeric column
+- SUM(): returns the total sum of a numeric column
+
+```sql
+-- syntax
+SELECT COUNT(column_name) FROM table_name WHERE conditon;
+SELECT AVG(column_name) FROM table_name WHERE conditon;
+SELECT SUM(column_name) FROM table_name WHERE conditon;
+
+-- example
+SELECT COUNT(ProductID) FROM Products;
+
+SELECT AVG(Price) FROM Products;
+
+SELECT SUM(Quantity) FROM OrderDetails;
+```
+
+## Like
+
+- used in __WHERE__ to search for a specified pattern in a column 
+
+- 2 wildcards often used in conjunction with the __LIKE__ operator
+    - __%__: 0, 1, or multiple characters
+    - **_**: a single character
+    - (MS Access 用 __*__ 和 __?__)
+
+- You can combine any number of conditions using __AND__ or __OR__ operators
+
+```sql
+-- syntax
+SELECT column1, column2 FROM table_name WHERE columnN LIKE pattern;
+
+-- example
+SELECT * FROM Customers WHERE CustomerName LIKE 'a%';
+
+SELECT * FROM Customers WHERE CustomerName LIKE '%a';
+
+SELECT * FROM Customers WHERE CustomerName LIKE '_r%';
+
+SELECT * FROM Customers WHERE CustomerName LIKE 'a__%';
+
+SELECT * FROM Customers WHERE CustomerName NOT LIKE 'a%';
+```
+
+- Wildcards Example
+
+| Like Operator | Description |
+| ----------- | ----------- |
+| WHERE columnN LIKE __'a%'__ | Finds any values that start with "a" |
+| WHERE columnN LIKE __'%a'__| Finds any values that end with "a" |
+| WHERE columnN LIKE __'%or%'__ | Finds any values that have "or" in any position |
+| WHERE columnN LIKE __'_r%'__ | Finds any values that have "r" in the second position |
+| WHERE columnN LIKE __'a_%'__ | Finds any values that start with "a" and are at least 2 characters in length |
+| WHERE columnN LIKE **'a__%'** | Finds any values that start with "a" and are at least 3 characters in length |
+| WHERE columnN LIKE __'a%o'__ | Finds any values that start with "a" and ends with "o" | 
+
+
+## Wildcards
+
+## In
+
+## Between
+
+## Alias
+
+## Join
+
+## Group By
+
+
+
+
+
+
+
+
