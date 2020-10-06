@@ -326,9 +326,101 @@ SELECT * FROM Customers WHERE CustomerName NOT LIKE 'a%';
 
 ## Wildcards
 
+- Wildcard characters is used to substitute one or more characters in a string
+
+- Wildcard characters are used with __LIKE__ operator
+
+- Wildcard characters
+
+| Symbol in MS Access | Symbol in SQL Server | Description | Example |
+| ----------- | ----------- | ----------- | ----------- |
+| * | % | Represents zero or more characters | __bl%__ finds bl, black, blue, and blob |
+| ? | _ | Represents a single character | __h?t__, **h_t** finds hot, hat, and hit |
+| [] | [] | Represents any single character within the brackets | __h[oa]t__ finds hot and hat, but not hit |
+| ! | ^ | Represents any character not in the brackets | __h[!oa]t__, __h[^oa]t__ finds hit, but not hot and hat |
+| - | - | Represents a range of characters | __c[a-b]t__ finds cat and cbt |
+| # | N/A | Represents any single numeric character | 2#5 finds 205, 215, 225, 235, 245, 255, 265, 275, 285, and 295 |
+
+
+```sql
+-- example
+
+-- starting with "ber"
+SELECT * FROM Customers WHERE City LIKE 'ber%';
+
+-- contain "es"
+SELECT * FROM Customers WHERE City LIKE '%es%';
+
+-- starting with any character(just one), endwith "ondon"
+SELECT * FROM Customers WHERE City LIKE '_ondon';
+
+-- starting with "b", "s" or "p"
+SELECT * FROM Customers WHERE City LIKE '[bsp]%';
+
+-- not starting with "b", "s" or "p"
+SELECT * FROM Customers WHERE City LIKE '[!bsp]%';
+SELECT * FROM Customers WHERE City NOT LIKE '[bsp]%';
+
+-- starting with anything from "a" to "f"
+SELECT * FROM Customers WHERE City LIKE '[a-f]%';
+
+```
+
 ## In
 
+- IN operator allows you to specify multiple values in a __WHERE__ clause
+
+- IN operator is a shorthand for multiple __OR__ conditions
+
+```sql
+-- syntax 
+SELECT column_name(s) FROM table_name WHERE column_name IN (value1, value2);
+
+SELECT column_name(s) FROM table_name WHERE column_name IN (SELECT statement);
+
+-- example
+-- City == "Germany" or "France" or "UK"
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+
+-- City != "Germany" or "France" or "UK"
+SELECT * FROM Customers WHERE Country NOT IN ('Germany', 'France', 'UK');
+
+-- selects all customers that are from the same countries as the suppliers:
+SELECT * FROM Customers WHERE Country IN (SELECT Country FROM Suppliers);
+```
+
 ## Between
+
+- The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+
+- The BETWEEN operator is inclusive: begin and end values are included. 
+
+
+```sql
+-- syntax 
+SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2
+
+-- example
+-- 10 <= Price <= 20
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;
+
+-- Price < 10 or Price > 20
+SELECT * FROM Products WHERE Price NOT BETWEEN 10 AND 20;
+
+-- BETWEEN with IN 
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20 
+AND CategoryID NOT IN (1, 2, 3);
+
+-- Text values example
+SELECT * FROM Products
+WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+
+-- Dates example
+SELECT * FROM Orders WHERE OrderDate BETWEEN #01/07/1996# AND #31/07/1996#;
+
+SELECT * FROM Orders WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+```
 
 ## Alias
 
