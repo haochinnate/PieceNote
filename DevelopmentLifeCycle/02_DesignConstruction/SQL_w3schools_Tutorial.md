@@ -605,3 +605,69 @@ FROM Suppliers;
 ```
 
 ## Group By
+
+- groups rows that have the same values into summary rows
+- is often used with aggrefate functions(COUNT, MAX, MIN, SUM, AVG) to group the result-set by one or more columns
+
+```sql
+-- syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+-- example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
+
+```
+
+## Others Keyword
+
+### HAVING 
+
+- __HAVING__ was added because the __WHERE__ keyword could not be used with aggregate functions
+
+```sql
+-- syntax 
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+-- example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+
+```
+
+### EXISTS
+
+- is used to test for the existence of any record in a subquery
+* return true if the subquery returns one or more records
+
+```sql
+-- syntax
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+
+-- example
+SELECT SupplierName
+FROM Suppliers
+WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
+
+```
+
