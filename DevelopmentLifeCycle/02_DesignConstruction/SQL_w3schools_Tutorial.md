@@ -671,3 +671,47 @@ WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppl
 
 ```
 
+## Stored Procedures
+
+- A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+```sql
+-- Stored Procedure Syntax
+CREATE PROCEDURE procedureName AS sql_statement GO;
+
+-- Execute a Stored Procedure Syntax
+EXEC procedureName;
+
+-- Example
+CREATE PROCEDURE SelectAllCustomers AS 
+SELECT * FROM Customers
+GO;
+
+EXEC SelectAllCustomers;
+```
+
+- Stored procedure with one parameter
+
+```sql
+-- stored 
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+SELECT * FROM Customers WHERE City = @City
+GO;
+
+-- execute 
+EXEC SelectAllCustomers @City = 'London';
+```
+
+- Stored Procedure With Multiple Parameters
+
+```sql
+-- stored 
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+AS
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+GO;
+
+-- example 
+EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+```
