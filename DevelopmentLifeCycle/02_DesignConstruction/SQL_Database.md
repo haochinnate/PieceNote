@@ -159,6 +159,118 @@ ALTER TABLE table_name MODIFY column_name datatype;
 
 - used to specify rules for data in a table
 
+- can be specified when the table is created with the __CREATE TABLE__ statement, or after the table is created with the __ALTER TABLE__ statement
+
+
+```sql
+-- syntax
+CREATE TABLE table_name(
+    column1 datatype constraint,
+    column2 datatype constraint,
+    column3 datatype constraint,
+);
+
+```
+
+- following constraints are commonly used in SQL
+
+### Not Null
+
+- Ensures that a column cannot have a NULL value
+
+- By default, a column can hold NULL values
+
+```sql
+-- example on CREATE TABLE
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255) NOT NULL,
+    Age int
+);
+
+-- example on ALTER TABLE
+ALTER TABLE Persons
+MODIFY Age int NOT NULL;
+```
+
+### Unique
+
+- Ensures that all values in a column are different
+
+- Both the __UNIQUE__ and __PRIMARY KEY__ constraints provide a guarantee for uniqueness for a column or set of columns
+
+- A __PRIMARY KEY__ constraint automatically has a __UNIQUE__ constraint.
+
+- You can have many __UNIQUE__ constraints per table, but only one __PRIMARY KEY__ constraint per table.
+
+```sql
+-- example on CREATE TABLE
+CREATE TABLE Persons (
+    ID int NOT NULL UNIQUE,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    UNIQUE (ID)
+);
+```
+
+```sql
+-- to name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT UC_Person UNIQUE (ID,LastName)
+);
+```
+
+```sql
+-- example on ALTER TABLE
+ALTER TABLE Persons ADD UNIQUE(ID);
+
+-- name constraint
+ALTER TABLE Persons ADD CONSTRAINT UC_Person UNIQUE (ID, LastName);
+```
+
+```sql
+-- drop a UNIQUE Constraint
+-- MySQL
+ALTER TABLE Persons DROP INDEX UC_Person;
+
+-- SQL Server/Oracle/MS Access
+ALTER TABLE Persons DROP CONSTRAINT UC_Person
+```
+
+
+### Primary Key
+
+- A combination of a __NOT NULL__ and __UNIQUE__. Uniquely identifies each row in a table
+
+### Foreign Key
+
+- Uniquely identifies a row/record in another table
+
+### Check
+
+- Ensures that all values in a column satisfies a specific condition
+
+### Default 
+
+- Sets a default value for a column when no value is specified
+
+### Index
+
+- Used to create and retrieve data from the database very quickly
+
 
 ## Not Null
 
