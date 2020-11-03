@@ -1,4 +1,4 @@
-# (SQL Database)[https://www.w3schools.com/sql/sql_create_db.asp]
+# [SQL Database](https://www.w3schools.com/sql/sql_create_db.asp)
 
 ## Create DB
 
@@ -250,14 +250,121 @@ ALTER TABLE Persons DROP INDEX UC_Person;
 ALTER TABLE Persons DROP CONSTRAINT UC_Person
 ```
 
-
 ### Primary Key
 
 - A combination of a __NOT NULL__ and __UNIQUE__. Uniquely identifies each row in a table
 
+- A table can have only __ONE__ primary key; and in the table, this primary key can consist of single or multiple columns(fields)
+
+```sql
+-- example in CREATE TABLE(MySQL)
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY(ID)
+);
+
+-- example in CREATE TABLE(SQL Server/Oracle/MS Access)
+CREATE TABLE Persons (
+    ID int NOT NULL PRIMARY KEY,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int
+);
+
+-- naming of a PRIMARY KEY constraint, and defining on multiple columns
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CONSTRAINT PK_Person PRIMARY KEY (ID, LastName)
+);
+
+```
+
+```sql
+-- example in ALTER TABLE
+ALTER TABLE Persons ADD PRIMARY KEY (ID);
+
+-- naming
+ALTER TABLE Persons ADD CONSTRAINT PK_Person PRIMARY KEY (ID, LastName)
+```
+
+```sql
+-- drop a PRIMARY KEY constraint(MySQL)
+ALTER TABLE Persons DROP PRIMARY KEY;
+
+-- drop a PRIMARY KEY constraint(SQL Server/Oracle/MS Access)
+ALTER TABLE Persons DROP CONSTRAINT PK_Person;
+```
+
 ### Foreign Key
 
 - Uniquely identifies a row/record in another table
+
+- is a key used to link two tables together
+
+- A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.
+
+- The table containing the foreign key is called the child table
+
+- The table containing the candidate key is called the referenced or parent table
+
+- The __FOREIGN KEY__ constraint is used to prevent actions that would destroy links between tables
+
+- The __FOREIGN KEY__ constraint also prevents invalid data from being inserted into the foreign key column, because it has to be one of the values contained in the table it points to.
+
+```sql
+-- example in CREATE TABLE(MySQL)
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int, 
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+-- example in CREATE TABLE(SQL Server/Oracle/MS Access)
+CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+-- naming and defining on multiple columns
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+    REFERENCES Persons(PersonID)
+);
+
+```
+
+```sql
+-- example in ALTER TABLE
+ALTER TABLE Orders 
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+-- naming and defining on multiple columns
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+```
+
+```sql
+-- drop a FOREIGN KEY constraint(MySQL)
+ALTER TABLE Orders DROP FOREIGN KEY FK_PersonOrder;
+
+-- drop a PRIMARY KEY constraint(SQL Server/Oracle/MS Access)
+ALTER TABLE Orders DROP CONSTRAINT FK_PersonOrder;
+```
 
 ### Check
 
