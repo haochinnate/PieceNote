@@ -370,13 +370,193 @@ ALTER TABLE Orders DROP CONSTRAINT FK_PersonOrder;
 
 - Ensures that all values in a column satisfies a specific condition
 
+- Used to limit the value range that can by placed in a column
+
+- If you define a __CHECK__ constraint on a single column it allows only certain values for this column.
+
+- If you define a __CHECK__ constraint on a table it can limit the values in certain columns based on values in other columns in the row.
+
+#### CHECK on CREATE TABLE
+
+```sql
+-- constaint on the "Age" column when the "Persons" table is created
+-- and ensures that the age of a person must be 18, or older
+
+-- MySQL
+CREATE TABLE Persons(
+    ID int NOT NULL, 
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age >= 18)
+);
+
+
+-- SQL Server/Oracle/MS Access
+CREATE TABLE Persons(
+    ID int NOT NULL, 
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age >= 18)
+);
+
+```
+
+```sql
+-- naming of a CHECK constraint, and for defining a CHECK contraint on multiple columns
+
+CREATE TABLE Persons(
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255),
+    CONSTRAINT CHK_Person CHECK (Age>=18 AND City = 'Sandnes')
+);
+
+```
+
+
+#### CHECK on ALTER TABLE
+
+```sql
+-- To create a CHECK contraint on the "Age" column when the table is already created
+
+-- MySQL/SQL Server/Oracle/MS Access
+ALTER TABLE Persons
+ADD CHECK (Age>=18);
+
+-- naming of a CHECK contraint, and defining a CHECK contraint on multiple columns
+ALTER TABLE Persons
+ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
+
+```
+
+#### DROP a CHECK constaint
+
+```sql
+
+-- SQL Server/Oracle/MS Access
+ALTER TABLE Persons
+DROP CONSTRAINT CHK_PersonAge;
+
+-- MySQL
+ALTER TABLE Persons
+DROP CHECK CHK_PErsonAge;
+
+```
+
 ### Default 
 
 - Sets a default value for a column when no value is specified
 
+- The default value will be added to all new records IF no other value is specified
+
+#### DEFAULT on CREATE TABLE
+
+```sql
+-- sets a default value for the "City" column when the "Persons" table is created
+
+CREATE TABLE Persons(
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Sandnes'
+);
+
+-- DEFAULT constraint can also be used to insert system values, by using functions like GETDATE()
+CREATE TABLE Orders(
+    ID int NOT NULL,
+    OrderNumber int NOT NULL,
+    OrderDate date DEFAULT GETDATE()
+);
+
+```
+
+#### DEFAULT on ALTER TABLE
+
+```sql
+-- To create a DEFAULT contraint on the "City" column when the table is already created
+
+-- MySQL
+ALTER TABLE Persons
+ALTER City SET DEFAULT 'Sandnes';
+
+-- SQL Server
+ALTER TABLE Persons
+ADD CONSTRAINT df_City
+DEFAULT 'Sandnes' FOR City;
+
+-- MS Access
+ALTER TABLE Persons
+ALTER COLUMN City SET DEFAULT 'Sandnes';
+
+-- Oracle
+ALTER TABLE Persons
+MODIFY City DEFAULT 'Sandnes';
+
+```
+
+#### DROP a DEFAULT constaint
+
+```sql
+
+-- MySQL
+ALTER TABLE Persons
+ALTER City DROP DEFAULT;
+
+-- SQL Server/Oracle/MS Access
+ALTER TABLE Persons
+ALTER COLUMN City DROP DEFAULT;
+
+```
+
 ### Index
 
+- CREATE INDEX statement is used to create indexes in tables
+
 - Used to create and retrieve data from the database very quickly
+
+```sql
+-- CREATE INDEX syntax 
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+
+-- CREATE UNIQUE INDEX syntax
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+
+```
+
+#### CREATE INDEX example 
+
+```sql
+CREATE INDEX idx_lastname
+ON Persons (LastName);
+
+-- create an index on combination of columns
+CREATE INDEX idx_pname
+ON Persons (LastName, FirstName);
+
+```
+
+#### DROP INDEX statement
+
+```sql
+-- MS Access
+DROP INDEX index_name ON table_name;
+
+-- SQL Server
+DROP INDEX table_name.index_name;
+
+-- DB2/Oracle
+DROP INDEX index_name;
+
+-- MySQL
+ALTER TABLE table_name
+DROP INDEX index_name;
+```
 
 
 ## Not Null
