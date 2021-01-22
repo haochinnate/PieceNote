@@ -5,15 +5,15 @@
 
 - 對 DI 架構的全面概要說明
 
-## Chapter 01
+## [Chapter 01](Ch01.md)
 
 - 探討 DI 架構的目標與好處為何
 
-## Chapter 02
+## [Chapter 02](Ch02.md)
 
 - 提出一個龐大的緊耦合架構程式碼範例
 
-## Chapter 03
+## [Chapter 03](Ch03.md)
 
 - 如何利用 DI 架構來重新實作前一章的範例
 
@@ -23,7 +23,7 @@
 
 - 了解如何實作 DI 架構、以及實作過程中需要當心之處
 
-## Chapter 04
+## [Chapter 04](Ch04.md)
 
 - 對 DI 設計模式的整理
 
