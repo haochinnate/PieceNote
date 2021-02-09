@@ -558,24 +558,73 @@ ALTER TABLE table_name
 DROP INDEX index_name;
 ```
 
-
-## Not Null
-
-## Unique
-
-## Primary Key
-
-## Foreign Key
-
-## Check
-
-## Default 
-
-## Index
-
 ## Auto Increment
 
+- Allows a unique number to be generated automatically when a new record is inserted into a table
+
+- Often this is the primary key field that we would like to be created automatically every time a new record is inserted
+
+```sql
+-- example (MySQL)
+CREATE TABLE Persons (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+);
+
+-- use "AUTO_INCREMENT" key word to perform feature
+```
+
+```sql
+-- let sequence start with another value
+ALTER TABLE Persons AUTO_INCREMENT=100;
+```
+
+```sql
+-- example (SQL Server)
+Personid int IDENTITY(1,1) PRIMARY KEY -- start from 1, increment by 1
+
+-- example (Access)
+Personid AUTOINCREMENT PRIMARY KEY -- AUTOINCREMENT(10, 5)
+
+-- example (Oracle)
+-- create a sequence, and use it by sequence.nextval
+CREATE SEQUENCE seq_person
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1
+CACHE 10;
+
+INSERT INTO Persons (Personid, FirstName, LastName)
+VALUES (seq_person.nextval, 'Lars', 'Monsen')
+```
+
 ## Dates 
+
+### SQL Date Data Types
+
+#### MySQL
+
+- DATE: YYYY-MM-DD
+- DATETIME: YYYY-MM-DD HH:MI:SS
+- TIMESTAMP: YYYY-MM-DD HH:MI:SS
+- YEAR: YYYY or YY
+
+#### SQL Server
+
+- DATE: YYYY-MM-DD
+- DATETIME: YYYY-MM-DD HH:MI:SS
+- SMALLDATETIME: YYYY-MM-DD HH:MI:SS
+- TIMESTAMP: a unique number
+
+### example
+
+```sql
+SELECT * FROM Orders WHERE OrderDate='2008-11-11'
+-- if OrderDate type is DateTime, then result is empty
+```
 
 ## Views
 
