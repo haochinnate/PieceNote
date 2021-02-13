@@ -5,7 +5,7 @@
 
 - 對 DI 架構的全面概要說明
 
-## [Chapter 01](Ch01.md)
+## [Chapter 01: DI的基礎](Ch01.md)
 
 - 探討 DI 架構的目標與好處為何
 
@@ -23,13 +23,21 @@
 
 - 了解如何實作 DI 架構、以及實作過程中需要當心之處
 
-## [Chapter 04](Ch04.md)
+## [Chapter 04: DI設計模式](Ch04.md)
 
 - 對 DI 設計模式的整理
 
-## Chapter 05
+- 這些設計模式共同組成一份DI架構的實作指引
 
-- 對反模式的彙整
+- 建構子注入(constructor injection)和組合根(composition root)是最為重要的概念
+
+## [Chapter 05:DI反模式](Ch05.md)
+
+- 對反模式(anti-patterns)的彙整
+
+- 再引入DI架構的過程中, 常見的錯誤實作
+
+- 服務定位(service locator)是危害最大的
 
 ## Chapter 06
 
