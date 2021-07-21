@@ -1,7 +1,6 @@
-## Project Timeline estimating
+# Project Timeline estimating
 
-- (How Do You Estimate How Long a Project Will Take?
-)[https://www.youtube.com/watch?v=o8ZErvkBeMw]
+- Reference: [How Do You Estimate How Long a Project Will Take?](https://www.youtube.com/watch?v=o8ZErvkBeMw)
 
 - break down the project
 
@@ -32,25 +31,4 @@
 - 下一個 project 就要從中學習, make your time frame larger
 
 - time slack, 40%, 50%
-
-
-### 1. 
-
-
-
-### 2. 
-
-
-
-### 3. 
-
-
-
-### 4. 
-
-
-
-
-### 5. 
-
 
