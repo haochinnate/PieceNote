@@ -1,0 +1,9 @@
+@import './variables';
+@import './header';
+
+.contact {
+    @extend header;
+    background: coral;
+    // background: $primaryBtn;
+    // @include flexCenter(row, blue);
+}
