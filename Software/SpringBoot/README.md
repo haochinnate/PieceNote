@@ -140,3 +140,79 @@ public class StudentConfig {
     }
 }
 ```
+
+## Transient
+
+- 這個 field 不用是 database 中的 column
+
+```java
+@Transient
+private Integer age;
+```
+
+## POST Mapping
+
+```java
+@PostMapping
+public void registrNewStudent(@RequestBody Student student) {
+    studentService.addNewStudent(student);
+}
+```
+
+- 利用 IntelliJ 測試 API, 或可以用 postman
+
+```json
+// POST http://localhost:8080/api/v1/student
+// Content-Type: application/json
+
+{
+  "name": "Bilal",
+  "email": "bilal.ahmed@gmail.com",
+  "dob": "1995-12-17"
+}
+```
+
+## Business logic
+
+- 在 repository 底下新增 function 
+
+```java
+
+// SELECT * FROM student WHERE email = ?
+@Query("SELECT s FROM Student s WHERE s.email = ?1")
+Optional<Student> findStudentByEmail(String email);
+
+```
+
+- 在 service 裡面使用 repository 的 function
+
+```java
+
+    public void addNewStudent(Student student) {
+        Optional<Student> studentOptional = studentRepository
+                .findStudentByEmail(student.getEmail());
+        if (studentOptional.isPresent()) {
+            throw new IllegalStateException("email taken");
+        }
+        
+        studentRepository.save(student);
+    }
+
+```
+
+- 在 application.properties 設定顯示 message
+    - server.error.include-message=always
+
+
+## Deleting
+
+```java
+    public void deleteStudent(Long studentId) {
+        boolean exists = studentRepository.existsById(studentId);
+        if (!exists) {
+            throw new IllegalStateException(
+                    "student with id " + studentId + " does not exists");
+        }
+        studentRepository.deleteById(studentId);
+    }
+```
