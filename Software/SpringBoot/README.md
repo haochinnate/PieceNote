@@ -59,3 +59,84 @@ public StudentController(StudentService studentService) {
 }
 ```
 
+## properties file
+
+- Data Access Layer
+- 設定 application.properties
+- [EDB](https://www.enterprisedb.com/) 安裝 postgresql
+- postgres - mcl
+
+```cmd
+\l 列出 database
+
+CREATE DATABASE student;
+
+\du 列出 role, attibutes
+
+GRANT ALL PRIVILEGES ON DATABASE "student" TO postgres
+
+\c student 連接到 student
+
+\d 查看 relation
+
+SELECT * FROM student;
+```
+
+## JPA
+
+```java
+@Entity
+@Table
+public class Student {
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
+}
+```
+
+- 會有log
+
+```
+Hibernate: create sequence student_sequence start 1 increment 1
+Hibernate: 
+    
+    create table student (
+       id int8 not null,
+        age int4,
+        dob date,
+        email varchar(255),
+        name varchar(255),
+        primary key (id)
+    )
+```
+
+## Data Access Layer
+
+```java
+@Repository
+public interface StudentRepository 
+        extends JpaRepository<Student, Long>{
+}
+```
+
+- 在 Service class 裡面使用 repository class
+
+
+- 建立初始資料
+
+```java
+@Configuration
+public class StudentConfig {
+
+    @Bean
+    CommandLineRunner commandLineRunner(StudentRepository repository) {
+    }
+}
+```
