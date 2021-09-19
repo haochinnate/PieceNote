@@ -206,6 +206,15 @@ Optional<Student> findStudentByEmail(String email);
 
 ## Deleting
 
+
+```java
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(
+            @PathVariable("studentId") Long studentId) {
+        studentService.deleteStudent(studentId);
+    }
+```
+
 ```java
     public void deleteStudent(Long studentId) {
         boolean exists = studentRepository.existsById(studentId);
@@ -216,3 +225,59 @@ Optional<Student> findStudentByEmail(String email);
         studentRepository.deleteById(studentId);
     }
 ```
+
+## Editing
+
+- @Transactional 表示不用實作 jpql query
+- PUT http://localhost:8080/api/v1/student/1?name=Maria
+
+```java
+    @PutMapping(path = "studentId")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email) {
+        studentService.updateStudent(studentId, name, email);
+    }
+```
+
+```java
+    @Transactional
+    public void updateStudent(Long studentId,
+                              String name,
+                              String email) {
+        Student student = studentRepository.findById(studentId)
+                .orElseThrow(() -> new IllegalStateException(
+                        "Student with id " + studentId + " does not exists"));
+
+        if (name != null &&
+                name.length() > 0 &&
+                !Objects.equals(student.getName(), name)) {
+            student.setName(name);
+        }
+
+        if (email != null &&
+                email.length() > 0 &&
+                !Objects.equals(student.getEmail(), email)) {
+            Optional<Student> studentOptional = studentRepository
+                    .findStudentByEmail(email);
+            if (studentOptional.isPresent()) {
+                throw new IllegalStateException("email taken");
+            }
+            student.setEmail(email);
+        }
+    }
+```
+
+## Packaging
+
+- 如果有 target 資料夾的話, 刪掉
+
+- Maven -> Lifecycle -> clean
+- Maven -> Lifecycle -> install
+- 在 target 資料夾中, 會有 *.jar 檔
+- 在 terminal 中執行
+  - cd target 
+  - java -jar xxxx.jar
+  - java -jar xxxx.jar --server.port=8081
+
