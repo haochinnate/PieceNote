@@ -3,6 +3,7 @@ package net.fortune;
 import net.fortune.entities.CarModel;
 import net.fortune.entities.Maker;
 import net.fortune.entities.TrimLevel;
+import net.fortune.services.TrimLevelPropertiesInitializer;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -52,102 +53,141 @@ public class UcarWebProcessor {
         Document specDoc = Jsoup.connect(model.getSpecUrl()).get();
         Document equipDoc = Jsoup.connect(model.getEquipUrl()).get();
 
-        Elements specTable = specDoc.select(_levelTable_ClassName);
-        Elements equipTable = equipDoc.select(_levelTable_ClassName);
+        Element specTable = specDoc.selectFirst(_levelTable_ClassName);
+        Element equipTable = equipDoc.selectFirst(_levelTable_ClassName);
 
         Elements levelsTitles = specTable.select("td.title_block");
         int numberOfLevels = levelsTitles.size() - 1; // -1 for the name column in the table
         for (int i = 0; i < numberOfLevels; i++) {
-            levels.add(new TrimLevel());
+            TrimLevel tmpLevel = new TrimLevel();
+            tmpLevel.setManufacturerId(model.getManufacturerId());
+            tmpLevel.setCarmodelId(model.getName());
+            levels.add(tmpLevel);
+        }
+
+        // get the level name and price
+        Element specHeadRow = specTable.selectFirst("thead").selectFirst("tr");
+        setNameAndPriceOfLevels(levels, specHeadRow);
+
+        Element specTbody = specTable.selectFirst("tbody");
+        Elements specRows = specTbody.select("tr");
+
+        for (int rowIdx = 0; rowIdx < specRows.size(); rowIdx++) {
+
+            Element row = specRows.get(rowIdx);
+            // this row is not item, so skip
+            if (row.selectFirst("td.list") == null) {
+                continue;
+            }
+
+            String itemName = row.selectFirst("td.list").text();
+            System.out.println(itemName);
+
+            Elements cells = row.select("td");
+
+            for (int cellIdx = 1; cellIdx < cells.size(); cellIdx++) {
+                Element cell = cells.get(cellIdx);
+
+                if (cell.className().equals("same")) {
+                    int colSpan = Integer.parseInt(cell.attr("colspan"));
+
+                    String cellText = cell.text();
+                    if(cellText == null || cellText.equals("") || cellText.trim().equals(""))
+                    {
+                        continue;
+                    }
+                    for (int i = 0; i < colSpan; i++) {
+                        TrimLevelPropertiesInitializer.SetTrimLevelPropertyValue(levels.get(i), itemName, cell.text());
+                    }
+                }
+
+                if (cell.className().equals("different")) {
+//                    System.out.println(cell.text());
+                    String cellText = cell.text();
+                    if(cellText == null || cellText.equals("") || cellText.trim().equals(""))
+                    {
+                        continue;
+                    }
+                    TrimLevelPropertiesInitializer.SetTrimLevelPropertyValue(levels.get(cellIdx -1), itemName, cell.text());
+                }
+            }
+
+        }
+
+        // handle Equip table
+        Element equipTbody = equipTable.selectFirst("tbody");
+        Elements equipRows = equipTbody.select("tr");
+        for (int rowIdx = 0; rowIdx < equipRows.size(); rowIdx++) {
+            Element row = equipRows.get(rowIdx);
+
+            // this row is not equip item, so skip
+            if (row.selectFirst("td.list") == null) {
+                continue;
+            }
+
+            String itemName = row.selectFirst("td.list").text();
+            if (!TrimLevelPropertiesInitializer.stringToSetterMapper.containsKey(itemName)) {
+                continue;
+            }
+            System.out.println(itemName);
+
+            Elements cells = row.select("td");
+
+            for (int cellIdx = 1; cellIdx < cells.size(); cellIdx++) {
+                Element cell = cells.get(cellIdx);
+
+                System.out.println(cell.text());
+                String cellText = cell.text();
+//                if(cellText == null || cellText.equals("") || cellText.trim().equals("")) {
+//                    continue;
+//                }
+                String equipStatus = "";
+                Element equipStatusImg = cell.selectFirst("img");
+                if (equipStatusImg == null) {
+                    equipStatus = "Unknown()";
+                }
+                else {
+                    String equipStatusImgSrc = cell.selectFirst("img").attr("src");
+                    if (equipStatusImgSrc.contains("round.png")) {
+                        equipStatus = "S(" + cellText.trim() + ")";
+                    }
+                    else if (equipStatusImgSrc.contains("non.png")) {
+                        equipStatus = "N()";
+                    }
+                    else if (equipStatusImgSrc.contains("selected")) {
+                        equipStatus = "O(" + cellText.trim() + ")";
+                    }
+                }
+
+                TrimLevelPropertiesInitializer.SetTrimLevelPropertyValue(levels.get(cellIdx -1), itemName, equipStatus);
+            }
         }
 
 
-
-
-//        for table_row in spec_table.findAll('tr'):
-//        row_data = []
-//        model_data = []
-//        price_data = []
-//        for idx, column in enumerate(table_row.findAll('td')):
-//                # class="title_block"
-//        if "title_block" in column.attrs['class'] and idx == 0:
-//        row_data.append(column.text)
-//        model_data.append("Model")
-//        price_data.append("Price")
-//        elif "title_block" in column.attrs['class']:
-//        for p in column.findAll('p'):
-//        if 'text_type' in p.attrs['class']:
-//        row_data.append(p.text)
-//        elif 'text_number' in p.attrs['class']:
-//        price = p.find('strong').text
-//        price_data.append(price)
-//                        # print(p.text)
-//        model_data.append(model_name)
-//                        # print(column, flush=True)
-//                    # print(column.text + ',', flush=True)
-//
-//                # class="list" (is spec or equip name)
-//        if "list" in column.attrs['class'] and idx == 0:
-//        row_data.append(column.text)
-//
-//        if "same" in column.attrs['class']:
-//        row_data.extend([column.text] * int(column.attrs['colspan']))
-//
-//        if "different" in column.attrs['class']:
-//        row_data.append(column.text)
-//
-//            # the row had process completed
-//        if len(model_data) != 0:
-//        levels_table.append(model_data)
-//
-//        if len(row_data) != 0:
-//        levels_table.append(row_data)
-//
-//        if len(price_data) != 0:
-//        levels_table.append(price_data)
-//
-//        for table_row in equip_table.findAll('tr'):
-//        row_data = []
-//
-//        if 'class' in table_row.attrs:
-//        if "sameequip" in table_row.attrs['class'] or "differentequip" in table_row.attrs['class']:
-//
-//        for idx, column in enumerate(table_row.findAll('td')):
-//                        # the cell of equip name
-//        if 'class' in column.attrs:
-//        if "list" in column.attrs['class'] and idx == 0:
-//        row_data.append(column.text)
-//                        # the equip cell didn't have any content (blank content)
-//        elif column.find('img'):
-//        img = column.find('img')
-//        if "round.png" in img.attrs['src']:   # "/images/ic_check_round.png"
-//        row_data.append("S" + "(" + img.next.strip() + ")")
-//        elif "non.png" in img.attrs['src']:   # "/images/ic_16_check_non.png"
-//        row_data.append("N")
-//        elif "selected" in img.attrs['src']:
-//        row_data.append("O" + "(" + img.next.strip() + ")")
-//        elif not column.text.strip():
-//        row_data.append("N")
-//        elif column.text.strip():
-//        row_data.append(column.text.strip())
-//
-//        if len(row_data) != 0:
-//        levels_table.append(row_data)
-//
-//        # rotate the table content
-//        levels_table = [list(i) for i in zip(*levels_table)]
-//
-//        # levels_table[0] is equipment/spec name, the value is start from 0
-//        # equipment/spec name set as key in dictionary
-//        levels = []
-//        for level in levels_table[1:]:
-//        trim_level_object = TrimLevel(level[1], '', model_name)
-//        trim_level_object.data = dict(zip(levels_table[0], level))
-//        levels.append(trim_level_object)
-//
-//        # for each level in levels, formatting the value and change the name of equipment/spec
-
-
         return levels;
+    }
+
+    private static void setNameAndPriceOfLevels(List<TrimLevel> levels, Element headerRow) {
+        Elements cells = headerRow.select("td");
+
+        for (int cellIdx = 0; cellIdx < cells.size(); cellIdx++) {
+            Element cell = cells.get(cellIdx);
+//                System.out.println(cell);
+
+            // cellIdx 0 is name of that row
+            if (cell.className().equals("title_block") && cellIdx > 0) {
+//                    System.out.println(cell);
+                Elements ps = cell.select("p");
+                for (Element p : ps) {
+                    if (p.className().equals("text_type")) {
+//                        System.out.println(p.text());
+                        levels.get(cellIdx - 1).setName(p.text());
+                    } else if (p.className().equals("text_number")) {
+//                        System.out.println(p.selectFirst("strong").text());
+                        levels.get(cellIdx - 1).setPrice(p.selectFirst("strong").text());
+                    }
+                }
+            }
+        }
     }
 }

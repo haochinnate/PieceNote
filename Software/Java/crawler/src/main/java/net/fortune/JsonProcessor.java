@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import net.fortune.entities.CarModel;
 import net.fortune.entities.Maker;
+import net.fortune.entities.TrimLevel;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -21,9 +22,7 @@ public class JsonProcessor {
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new FileReader(filePath.toString()));
 
-        List<Maker> makers = gson.fromJson(reader, makersType); // contains the whole reviews list
-
-        return makers;
+        return gson.fromJson(reader, makersType);
     }
 
     public static void serializeToJson(Path filePath, List<CarModel> carModels) throws IOException {
@@ -44,9 +43,19 @@ public class JsonProcessor {
         Gson gson = new Gson();
         JsonReader reader = new JsonReader(new FileReader(filePath.toString()));
 
-        List<CarModel> carModels = gson.fromJson(reader, makersType); // contains the whole reviews list
+        return gson.fromJson(reader, makersType);
+    }
 
-        return carModels;
+    public static void serializeLevelsToJson(Path filePath, List<TrimLevel> levels) throws IOException {
+
+        Gson gson = new GsonBuilder().serializeNulls().setPrettyPrinting().create();
+
+        Type levelsType = new TypeToken<List<TrimLevel>>() {}.getType();
+
+        // Serialization
+        try (Writer writer = new FileWriter(filePath.toString(), StandardCharsets.UTF_8)) {
+            gson.toJson(levels, levelsType, writer);
+        }
     }
 
 }
