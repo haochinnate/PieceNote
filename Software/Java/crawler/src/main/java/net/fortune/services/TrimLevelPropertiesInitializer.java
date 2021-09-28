@@ -12,29 +12,48 @@ interface InitialiseFieldAction {
 
 public class TrimLevelPropertiesInitializer {
 
-//    [-+]?[0-9]*\.?[0-9]*
-    
+    private static int FindFirstInteger(String content) {
+        try {
+            String[] stringParts = content.split(" ");
+            // parse first parts of content as integer
+            return Integer.parseInt(stringParts[0]);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
+    private static double FindFirstDouble(String content) {
+        try {
+            String[] stringParts = content.split(" ");
+            // parse first parts of content as integer
+            return Double.parseDouble(stringParts[0]);
+        } catch (NumberFormatException e) {
+            return 0.0;
+        }
+    }
+
+
     public static Map<String, InitialiseFieldAction> stringToSetterMapper = new HashMap<>() {{
         // BodySpec properties
         put("車身型式", TrimLevel::setBodyStyle);
-//        put("乘客數", (TrimLevel o, String value) -> { o.setSeats(Integer.parseInt(value.substring(0,2).trim()));} );
-//        put("車長", (TrimLevel o, String value) -> { o.setLength(Integer.parseInt(value.trim().substring(0,4)));} );
-//        put("車寬", (TrimLevel o, String value) -> { o.setWidth(Integer.parseInt(value.trim().substring(0,4)));} );
-//        put("車高", (TrimLevel o, String value) -> { o.setHeight(Integer.parseInt(value.trim().substring(0,4)));} );
-//        put("軸距", (TrimLevel o, String value) -> { o.setWheelbase(Integer.parseInt(value.trim().substring(0,4)));} );
-//        put("車重", (TrimLevel o, String value) -> { o.setWeight(Integer.parseInt(value.trim().substring(0,4)));} );
-//        put("行李容積", TrimLevel::setStandardCargoVolume);
+        put("乘客數", (TrimLevel o, String value) -> { o.setSeats(FindFirstInteger(value));} );
+        put("車長", (TrimLevel o, String value) -> { o.setLength(FindFirstInteger(value));} );
+        put("車寬", (TrimLevel o, String value) -> { o.setWidth(FindFirstInteger(value));} );
+        put("車高", (TrimLevel o, String value) -> { o.setHeight(FindFirstInteger(value));} );
+        put("軸距", (TrimLevel o, String value) -> { o.setWheelbase(FindFirstInteger(value));} );
+        put("車重", (TrimLevel o, String value) -> { o.setWeight(FindFirstInteger(value));} );
+        put("行李容積", TrimLevel::setStandardCargoVolume);
         // PowerTrain properties
-//        put("燃料", TrimLevel::setPowerType);
-//        put("變速系統", TrimLevel::setTransmission);
-//        put("傳動方式", TrimLevel::setDriveWheel);
+        put("燃料", TrimLevel::setPowerType);
+        put("變速系統", TrimLevel::setTransmission);
+        put("傳動方式", TrimLevel::setDriveWheel);
         // Engine properties
-//        put("排氣量", (TrimLevel o, String value) -> { o.setEngineDisplacement(Integer.parseInt(value.replace("c.c.", "").trim()));});
-//        put("引擎最大馬力", (TrimLevel o, String value) -> { o.setMaxHorsepower(Double.parseDouble(value.substring(0,4).trim()));} );
-//        put("引擎最大扭力", (TrimLevel o, String value) -> { o.setMaxTorque(Double.parseDouble(value.substring(0,4).trim()));} );
-//        put("市區油耗", (TrimLevel o, String value) -> { o.setCityFuelEfficiency(Double.parseDouble(value.substring(0,4).trim()));} );
-//        put("高速油耗", (TrimLevel o, String value) -> { o.setFreewayFuelEfficiency(Double.parseDouble(value.substring(0,4).trim()));} );
-//        put("平均油耗", (TrimLevel o, String value) -> { o.setAverageFuelEfficiency(Double.parseDouble(value.substring(0,4).trim()));} );
+        put("排氣量", (TrimLevel o, String value) -> { o.setEngineDisplacement(Integer.parseInt(value.replace("c.c.", "").trim()));});
+        put("引擎最大馬力", (TrimLevel o, String value) -> { o.setMaxHorsepower(FindFirstDouble(value));} );
+        put("引擎最大扭力", (TrimLevel o, String value) -> { o.setMaxTorque(FindFirstDouble(value));} );
+        put("市區油耗", (TrimLevel o, String value) -> { o.setCityFuelEfficiency(FindFirstDouble(value));} );
+        put("高速油耗", (TrimLevel o, String value) -> { o.setFreewayFuelEfficiency(FindFirstDouble(value));} );
+        put("平均油耗", (TrimLevel o, String value) -> { o.setAverageFuelEfficiency(FindFirstDouble(value));} );
 
         // Electric Motor properties
 //        private double batteryCapacity;

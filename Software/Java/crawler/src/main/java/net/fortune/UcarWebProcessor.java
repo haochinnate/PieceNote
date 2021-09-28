@@ -81,7 +81,7 @@ public class UcarWebProcessor {
             }
 
             String itemName = row.selectFirst("td.list").text();
-            System.out.println(itemName);
+//            System.out.println(itemName);
 
             Elements cells = row.select("td");
 
@@ -129,14 +129,14 @@ public class UcarWebProcessor {
             if (!TrimLevelPropertiesInitializer.stringToSetterMapper.containsKey(itemName)) {
                 continue;
             }
-            System.out.println(itemName);
+//            System.out.println(itemName);
 
             Elements cells = row.select("td");
 
             for (int cellIdx = 1; cellIdx < cells.size(); cellIdx++) {
                 Element cell = cells.get(cellIdx);
 
-                System.out.println(cell.text());
+//                System.out.println(cell.text());
                 String cellText = cell.text();
 //                if(cellText == null || cellText.equals("") || cellText.trim().equals("")) {
 //                    continue;

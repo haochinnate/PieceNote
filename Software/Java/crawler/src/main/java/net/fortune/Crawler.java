@@ -23,13 +23,20 @@ public class Crawler {
 
         try {
 
+            long startTime = System.nanoTime();
             // makers -> models
-            GetModelsFromMakers(_makersJsonFile, _modelsJsonFile);
+//            GetModelsFromMakers(_makersJsonFile, _modelsJsonFile);
+            long endTime = System.nanoTime();
+
+            System.out.println("Process makers took: " + (endTime - startTime)/1000000 + " milliseconds");
+
+            startTime = System.nanoTime();
 
             // models -> levels
             GetLevelsFromModels(_modelsJsonFile, _levelsJsonFile);
 //            GetLevelsFromModels(_modelsOfNewReleasedJsonFile, _levelsOfNewReleasedJsonFile);
-
+            endTime = System.nanoTime();
+            System.out.println("Process models took: " + (endTime - startTime)/1000000 + " milliseconds");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -42,18 +49,16 @@ public class Crawler {
         List<Maker> makers = JsonProcessor.deserializeFromJson(Paths.get(srcMakersFile));
 
         List<CarModel> allModels = new ArrayList<>();
-//            for (Maker maker : makers) {
-        for (Maker maker : makers.subList(0,1)) {
-
-
+        for (Maker maker : makers) {
+//        for (Maker maker : makers.subList(0,1)) {
             try {
-                System.out.println(new StringBuilder().append("Start process: ").append(maker));
+//                System.out.println(new StringBuilder().append("Start process: ").append(maker));
                 List<CarModel> modelsOfMaker = UcarWebProcessor.getModelsOf(maker);
                 allModels.addAll(modelsOfMaker);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (Exception e) {
-                System.out.println(new StringBuilder().append("  Maker: ").append(maker.getName()).append("failed...").append(e));
+                System.out.println(new StringBuilder().append("  Maker: ").append(maker.getName()).append(" failed...").append(e));
             }
         }
 
@@ -65,16 +70,16 @@ public class Crawler {
             List<CarModel> models = JsonProcessor.deserializeCarModelsFromJson(Paths.get(srcModelsFile));
 
             List<TrimLevel> allLevels = new ArrayList<>();
-//            for (CarModel model : models) {
-            for (CarModel model : models.subList(0,2)) {
+            for (CarModel model : models) {
+//            for (CarModel model : models.subList(0,2)) {
                 try {
-                    System.out.println(new StringBuilder().append("Start process: ").append(model.getManufacturerId()).append("-").append(model));
+//                    System.out.println(new StringBuilder().append("Start process: ").append(model.getManufacturerId()).append("-").append(model));
                     List<TrimLevel> levelsOfModel = UcarWebProcessor.getLevelsOf(model);
                     allLevels.addAll(levelsOfModel);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (Exception e) {
-                    System.out.println(new StringBuilder().append("  Model: ").append(model.getName()).append("failed...").append(e));
+                    System.out.println(new StringBuilder().append("  Model: ").append(model.getName()).append(" failed...").append(e));
                 }
             }
 

@@ -1,0 +1,2 @@
+- for loop 取得 models 約 10000 ms 上下
+- for loop 取得 levels 約 121229 ms 上下
