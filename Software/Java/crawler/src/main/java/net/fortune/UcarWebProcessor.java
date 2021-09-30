@@ -39,7 +39,7 @@ public class UcarWebProcessor {
 
             String modelUrl = title.parent().attr("href");
 
-            CarModel carModel = new CarModel(modelTitle, maker.getName(), _modelUrlPrefix + modelUrl);
+            CarModel carModel = new CarModel(modelTitle, maker.getId(), _modelUrlPrefix + modelUrl);
 
             carModels.add(carModel);
         }
@@ -61,7 +61,7 @@ public class UcarWebProcessor {
         for (int i = 0; i < numberOfLevels; i++) {
             TrimLevel tmpLevel = new TrimLevel();
             tmpLevel.setManufacturerId(model.getManufacturerId());
-            tmpLevel.setCarmodelId(model.getName());
+            tmpLevel.setCarmodelId(model.getId());
             levels.add(tmpLevel);
         }
 

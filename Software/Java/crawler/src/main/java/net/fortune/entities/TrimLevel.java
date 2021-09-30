@@ -10,8 +10,8 @@ public class TrimLevel {
     private String name;
     private String price;
     private boolean isArchived;
-    private String manufacturerId = "";
-    private String carmodelId = "";
+    private int manufacturerId = 0;
+    private int carmodelId = 0;
     // BodySpec properties
     private String bodyStyle = "";
     private int seats;
@@ -103,19 +103,17 @@ public class TrimLevel {
         isArchived = archived;
     }
 
-    public String getManufacturerId() {
-        return manufacturerId;
-    }
+    public int getManufacturerId() { return manufacturerId; }
 
-    public void setManufacturerId(String manufacturerId) {
+    public void setManufacturerId(int manufacturerId) {
         this.manufacturerId = manufacturerId;
     }
 
-    public String getCarmodelId() {
+    public int getCarmodelId() {
         return carmodelId;
     }
 
-    public void setCarmodelId(String carmodelId) {
+    public void setCarmodelId(int carmodelId) {
         this.carmodelId = carmodelId;
     }
 

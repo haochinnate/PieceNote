@@ -7,6 +7,7 @@ public class Maker {
     private String chineseName;
     private String url;
     private String level;
+    private int id;
 
     public String getName() {
         return name;
@@ -40,6 +41,10 @@ public class Maker {
         this.level = level;
     }
 
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
     @Override
     public String toString() {
         return "Maker{" +
@@ -47,6 +52,7 @@ public class Maker {
                 ", chineseName='" + chineseName + '\'' +
                 ", url='" + url + '\'' +
                 ", level='" + level + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

@@ -6,7 +6,7 @@ public class CarModel {
     private String bodyStyle = "";
     private String officialUrl = "";
     private String isArchived = "";
-    private String manufacturerId = "";
+    private int manufacturerId = 0;
     private String alias = "";
     private String releaseDate = "";
     private String yearsInfo = "";
@@ -19,7 +19,7 @@ public class CarModel {
     public CarModel() {
     }
 
-    public CarModel(String name, String manufacturerId, String url) {
+    public CarModel(String name, int manufacturerId, String url) {
         this.name = name;
         this.manufacturerId = manufacturerId;
         this.url = url;
@@ -70,11 +70,11 @@ public class CarModel {
         this.isArchived = isArchived;
     }
 
-    public String getManufacturerId() {
+    public int getManufacturerId() {
         return manufacturerId;
     }
 
-    public void setManufacturerId(String manufacturerId) {
+    public void setManufacturerId(int manufacturerId) {
         this.manufacturerId = manufacturerId;
     }
 
@@ -114,9 +114,7 @@ public class CarModel {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) { this.id = id; }
 
     public String getUrl() {
         return url;
