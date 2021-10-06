@@ -29,11 +29,12 @@ public class Crawler {
         try {
 
             // makers -> models
+//            getModelsFromMakersAsync(_makersJsonFile, _modelsJsonFile);
 //            GetModelsFromMakers(_makersJsonFile, _modelsJsonFile);
-            getModelsFromMakersAsync(_makersJsonFile, _modelsJsonFile);
 
 
             // models -> levels
+            getLevelsFromModelsAsync(_modelsJsonFile, _levelsJsonFile);
 //            GetLevelsFromModels(_modelsJsonFile, _levelsJsonFile);
 //            GetLevelsFromModels(_modelsOfNewReleasedJsonFile, _levelsOfNewReleasedJsonFile);
 
@@ -110,19 +111,6 @@ public class Crawler {
 
         ExecutorService threadPool = Executors.newFixedThreadPool(_threadPoolSize);
 
-//        List<CompletableFuture<List<CarModel>>> completableFutures = makers.subList(0,3).stream().map(maker -> CompletableFuture
-//                .supplyAsync(() -> {
-//                    List<CarModel> modelsOfMaker = new ArrayList<>();
-//                    try {
-//                        System.out.println("current process: " + maker);
-//                        modelsOfMaker = UcarWebProcessor.getModelsOf(maker);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                    return modelsOfMaker;
-//                }, threadPool)
-//        ).collect(Collectors.toList());
-
         List<CompletableFuture<List<CarModel>>> completableFutures = makers.stream().map(maker -> CompletableFuture
                 .supplyAsync(() -> {
                     List<CarModel> modelsOfMaker = new ArrayList<>();
@@ -134,11 +122,7 @@ public class Crawler {
                     }
                     return modelsOfMaker;
                 }, threadPool)
-//                .whenComplete((result, ex) -> {
-//                    allModels.addAll(result);
-//                })
         ).collect(Collectors.toList());
-
 
 
         // Create a combined Future using allOf()
@@ -146,7 +130,6 @@ public class Crawler {
                 completableFutures.toArray(new CompletableFuture[completableFutures.size()])
         );
 
-//        allFutures.complete(true);
         allFutures.get();
 
 
@@ -176,7 +159,60 @@ public class Crawler {
         return;
     }
 
-    private static void getLevelsFromModelsAsync(String srcModelsFile, String destLevelsFile) {
+    private static void getLevelsFromModelsAsync(String srcModelsFile, String destLevelsFile) throws ExecutionException, InterruptedException {
+        long startTime = System.nanoTime();
 
+        try {
+            List<CarModel> models = JsonProcessor.deserializeCarModelsFromJson(Paths.get(srcModelsFile));
+
+            ExecutorService threadPool = Executors.newFixedThreadPool(_threadPoolSize);
+
+            List<CompletableFuture<List<TrimLevel>>> completableFutures = models.stream().map(model -> CompletableFuture
+                    .supplyAsync(() -> {
+                        List<TrimLevel> levelsOfModel = new ArrayList<>();
+                        try {
+//                            System.out.println("current process: " + maker);
+                            levelsOfModel = UcarWebProcessor.getLevelsOf(model);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        return levelsOfModel;
+                    }, threadPool)
+            ).collect(Collectors.toList());
+
+
+            // Create a combined Future using allOf()
+            CompletableFuture<Void> allFutures = CompletableFuture.allOf(
+                    completableFutures.toArray(new CompletableFuture[completableFutures.size()])
+            );
+
+            allFutures.get();
+
+
+            // When all the Futures are completed, call `future.join()` to get their results and collect the results in a list -
+            CompletableFuture<List<List<TrimLevel>>> allPageContentsFuture = allFutures.thenApply(v -> {
+                return completableFutures.stream()
+                        .map(oneFuture -> oneFuture.join())
+                        .collect(Collectors.toList());
+            });
+
+            List<List<TrimLevel>> allLevelsByModel = allPageContentsFuture.get();
+
+            List<TrimLevel> allLevels = allLevelsByModel
+                    .stream()
+                    .flatMap(listContainer -> listContainer.stream())
+                    .collect(Collectors.toList());
+
+            AtomicInteger atomicInteger = new AtomicInteger(0);
+            allLevels.stream().forEach(level -> level.setId(atomicInteger.getAndIncrement()));
+
+            JsonProcessor.serializeLevelsToJson(Paths.get(destLevelsFile), allLevels);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        long endTime = System.nanoTime();
+        System.out.println("Process models took: " + (endTime - startTime)/1000000 + " milliseconds");
     }
 }

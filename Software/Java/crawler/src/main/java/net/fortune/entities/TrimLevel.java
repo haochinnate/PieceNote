@@ -44,7 +44,7 @@ public class TrimLevel {
     private double cityRange;
     private double freewayRange;
     private double combinedRange;
-    private String chargingTime;
+    private String chargingTime = "";
     // Safety properties
     private String antilockBrakingSystem = "";
     private String accelerationStabilityRetainer = "";
