@@ -41,4 +41,9 @@ public class StudentController {
             @RequestParam(required = false) String email) {
         studentService.updateStudent(studentId, name, email);
     }
+
+    @GetMapping("/test")
+    public String helloWorld() {
+        return "Greetings from the Sprint Boot!";
+    }
 }
