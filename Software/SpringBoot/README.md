@@ -2,6 +2,10 @@
 
 - https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.5.4&packaging=jar&jvmVersion=11&groupId=com.qineria&artifactId=Fortune&name=Fortune&description=Demo%20project%20for%20Spring%20Boot&packageName=com.qineria.Fortune&dependencies=lombok,web,data-jpa,postgresql
 
+# Spring Boot Tutorial
+
+- [Youtube 影片](https://www.youtube.com/watch?v=9SGDpanrc8U)
+
 - \src\main\resources\application.properties 用來放 config settings
 
 - 文字修改 package 後, 對 pom.xml 右鍵 -> Maven -> reload project 
@@ -228,7 +232,8 @@ Optional<Student> findStudentByEmail(String email);
 
 ## Editing
 
-- @Transactional 表示不用實作 jpql query
+- @Transactional [介紹](https://www.baeldung.com/transaction-configuration-with-jpa-and-spring)
+  - 影片是說, 表示不用實作 jpql query, 使用 entity 的 setter, getter 來設定值?
 - PUT http://localhost:8080/api/v1/student/1?name=Maria
 
 ```java
@@ -281,3 +286,168 @@ Optional<Student> findStudentByEmail(String email);
   - java -jar xxxx.jar
   - java -jar xxxx.jar --server.port=8081
 
+
+
+# Testing
+
+- [Youtube 影片](https://www.youtube.com/watch?v=Geq60OVyBPg)
+
+- 裡面有包含 AssertJ, hamcrest  junit.jupiter, mockito
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+```
+
+## simple unit test
+
+```java
+@Test
+void itShouldAddTwoNumbers() {
+    // given
+    int numberOne = 20;
+    int numberTwo = 40;
+
+    // when
+    int result = underTest.add(numberOne, numberTwo);
+
+    // then
+    int expected = 60;
+    assertThat(result).isEqualTo(expected);
+}
+```
+
+## Test repository
+
+```java
+ @Autowired
+private StudentRepository underTest;
+
+// 在 test method 中使用 underTest
+```
+
+## H2 Database
+
+- [官網](https://www.h2database.com/html/main.html)
+
+```xml
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>test</scope>
+</dependency>
+```
+
+- 在 application.properties 中做設定
+
+```properties
+spring.datasource.url=jdbc:h2://mem:db;DB_CLOSE_DELAY=-1
+spring.datasource.username=sa
+spring.datasource.password=sa
+spring.datasource.driver-class-name=org.h2.Driver
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+```
+
+- 在 StudentRepositoryTest 中使用, 增加 DataJpaTest
+
+```java
+@DataJpaTest
+class StudentRepositoryTest {
+
+}
+```
+
+## Mockito
+
+- StudentServiceTest.java
+
+- 設定
+
+```java
+
+@Mock
+private StudentRepository studentRepository;
+private AutoCloseable autoCloseable;
+private StudentService underTest;
+
+@BeforeEach
+void setUp() {
+    autoCloseable = MockitoAnnotations.openMocks(this);
+    underTest = new StudentService(studentRepository);
+}
+
+@AfterEach
+void tearDown() throws Exception {
+    autoCloseable.close();
+}
+```
+
+```java
+@Test
+void canGetAllStudents() {
+    // when
+    underTest.getStudents();
+    // then
+    // 預期有哪個 interaction, mock 有invoked findAll
+    // StudentRepository 本身已經測試好了 
+    verify(studentRepository).findAll();
+}
+```
+
+- 如果不用 AutoCloseable, 可加 ExtendWith annotation
+
+```java
+@ExtendWith(MockitoExtension.class)
+class StudentServiceTest {
+
+}
+```
+
+## Argument Captor
+
+```java
+// 檢驗 studentRepository 有沒有呼叫 save, 並用 capture 抓取傳入 save 的參數
+// 傳入 studentRepository.save 的參數, 跟傳入 service.addNewStudent 的參數一樣
+
+// then
+ArgumentCaptor<Student> studentArgumentCaptor =
+        ArgumentCaptor.forClass(Student.class);
+verify(studentRepository).save(studentArgumentCaptor.capture());
+
+Student capturedStudent = studentArgumentCaptor.getValue();
+assertThat(capturedStudent).isEqualTo(student);
+```
+
+## assert throw exception
+
+```java
+
+// 強迫設定回傳 造成 exception
+given(studentRepository.findStudentByEmail(student.getEmail()))
+    .willReturn(Optional.of(student));
+// 其實不一定要用 email 可以是任何 string, 因為已經固定回傳值
+given(studentRepository.findStudentByEmail(anyString()))
+    .willReturn(Optional.of(student));
+
+
+// when
+assertThatThrownBy(() -> underTest.addNewStudent(student))
+    .isInstanceOf(IllegalStateException.class)
+    .hasMessageContaining("email taken");
+
+// 並確認 save function 沒有被呼叫
+verify(studentRepository, never()).save(any());
+
+```
+
+## Integration Testing Overview
+
+```java
+
+
+
+```
