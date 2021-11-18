@@ -9,6 +9,9 @@
 6. [簡報訣竅](https://drive.google.com/open?id=1Uk7s-lyklEB-g7CHwBPYLXRIk1PyNNxR7QC3DGnweBg)
 7. [完整筆記](https://drive.google.com/open?id=18YKttajAuXKAo0X-gP3l50XAhhAjz_khyc0wr2-anSQ)
 
-## 引爆需求
 
-* [投影片](https://drive.google.com/open?id=1C0QsClBN0KsH9eE6IN4bxQ7KROLwT9-COmYIEpGPM2I)
+## 書籍
+
+- 思維誤判 [連結](https://www.books.com.tw/products/0010904781?sloc=main) [筆記](TheInsideGame\README.md)
+- 引爆需求 [投影片](https://drive.google.com/open?id=1C0QsClBN0KsH9eE6IN4bxQ7KROLwT9-COmYIEpGPM2I)
+
