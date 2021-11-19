@@ -13,40 +13,9 @@
 
 # Section 3: Creating Databases and Tables
 
-```sh
-# 進入 mysql
-mysql-ctl cli
+- [連結](Section3.md)
+- 建立/刪除 database/table
 
-# 離開
-\q
-```
+# Section 4: 
 
-## 建立資料庫
-
-```sql
--- 列出MySQL中存在的 database
-show databases;
-
--- 建立 database
-CREATE DATABASE <name>;
-CREATE DATABASE soap_store;
-```
-
-## 刪除資料庫
-
-```sql
--- 刪除 database
-DROP DATABASE <name>;
-DROP DATABASE hello_world_db;
-```
-
-## Use database
-
-```sql
-USE <database name>;
-USE dog_walking_app;
-
--- 得知目前使用的 database
-SELECT database();
--- 如果DROP database 再執行, 則使用中的 database 會是NULL
-```
+- [連結](Section4.md)
