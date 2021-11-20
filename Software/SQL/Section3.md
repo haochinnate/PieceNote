@@ -59,7 +59,7 @@ CREATE TABLE tablename(
 
 CREATE DATABASE cat_app;
 USE cat_app;
- SELECT database();
+SELECT database();
 
 CREATE TABLE cats(
     name VARCHAR(100),
