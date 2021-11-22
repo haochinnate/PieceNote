@@ -49,6 +49,20 @@ INSERT INTO table_name(column_name) VALUES (data);
 INSERT INTO cats(name, age) VALUES ('Jetson', 7);
 ```
 
+### READ
+
+```sql
+
+SELECT name FROM cats;
+SELECT name, age FROM cats;
+
+SELECT * FROM cats WHERE age=4;
+SELECT * FROM cats WHERE name='Egg';
+
+SELECT cat_id As id, name FROM cats;
+SELECT name AS 'cat name', breed AS 'kitty breed' FROM cats;
+```
+
 ### 其他
 
 ```sql
