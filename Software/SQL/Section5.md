@@ -49,6 +49,22 @@ SELECT name AS 'cat name', breed AS 'kitty breed' FROM cats;
 ## Update
 
 ```sql
+UPDATE cats SET breed='Shorthair' WHERE breed='Tabby';
+UPDATE cats SET age=14 WHERE name='Misty';
 
+UPDATE cats SET name='Jack' WHERE name='Jackson';
+UPDATE cats SET breed='British Shorthair' WHERE name='Ringo';
+UPDATE cats SET age=12 WHERE breed='Maine Coon';
 ```
 
+## DELETE
+
+```sql
+
+DELETE FROM cats WHERE name='Egg'; 
+DELETE FROM cats; -- all delete
+DELETE FROM cats WHERE age=14;
+SELECT * FROM cats WHERE cat_id=age;
+DELETE FROM cats WHERE cat_id=age;
+DELETE FROM cats;
+```

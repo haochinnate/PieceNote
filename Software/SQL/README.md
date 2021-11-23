@@ -24,4 +24,8 @@
 # Section 5: CRUD commands
 
 - [連結](Section5.md)
-- 
+
+# Section 6: CRUD Challenge Section
+
+- [連結](Section6.md)
+

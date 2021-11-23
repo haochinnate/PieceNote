@@ -63,6 +63,19 @@ SELECT cat_id As id, name FROM cats;
 SELECT name AS 'cat name', breed AS 'kitty breed' FROM cats;
 ```
 
+### Update
+
+```sql
+UPDATE cats SET breed='Shorthair' WHERE breed='Tabby';
+UPDATE cats SET age=14 WHERE name='Misty';
+```
+
+### Delete
+
+```sql
+DELETE FROM cats WHERE name='Egg'; 
+```
+
 ### 其他
 
 ```sql
