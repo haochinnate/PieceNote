@@ -3,9 +3,14 @@
 
 ```sql
 CREATE DATABASE <name>;
-DROP DATABASE <name>;
+
+show databases;
+
 USE <database name>;
+
 SELECT database();
+
+DROP DATABASE <name>;
 ```
 
 ### CREATE TABLE

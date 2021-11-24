@@ -29,3 +29,7 @@
 
 - [連結](Section6.md)
 
+# Section 7: The World Of String Functions
+
+- [連結](Section7.md)
+
