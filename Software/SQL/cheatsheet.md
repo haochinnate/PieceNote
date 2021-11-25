@@ -1,4 +1,8 @@
 
+### Links
+
+- [Formatter](https://www.dpriver.com/pp/sqlformat.htm)
+
 ### CREATE DATABASE
 
 ```sql
@@ -79,6 +83,27 @@ UPDATE cats SET age=14 WHERE name='Misty';
 
 ```sql
 DELETE FROM cats WHERE name='Egg'; 
+```
+
+### String Functions
+
+```sql
+SELECT 
+  CONCAT(author_fname, ' ', author_lname) AS Author
+FROM books;
+
+SELECT SUBSTRING(title, 1, 10) AS 'short title' from books;
+
+SELECT REPLACE(title, 'e', '3') FROM books;
+
+SELECT REVERSE('Hello World');
+
+SELECT CHAR_LENGTH('Hello World');
+SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length' FROM books;
+
+SELECT UPPER('Hello Wrold');
+SELECT LOWER('Hello Wrold');
+
 ```
 
 ### 其他
