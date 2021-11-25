@@ -33,3 +33,6 @@
 
 - [連結](Section7.md)
 
+# Section 8: Refining Our Selections
+
+- [連結](Section8.md)
