@@ -1,38 +1,19 @@
 
-# Section 2: Getting Started
+# Udemy course: MySQL bootcamp
 
-- SQL is the language we use to "talk" to our databases
+- [course link](https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/)
 
-## goormIDE
+- Section 2: Getting Started
+  - SQL is the language we use to "talk" to our databases
+  - goormIDE
+    - 原本用 cloud9, 現在改用[goormIDE](https://ide.goorm.io/)
+    - [Goorm MySQL Cheat Sheet](https://gist.github.com/nax3t/767e06f6af0bafc70b4c4cba0c8d38e7)
+    - [建立步驟](https://gist.github.com/nax3t/2773378c4d1bada8d66d12f4d5210248)
 
-- 原本用 cloud9, 現在改用[goormIDE](https://ide.goorm.io/)
-
-- [Goorm MySQL Cheat Sheet](https://gist.github.com/nax3t/767e06f6af0bafc70b4c4cba0c8d38e7)
-
-- [建立步驟](https://gist.github.com/nax3t/2773378c4d1bada8d66d12f4d5210248)
-
-# Section 3: Creating Databases and Tables
-
-- [連結](Section3.md)
-- 建立/刪除 database/table
-
-# Section 4: Inserting data 
-
-- [連結](Section4.md)
-- 新增資料 & 條件
-
-# Section 5: CRUD commands
-
-- [連結](Section5.md)
-
-# Section 6: CRUD Challenge Section
-
-- [連結](Section6.md)
-
-# Section 7: The World Of String Functions
-
-- [連結](Section7.md)
-
-# Section 8: Refining Our Selections
-
-- [連結](Section8.md)
+- [Section 3: Creating Databases and Tables](udemy_mysql_bootcamp\Section3.md)
+- [Section 4: Inserting data](udemy_mysql_bootcamp\Section4.md)
+- [Section 5: CRUD commands](udemy_mysql_bootcamp\Section5.md)
+- [Section 6: CRUD Challenge Section](udemy_mysql_bootcamp\Section6.md)
+- [Section 7: The World Of String Functions](udemy_mysql_bootcamp\Section7.md)
+- [Section 8: Refining Our Selections](udemy_mysql_bootcamp\Section8.md)
+- [Section 9: The Magic of Aggregate Functions](udemy_mysql_bootcamp\Section9.md)
