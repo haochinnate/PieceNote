@@ -12,6 +12,6 @@
 
 ## 書籍
 
-- 思維誤判 [連結](https://www.books.com.tw/products/0010904781?sloc=main) [筆記](TheInsideGame\README.md)
+- 思維誤判 [連結](https://www.books.com.tw/products/0010904781?sloc=main) [筆記](TheInsideGame/README.md)
 - 引爆需求 [投影片](https://drive.google.com/open?id=1C0QsClBN0KsH9eE6IN4bxQ7KROLwT9-COmYIEpGPM2I)
 
