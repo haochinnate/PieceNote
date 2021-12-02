@@ -99,4 +99,84 @@ SELECT DATE_FORMAT(birthdt, '%m/%d/%Y at %h:%i') FROM people;
 
 ```
 
+## Date math
+
+```sql
+-- DATEDIFF(...)
+SELECT name, birthdate, DATEDIFF(NOW(), birthdate) FROM people;
+
+-- DATE_ADD(...)
+-- add one month
+SELECT birthdt, DATE_ADD(birthdt, INTERVAL 1 MONTH) FROM people;
+
+SELECT birthdt, DATE_ADD(birthdt, INTERVAL 10 SECOND) FROM people;
+
+-- use +, -
+SELECT birthdt, birthdt + INTERVAL 15 MONTH + INTERVAL 10 HOUR FROM people;
+
+```
+
+## TIMESTAMPS
+
+```sql
+
+CREATE TABLE comments(
+    content VARCHAR(100),
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO comments (content) VALUES('some comment');
+
+SELECT * FROM comments ORDER BY created_at DESC;
+
+-- 在 update 時更新 changed_at
+-- CURRENT_TIMESTAMP 也可以用 NOW() 取代
+CREATE TABLE comments2(
+    content VARCHAR(100),
+    changed_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+);
+
+UPDATE comments2 SET content='new comment' 
+WHERE content='some comment';
+
+```
+
+
+## Exercises
+
+```sql
+
+-- CHAR: for 100% has fixed length
+
+-- DECIMAL have to set digit numbers
+CREATE TABLE inventory(
+    item_name VARCHAR(100),
+    price DECIMAL(8,2), 
+    quantity int
+);
+
+
+SELECT CURTIME();
+SELECT CURDATE();
+-- print out the current day of week
+SELECT DAYOFWEEK(NOW());
+SELECT DATE_FORMAT(NOW(), '%w');
+
+SELECT DAYNAME(NOW());
+SELECT DATE_FORMAT(NOW(), '%W');
+
+-- print out the current day and time using format 'mm/dd/yyyy'
+SELECT DATE_FORMAT(NOW(), '%m/%d/%Y');
+
+
+-- print out the current day and time of format:
+SELECT DATE_FORMAT(NOW(), '%M %D at %h:%i');
+
+-- create a tweet table
+CREATE TABLE inventory(
+    item_name VARCHAR(140),
+    username VARCHAR(20),
+    created_at TIMESTAMP DEFAULT NOW()
+);
+```
 

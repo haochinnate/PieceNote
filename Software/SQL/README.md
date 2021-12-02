@@ -18,3 +18,4 @@
 - [Section 8: Refining Our Selections](udemy_mysql_bootcamp/Section8.md)
 - [Section 9: The Magic of Aggregate Functions](udemy_mysql_bootcamp/Section9.md)
 - [Section 10: Revisiting Data Types](udemy_mysql_bootcamp/Section10.md)
+- [Section 11: The Power of Logical Operators](udemy_mysql_bootcamp/Section11.md)
