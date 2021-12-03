@@ -19,3 +19,5 @@
 - [Section 9: The Magic of Aggregate Functions](udemy_mysql_bootcamp/Section9.md)
 - [Section 10: Revisiting Data Types](udemy_mysql_bootcamp/Section10.md)
 - [Section 11: The Power of Logical Operators](udemy_mysql_bootcamp/Section11.md)
+- [Section 12: One To Many](udemy_mysql_bootcamp/Section12.md)
+- [Section 13: Many To Many](udemy_mysql_bootcamp/Section13.md)
