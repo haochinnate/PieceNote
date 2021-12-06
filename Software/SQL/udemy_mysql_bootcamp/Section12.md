@@ -214,7 +214,7 @@ LEFT JOIN papers
 GROUP BY students.id
 ORDER BY average DESC;
 
--- WHE AS 'average' didn't ORDER as expected?
+-- WHY AS 'average' didn't ORDER as expected?
 -- BUT AS average can sort successfullt?
 ```
 
