@@ -21,3 +21,4 @@
 - [Section 11: The Power of Logical Operators](udemy_mysql_bootcamp/Section11.md)
 - [Section 12: One To Many](udemy_mysql_bootcamp/Section12.md)
 - [Section 13: Many To Many](udemy_mysql_bootcamp/Section13.md)
+- [Section 14: Instagram Database Clone](udemy_mysql_bootcamp/Section14.md)
