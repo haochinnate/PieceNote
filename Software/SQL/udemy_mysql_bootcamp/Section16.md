@@ -100,9 +100,57 @@ CREATE TABLE users(
 );
 
 DESC users;
+
+INSERT INTO users(email) VALUES
+('Katie34@yahoo.com'), ('Tunde@gmail.com');
 ```
 
 
 ```js
+var q = 'SELECT * FROM users';
+connection.query(q, function (error, results, fields) {
+    if (error) throw error;
+    console.log(results);
+    console.log(results[1].email);
+});
+
+// query total number of users
+var q = 'SELECT COUNT(*) AS total FROM users';
+console.log(results[0].total);
+
+```
+
+## Inserting data using node
+
+```js
+// take 1
+var q = 'INSERT INTO users (email) VALUES ("someemail@gmail.com")';
+connection.query(q, function (error, results, fields) {
+    if (error) throw error;
+    console.log(results);    
+});
+
+// take 2
+var person = { email: 'Jenny467@gmail.com' };
+connection.query('INSERT INTO users SET ?', person, function(error, result) {
+    if (error) throw error;
+    console.log(result); 
+});
+
+// take 3, dynamically
+var person = { 
+    email: faker.internet.email(), 
+    created_at: faker.date.past() 
+};
+connection.query('INSERT INTO users SET ?', person, function(error, result) {
+    if (error) throw error;
+    console.log(result); 
+});
+
+// mysql package 會自己轉 faker.date 的格式
+
+```
+
+```sql
 
 ```
