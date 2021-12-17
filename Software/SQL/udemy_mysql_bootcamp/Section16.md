@@ -149,8 +149,84 @@ connection.query('INSERT INTO users SET ?', person, function(error, result) {
 
 // mysql package 會自己轉 faker.date 的格式
 
+
+// take 4, insert 500 users
+var data = [];
+for(int i = 0; i < 500; i++) {
+    data.push([
+        faker.internet.email(),
+        faker.date.past()
+    ]);
+}
+
+console.log(data);
+
+var q = 'INSERT INTO users (email, created_at) VALUES ?'
+connection.query(q, [data], function(err, result) {
+    if (err) throw err;
+    console.log(result); 
+});
+
 ```
 
+## Exercises
+
 ```sql
+-- 1. find the earliest date a user joined
+SELECT DATE_FORMAT(created_at, '%M %D %Y') AS earliest_date 
+FROM users 
+ORDER BY created_at
+LIMIT 1;
+
+-- course answer
+SELECT DATE_FORMAT(MIN(created_at), '%M %D %Y') AS earliest_date 
+FROM users; 
+
+-- 2. Find email of the first user
+SELECT email, created_at 
+FROM users   
+ORDER BY created_at  
+LIMIT 1;
+
+-- course answer
+SELECT * 
+FROM users
+WHERE created_at = (SELECT MIN(created_at) FROM users);
+
+ -- 3. users according to the month they joined
+SELECT 
+    DATE_FORMAT(created_at, '%M') AS month,
+    COUNT(*) AS count
+FROM users
+GROUP BY month
+ORDER BY count DESC;
+
+-- course answer
+SELECT 
+    MONTHNAME(created_at) AS month,
+    COUNT(*) AS count
+FROM users
+GROUP BY month
+ORDER BY count DESC;
+
+
+-- 4. count numbers of users with Yahoo emails
+SELECT COUNT(*) AS 'yahoo_users'
+FROM users
+WHERE email LIKE '%@yahoo.com';
+
+-- 5. calculate total number of users for each email host
+-- gmail, yahoo, hotmail, other
+SELECT 
+    CASE 
+        WHEN email LIKE '%@gmail.com' THEN 'gmail'
+        WHEN email LIKE '%@yahoo.com' THEN 'yahoo'
+        WHEN email LIKE '%@hotmail.com' THEN 'hotmail'
+        ELSE 'other'
+    END AS provider,
+    COUNT(*) AS total_users
+FROM users
+GROUP BY provider
+ORDER BY total_users DESC;
 
 ```
