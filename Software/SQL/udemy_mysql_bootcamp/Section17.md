@@ -61,3 +61,52 @@ app.listen(3000, function() {
 cd JoinUs
 node app.js
 ```
+
+## Connecting Express and MySQL
+
+```js
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'join_us'
+});
+
+app.get("/", function(req, res) {	
+	var q = "SELECT COUNT(*) AS count FROM users";
+    connection.query(q, function(err, results){
+        if(err) throw err;
+        var count = results[0].count; 
+        // res.render("home", {count: count});
+        res.send("total user: " + count);
+    });
+});
+```
+
+
+## Adding EJS template
+
+- 安裝
+
+```sj
+npm install --save ejs
+```
+
+- 使用
+
+```js
+app.set("view engine", "ejs");
+
+// 從 views 資料夾去找 home.ejs
+res.render('home')
+
+res.render("home", {count: count});
+```
+
+```ejs
+<!-- <% = count %> -->
+
+<p class="lead">Enter your email to join <strong><%= count %></strong> others on our waitlist. We are 100% not a cult. </p>
+```
+
