@@ -110,3 +110,31 @@ res.render("home", {count: count});
 <p class="lead">Enter your email to join <strong><%= count %></strong> others on our waitlist. We are 100% not a cult. </p>
 ```
 
+## Form
+
+```js
+app.post("/register", function(req, res){
+    var person = {
+        email: req.body.email
+    };
+    connection.query('INSERT INTO users SET ?', person, function(err, result) {
+        // if (err) throw err;
+        console.log(err);
+        console.log(result);
+        res.redirect("/");
+    });
+});
+```
+
+### bodyparser
+  
+```sh
+npm install --save body-parser
+```
+
+```js
+var bodyParser  = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
+// req.body.email
+```
+
