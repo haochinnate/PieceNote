@@ -25,3 +25,4 @@
 - [Section 15: Working With Lots Of Instagram Data](udemy_mysql_bootcamp/Section15.md)
 - [Section 16: Introducing Node](udemy_mysql_bootcamp/Section16.md)
 - [Section 17: Building Our Web App](udemy_mysql_bootcamp/Section17.md)
+- [Section 18: Databases Trigger](udemy_mysql_bootcamp/Section18.md)

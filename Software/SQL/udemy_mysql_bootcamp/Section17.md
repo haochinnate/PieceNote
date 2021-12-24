@@ -138,3 +138,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // req.body.email
 ```
 
+## Link to CSS
+
+```js
+app.use(express.static(__dirname + "/public"));
+```
