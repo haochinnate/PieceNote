@@ -16,11 +16,16 @@
 
 ```sql
 -- syntax
+DELIMITER $$
+
 CREATE TRIGGER trigger_name
     trigger_time trigger_event ON table_name FOR EACH ROW
     BEGIN
     -- ...
     END;
+$$
+DELIMITER ;
+
 
 -- example 1, a simple validation
 DELIMITER $$
@@ -99,4 +104,45 @@ DELIMITER ;
 INSERT INTO follows(follower_id, followee_id) VALUES(88,88);
 -- ERROR 1644 (45000): You cannot follow yourself
 
+```
+
+## Example 3: Logger Trigger
+
+- OLD
+
+```sql
+DELIMITER $$
+
+CREATE TRIGGER capture_unfollow
+    AFTER DELETE ON follows FOR EACH ROW
+    BEGIN
+        -- INSERT INTO unfollows(follower_id, followee_id)
+        -- VALUES(OLD.follower_id, OLD.followee_id)
+        
+        INSERT INTO unfollows
+        SET follower_id = OLD.follower_id,
+            followee_id = OLD.followee_id;
+    END;
+$$
+DELIMITER ;
+```
+
+```sql
+SELECT * FROM unfollows;
+
+SELECT * FROM follows LIMIT 5;
+
+DELETE FROM follows WHERE follower_id = 2 AND followee_id = 1;
+```
+
+## Managing Triggers
+
+```sql
+-- Listing triggers
+SHOW TRIGGERS;
+
+-- Removing triggers
+DROP TRIGGER prevent_self_follows;
+
+-- warning: triggers can make debugging hard!!
 ```
