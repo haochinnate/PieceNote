@@ -1,0 +1,32 @@
+{
+  "streams": [
+    {
+      "title": "My Stream",
+      "description": "just test",
+      "id": 1
+    },
+    {
+      "title": "Yuniki  Stream",
+      "description": "hahaha",
+      "id": 2
+    },
+    {
+      "title": "Qin stream patch",
+      "description": "new stream LOL really?",
+      "userId": "103004914447672664965",
+      "id": 3
+    },
+    {
+      "title": "programmatic naviagation",
+      "description": "hihi",
+      "userId": "103004914447672664965",
+      "id": 4
+    },
+    {
+      "title": "after refactor hih",
+      "description": "really done? qqq",
+      "userId": "103004914447672664965",
+      "id": 5
+    }
+  ]
+}
