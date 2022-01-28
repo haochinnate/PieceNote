@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 public class Crawler {
 
-    static String _makersJsonFile = "D:\\CodingWorkspace\\Github\\YamanoProject\\crawler\\automobile\\data\\UcarManufacturers.json";
+    static String _makersJsonFile = "D:\\CodingWorkspace\\Github\\PieceNote\\Software\\Java\\AllMakers.json";
     static String _modelsJsonFile = "D:\\CodingWorkspace\\Github\\PieceNote\\Software\\Java\\AllModels.json";
     static String _levelsJsonFile = "D:\\CodingWorkspace\\Github\\PieceNote\\Software\\Java\\AllLevels.json";
     static String _modelsOfNewReleasedJsonFile = "D:\\CodingWorkspace\\Github\\PieceNote\\Software\\Java\\NewReleaseModels.json";
