@@ -1,5 +1,8 @@
 package net.fortune.entities;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class CarModel {
 
     private String name = "";
@@ -36,6 +39,22 @@ public class CarModel {
                 ", specUrl='" + specUrl + '\'' +
                 ", equipUrl='" + equipUrl + '\'' +
                 '}';
+    }
+
+    public void printSqlInsertStatement() {
+        try {
+            FileWriter myWriter = new FileWriter("D:\\\\carmodels_seed.sql", true);
+            String insertStatement = String.format("insert into carmodels(Id, Name, IsArchived, YearsInfo, CarMakerId, ReleaseDate) "
+                    + "values (%d, \"%s\", b\'0\', \"2022年式\", %d, \"2022-01-01\");%s", id, name, manufacturerId, System.lineSeparator());
+//            System.out.println(insertStatement);
+
+            myWriter.write(insertStatement);
+            myWriter.close();
+//            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 
     public String getName() {

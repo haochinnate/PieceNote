@@ -147,8 +147,13 @@ public class Crawler {
                 .flatMap(listContainer -> listContainer.stream())
                 .collect(Collectors.toList());
 
-        AtomicInteger atomicInteger = new AtomicInteger(0);
-        allModels.stream().forEach(model -> model.setId(atomicInteger.getAndIncrement()));
+        AtomicInteger atomicInteger = new AtomicInteger(1);
+//        allModels.stream().forEach(model -> model.setId(atomicInteger.getAndIncrement()));
+        allModels.stream().forEach(
+                model -> {
+                    model.setId(atomicInteger.getAndIncrement());
+                    model.printSqlInsertStatement();
+                });
 
         // to json file
         JsonProcessor.serializeToJson(Paths.get(destModelsFile), allModels);
@@ -203,8 +208,12 @@ public class Crawler {
                     .flatMap(listContainer -> listContainer.stream())
                     .collect(Collectors.toList());
 
-            AtomicInteger atomicInteger = new AtomicInteger(0);
-            allLevels.stream().forEach(level -> level.setId(atomicInteger.getAndIncrement()));
+            AtomicInteger atomicInteger = new AtomicInteger(1);
+            allLevels.stream().forEach(
+                    level -> {
+                        level.setId(atomicInteger.getAndIncrement());
+                        level.printSqlInsertStatement();
+                    });
 
             JsonProcessor.serializeLevelsToJson(Paths.get(destLevelsFile), allLevels);
 

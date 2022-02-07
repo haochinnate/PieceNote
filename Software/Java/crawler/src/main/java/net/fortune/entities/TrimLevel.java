@@ -1,5 +1,8 @@
 package net.fortune.entities;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class TrimLevel {
 
     public TrimLevel() {
@@ -70,6 +73,111 @@ public class TrimLevel {
     private String ncapDescription = "";
     private String surroundViewCamera = "";
     private String rearViewCamera = "";
+
+    public void printSqlInsertStatement() {
+        try {
+            String insertTrimLevelStatement = getInsertTrimLevelStatement();
+            String insertBodySpecStatement = getInsertBodySpecStatement();
+            String insertElectricMotorSpecStatement = getInsertElectricMotorSpecStatement();
+            String insertEngineSpecStatement = getInsertEngineSpecStatement();
+            String insertPowerTrainStatement = getInsertPowerTrainStatement();
+            String insertSafetyEquipmentStatement = getInsertSafetyEquipmentStatement();
+            String insertCarModelBodyStyleStatement = getInsertCarModelBodyStyleStatement();
+
+            FileWriter myWriter = new FileWriter("D:\\\\cartrimlevels_seed.sql", true);
+            myWriter.write(insertTrimLevelStatement + System.lineSeparator());
+            myWriter.write(insertBodySpecStatement + System.lineSeparator());
+            myWriter.write(insertElectricMotorSpecStatement + System.lineSeparator());
+            myWriter.write(insertEngineSpecStatement + System.lineSeparator());
+            myWriter.write(insertPowerTrainStatement + System.lineSeparator());
+            myWriter.write(insertSafetyEquipmentStatement + System.lineSeparator());
+            myWriter.write(insertCarModelBodyStyleStatement + System.lineSeparator());
+            myWriter.write(System.lineSeparator());
+            myWriter.close();
+//            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    private String getInsertCarModelBodyStyleStatement() {
+        String insertStatement = String.format("insert into carmodelbodystyles(CarModelId, BodyStyleId) " +
+                "values (%d, BBODYSTYLE %s);", carmodelId, bodyStyle);
+
+        return insertStatement;
+    }
+
+    private String getInsertSafetyEquipmentStatement() {
+        String insertStatement = String.format("insert into safetyequipment(Id, CarTrimLevelId, AntilockBrakingSystem, " +
+                        "AccelerationStabilityRetainer, ElectronicBrakeforceDistribution, BrakeAssistSystem, ElectronicStabilityProgram, " +
+                        "CruiseControl, AdaptiveCruiseControl, ForwardCollisionWarning, AutomaticEmergencyBraking, LaneDepartureWarning, " +
+                        "LaneDepartureRevise, LaneKeepingAssistance, RearCrossTrafficWarning, BlindSpotWarning, " +
+                        "ReverseAutomaticEmergencyBraking, HillStartAssis, HillDescentControl, AirBagNumbers, Isofix, " +
+                        "ActiveParkingAssistance, IihsDescription, NcapDescription, SurroundViewCamera, RearViewCamera) " +
+                        "values (%d, %d, \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", LLANE \"%s\", " +
+                        "  \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", AAIR \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");",
+                id, id, antilockBrakingSystem, accelerationStabilityRetainer, electronicBrakeforceDistribution, brakeAssistSystem,
+                electronicStabilityProgram, cruiseControl, adaptiveCruiseControl, forwardCollisionWarning, automaticEmergencyBraking, laneDepartureWarning,
+                laneDepartureRevise, laneKeepingAssistance, rearCrossTrafficWarning, blindSpotWarning, reverseAutomaticEmergencyBraking,
+                hillStartAssis, hillDescentControl, airBagNumbers, isofix, activeParkingAssistance, iihsDescription, ncapDescription,
+                surroundViewCamera, rearViewCamera);
+
+        return insertStatement;
+    }
+
+    private String getInsertPowerTrainStatement() {
+        String insertStatement = String.format("insert into powertrains(Id, CarTrimLevelId, PowerTypeId, Transmission, Drivewheel) " +
+                "values (%d, %d, PPOWERTYPE %s, \"%s\", \"%s\");", id, id, powerType, transmission, driveWheel);
+
+        return insertStatement;
+    }
+
+    //        String insertStatement = String.format( "insert into carmodels(Id, Name, IsArchived, YearsInfo, CarMakerId, ReleaseDate) "
+//                + "values (%d, \"%s\", b\'0\', \"2022年式\", %d, \"2022-01-01\");%s", id, name, manufacturerId, System.lineSeparator());
+////            System.out.println(insertStatement);
+
+    private String getInsertEngineSpecStatement() {
+        String insertStatement = String.format("insert into enginespecs(Id, CarTrimLevelId, EngineDisplacement, MaxTorque, " +
+                "MaxHorsepower, CityFuelEfficiency, FreewayFuelEfficiency, AverageFuelEfficiency) " +
+                "values (%d, %d, %d, %f, %f, %f, %f, %f);",
+                id, id, engineDisplacement, maxTorque, maxHorsepower, cityFuelEfficiency, freewayFuelEfficiency, averageFuelEfficiency);
+
+        return insertStatement;
+    }
+
+    private String getInsertElectricMotorSpecStatement() {
+        String insertStatement = String.format("insert into electricmotorspecs(Id, CarTrimLevelId, BatteryCapacity, " +
+                "MotorTorque, MotorPower, ElectricEfficiency, ElectricRange, FreewayRange, CityRange, CombinedRange, " +
+                "ChargingTime, RangeNEDC, RangeWLTP, RangeEPA) " +
+                "values(%d, %d, %f, %f, %f, %f, %f, %f, %f, %f, \"%s\", %f, %f, %f);",
+                id, id, batteryCapacity, motorTorque, motorPower, electricEfficiency, electricRange, freewayRange, cityRange,
+                combinedRange, chargingTime, electricRange, electricRange, electricRange);
+
+        return insertStatement;
+    }
+
+    private String getInsertBodySpecStatement() {
+        //    insert into bodyspecs(Id, CarTrimLevelId, Seats, Length, Width, Height, WheelBase, Weight,
+        //        StandardCargoVolume, FiveSeatsCargoVolume, MaxCargoVolume, FrunkCargoVolume)
+        //        values(77, 77, 5, 4000, 2000, 4000, 2000, 2000, 200, 300, 100, 400);
+
+        String insertStatement = String.format("insert into bodyspecs(Id, CarTrimLevelId, Seats, Length, Width, " +
+                "Height, WheelBase, Weight, StandardCargoVolume, FiveSeatsCargoVolume, MaxCargoVolume, FrunkCargoVolume) "
+                + "values (%d, %d, %d, %d, %d, %d, %d, %d, SSTANDARD%s, %d, %d, %d);",
+                id, id, seats, length, width, height, wheelbase, weight,
+                standardCargoVolume, fiveSeatsCargoVolume, maxCargoVolume, frunkCargoVolume);
+        return insertStatement;
+    }
+
+    private String getInsertTrimLevelStatement() {
+        // insert into cartrimlevels(Id, Name, IsArchived, Price, CarModelId) values (88, "Style", b'1', 980000, 3);
+
+        String insertStatement = String.format("insert into cartrimlevels(Id, Name, IsArchived, Price, CarModelId) "
+            + "values (%d, \"%s\", b\'0\', PPRICE: %s, %d);", id, name, price, carmodelId);
+
+        return insertStatement;
+    }
 
     public int getId() {
         return id;
