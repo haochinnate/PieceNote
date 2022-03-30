@@ -23,6 +23,12 @@
     - 開啟realtime 的直方圖, 拍的時候就可以看
     - 快門時間: 根據直方圖調整 or 根據想拍的效果調整
 
+
+## 裝備
+
+- 6檔 & 10 檔 ND
+
 ## 參考連結
 
 - [【詹姆斯】相机如何设置才最适合拍风景](https://www.youtube.com/watch?v=_dIih-Badkc)
+- [【詹姆斯】如何拍出旅行風光大片？九個你應該知道的攝影秘訣](https://www.youtube.com/watch?v=3h_4LaDz8lc)
