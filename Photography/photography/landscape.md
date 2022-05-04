@@ -28,7 +28,16 @@
 
 - 6檔 & 10 檔 ND
 
+## 後期
+
+1. 
+2. 
+3. 
+
+
 ## 參考連結
 
 - [【詹姆斯】相机如何设置才最适合拍风景](https://www.youtube.com/watch?v=_dIih-Badkc)
 - [【詹姆斯】如何拍出旅行風光大片？九個你應該知道的攝影秘訣](https://www.youtube.com/watch?v=3h_4LaDz8lc)
+- [巫師後期-风光照后期的常用技法](https://www.youtube.com/watch?v=J3BF6sTnQYw)
+
