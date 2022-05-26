@@ -1,1 +1,53 @@
-* [筆記 on Google drive](https://drive.google.com/drive/folders/0BzUPI2q-erA_bG5CMENIUUxWRlk?usp=sharing)
+- [筆記 on Google drive](https://drive.google.com/drive/folders/0BzUPI2q-erA_bG5CMENIUUxWRlk?usp=sharing)
+
+- [Git for Professionals Tutorial - Tools & Concepts for Mastering Version Control with Git](https://www.youtube.com/watch?v=Uszj_k0DGsg)
+
+### Perfect Commit
+  
+1. Add the __right__ changes!
+
+```sh
+git add css/general.css
+git diff index.html
+
+# -p for patch level, 問每一段要不要加入變更
+git add -p index.html
+
+git status 
+```
+
+2. Compose a __good__ commit message!
+  1. Subject = concise summary of what happened
+  2. Body = more detailed explanation
+    - What is now different than before?
+    - What's the reason for the change?
+    - Is there anything to watch out for / anything particularly remarkable?
+
+```sh
+git commit 
+
+git log
+```
+
+### Branching Strategies
+
+#### A Written Convention
+
+- Need a written best practice of how work is ideally structured in your team - to avoid mistakes & collisions
+
+- It helps to onboard new team members
+
+#### Integrating Changes & Structuring Releases
+
+1. Maintline Development
+2. State, Release, and Feature Branches
+  - Long-Running & Short-Lived Branches
+
+- Long-Running: main/master, develop/production
+  - exist through the complete lifetime of the project
+  - often, they mirror "stages" in your dev life cycle
+  - common convention: __no direct commits!__    
+- Short-Lived: feature 
+  - for new features, bug fixes, refactorings, experiments
+  - will be deleted after integration (merge/rebase)
+
