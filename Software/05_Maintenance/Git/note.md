@@ -51,3 +51,55 @@ git log
   - for new features, bug fixes, refactorings, experiments
   - will be deleted after integration (merge/rebase)
 
+
+### Pull Requests
+
+- is provide by Git playform
+- for: Communicating About and Reviewing Code
+- Fork: your personal copy of a git repository
+- PR are always based on branches, not on individual commits
+
+```sh
+git clone https://github.com/gntr/rails.git
+
+cd rails
+
+# some changes
+
+git branch test
+git checkout test
+
+git add README.md
+git commit -m "silly little change"
+
+git push --set-upstream origin test
+```
+
+### Merge Conflicts
+
+- How to Undo a Conflict and Start Over
+
+```sh
+git merge --abort 
+
+git rebase --abort 
+```
+
+### Merge vs. Rebase
+
+```sh
+# merge commit 
+
+# rebase: A Straight Line of Commits
+git rebase branch-B
+# 1. remove all commit on branch-A, save temporarily 
+# 2. get applies to new commits from branch-B
+# 3. take back the commit in step 1, that branch-A has been rebased
+# rebase will rewrite comment history
+```
+
+- __DO NOT__ use rebase on commits that you've already pushed/shared on a remote repository!
+- Use rebase for cleaning up your local commit history before merging it into a shared team branch
+
+
+
