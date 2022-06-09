@@ -15,7 +15,7 @@
 		3. COMPENSATE EXPOSURE WITH APERTURE(F/STOP)
 		4. PUT CAMERA ON 2-SEC TIMER
 	
-	
+
 ## 星軌
 
 - [星軌照片後期合成](https://www.youtube.com/watch?v=1yGroYUfVXM)-左手+
@@ -106,3 +106,10 @@
 8. metadata管理
     - 要可以快速地找到照片
 9. 適當後期
+
+
+## SOP
+
+- [SOP](https://www.youtube.com/watch?v=4WWsJb08l88)
+
+
