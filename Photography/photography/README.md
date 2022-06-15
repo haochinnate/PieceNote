@@ -44,6 +44,10 @@
 		4. Number of Shots (拍攝次數): 240次,
 		5. 在LR修圖完, export sequence, 再到Premiere 變成影片
 
+- [縮時攝影-拍攝教學](https://www.youtube.com/watch?v=cuTxDtRoZbw)
+- [縮時攝影-後期](https://www.youtube.com/watch?v=5FuaBbr2-sQ)
+
+
 ## Long Exposure
 
 * References:
