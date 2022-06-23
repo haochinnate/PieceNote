@@ -14,9 +14,9 @@
 
 - git commit: save point
 
-![git push](/imgs/image1_Amigoscode.png)
+![git push(/imgs/image1_Amigoscode.png)]
 
-![git pull](/imgs/image2_Amigoscode.png)
+![git pull(/imgs/image2_Amigoscode.png)]
 
 ## Verify Installation
 
