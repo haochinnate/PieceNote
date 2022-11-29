@@ -114,6 +114,6 @@
 
 ## SOP
 
-- [SOP](https://www.youtube.com/watch?v=4WWsJb08l88)
+- [風光攝影師的操作流程-詹姆斯攝影](https://www.youtube.com/watch?v=4WWsJb08l88)
 
 
