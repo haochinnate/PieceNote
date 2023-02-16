@@ -143,10 +143,75 @@ GROUP BY author_id
 ORDER BY author_id;
 ```
 
-
 # Day 6: Union
 
+## 197. Rising Temperature
+
+- find all dates' Id with higher temperatures compared to its previous dates (yesterday).
+
+```sql
+SELECT w2.id FROM Weather w1,Weather w2
+WHERE datediff(w2.recordDate, w1.recordDate) = 1 
+AND w2.temperature > w1.temperature;
+```
+
+## 607. Sales Person
+
+- report the names of all the salespersons who did not have any orders related to the company with the name "RED".
+
+```sql
+SELECT s.name
+FROM SalesPerson s
+WHERE s.sales_id NOT IN (
+    SELECT o.sales_id
+    FROM Orders o
+    LEFT JOIN Company c 
+        ON o.com_id = c.com_id
+    WHERE c.name = "RED"
+);
+```
+
 # Day 7: Function
+
+## 1141. User Activity for the Past 30 Days I
+
+- find the daily active user count for a period of 30 days ending 2019-07-27 inclusively. 
+- A user was active on someday if they made at least one activity on that day.
+
+```sql
+SELECT activity_date AS 'day',
+    COUNT(DISTINCT user_id) AS 'active_users'
+FROM Activity
+WHERE datediff('2019-07-27', activity_date) < 30
+    AND activity_date <= '2019-07-27'
+GROUP BY activity_date;
+```
+
+## 1693. Daily Leads and Partners
+
+- for each date_id and make_name, return the number of distinct lead_id's and distinct partner_id's.
+
+```sql
+SELECT date_id, make_name,
+    COUNT(DISTINCT lead_id) AS 'unique_leads', 
+    COUNT(DISTINCT partner_id) AS 'unique_partners'
+FROM DailySales
+GROUP BY date_id, make_name
+```
+
+## 1729. Find Followers Count
+
+- for each user, return the number of followers.
+- Return the result table ordered by user_id in ascending order.
+
+```sql
+
+SELECT user_id, 
+    COUNT(follower_id) AS 'followers_count'
+FROM Followers
+GROUP BY user_id
+ORDER BY user_id;
+```
 
 # Day 8: Function
 
