@@ -2,6 +2,11 @@
 
 ## 595. Big Countries
 
+- A country is big if:
+    - it has an area of at least three million (i.e., 3000000 km2), or
+    - it has a population of at least twenty-five million (i.e., 25000000).
+- Write an SQL query to report the name, population, and area of the big countries.
+
 ```sql
 SELECT name, population, area FROM World 
 WHERE area >= 3000000 OR population  >= 25000000;
@@ -9,19 +14,25 @@ WHERE area >= 3000000 OR population  >= 25000000;
 
 ## 1757. Recyclable and Low Fat Products
 
+- find the ids of products that are both low fat and recyclable.
+
 ```sql
 SELECT product_id FROM products 
 WHERE low_fats = 'Y' AND recyclable = 'Y'
 ```
 
-# 584. Find Customer Referee
+## 584. Find Customer Referee
+
+- report the names of the customer that are not referred by the customer with id = 2.
 
 ```sql
 SELECT name FROM Customer
 WHERE referee_id != 2 OR referee_id IS NULL;
 ```
 
-# 183. Customers Who Never Order
+## 183. Customers Who Never Order
+
+- report all customers who never order anything.
 
 ```sql
 SELECT c.Name AS "Customers" from Customers c
@@ -29,6 +40,46 @@ WHERE c.Id NOT IN (SELECT o.CustomerId from Orders o)
 ```
 
 # Day 2: Select and Order
+
+## 1873. Calculate Special Bonus
+
+- calculate the bonus of each employee. 
+- The bonus of an employee is 100% of their salary 
+    - if the ID of the employee is an odd number and 
+    - the employee name does not start with the character 'M'. 
+    - The bonus of an employee is 0 otherwise.
+
+```sql
+SELECT employee_id,
+CASE 
+    WHEN name NOT LIKE 'M%' 
+        AND employee_id % 2 != 0 THEN salary * 1
+    ELSE 0
+END AS 'bonus'
+FROM employees
+ORDER BY employee_id;
+```
+
+## 627. Swap Salary
+
+- swap all 'f' and 'm' values (i.e., change all 'f' values to 'm' and vice versa) with a single update statement and no intermediate temporary tables.
+
+```sql
+UPDATE Salary SET sex = 
+(CASE 
+    WHEN sex = 'm' THEN 'f' 
+    WHEN sex = 'f' THEN 'm' 
+END);
+```
+
+## 196. Delete Duplicate Emails
+
+- delete all the duplicate emails, keeping only one unique email with the smallest id
+
+```sql
+DELETE p1 FROM Person p1, Person p2 
+WHERE p1.email = p2.email AND p1.id > p2.id;
+```
 
 # Day 3: String Processing Functions
 
