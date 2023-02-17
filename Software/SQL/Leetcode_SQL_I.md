@@ -32,8 +32,6 @@ WHERE c.Id NOT IN (SELECT o.CustomerId from Orders o)
 
 # Day 3: String Processing Functions
 
-# Day 3: String Processing Functions
-
 # Day 4: Union and Select
 
 ## 1965. Employees With Missing Information
@@ -214,6 +212,51 @@ ORDER BY user_id;
 ```
 
 # Day 8: Function
+
+## 586. Customer Placing the Largest Number of Orders
+
+- find the customer_number for the customer who has placed the largest number of orders.
+
+```sql
+SELECT customer_number 
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(*) DESC LIMIT 1;
+```
+
+## 511. Game Play Analysis I
+
+- report the first login date for each player.
+
+```sql
+SELECT player_id, MIN(event_date) AS 'first_login'
+FROM Activity
+GROUP BY player_id;
+```
+
+## 1890. The Latest Login in 2020
+
+- report the latest login for all users in the year 2020. Do not include the users who did not login in 2020.
+
+```sql
+SELECT user_id, MAX(time_stamp) AS 'last_stamp'
+FROM Logins
+WHERE time_stamp LIKE '2020%'
+GROUP BY user_id;
+```
+
+## 1741. Find Total Time Spent by Each Employee
+
+- calculate the total time in minutes spent by each employee on each day at the office. 
+- Note that within one day, an employee can enter and leave more than once. The time spent in the office for a single entry is out_time - in_time.
+
+```sql
+SELECT event_day AS 'day',
+    emp_id,
+    SUM(out_time - in_time) AS 'total_time'
+FROM Employees
+GROUP BY day, emp_id;
+```
 
 # Day 9: Control of Flow
 
