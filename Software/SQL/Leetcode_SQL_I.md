@@ -311,6 +311,55 @@ GROUP BY day, emp_id;
 
 # Day 9: Control of Flow
 
+## 1393. Capital Gain/Loss
+
+- report the Capital gain/loss for each stock.
+
+```sql
+SELECT stock_name, 
+    SUM(
+        CASE
+            WHEN operation = 'Sell' 
+                THEN price
+            ELSE
+                -price 
+        END
+    ) AS 'capital_gain_loss'
+FROM Stocks
+GROUP BY stock_name;
+```
+
+## 1407. Top Travellers
+
+- report the distance traveled by each user.
+
+```sql
+SELECT 
+    u.name AS 'name', 
+    IFNULL(SUM(r.distance), 0) AS travelled_distance
+FROM Users u
+LEFT JOIN Rides r ON u.id = r.user_id
+GROUP BY r.user_id
+ORDER BY travelled_distance DESC, name ASC;
+```
+
+## 1158. Market Analysis I
+
+- find for each user, the join date and the number of orders they made as a buyer in 2019.
+- AND and WHERE[1](https://stackoverflow.com/questions/16400603/usage-of-and-vs-where-clause-in-sql), [2](https://stackoverflow.com/questions/2559194/difference-between-and-and-where-in-joins)
+
+```sql
+SELECT 
+    user_id AS buyer_id,
+    join_date, 
+    IFNULL(COUNT(order_date), 0) AS orders_in_2019
+FROM Users u
+LEFT JOIN Orders o ON o.buyer_id = u.user_id
+AND order_date LIKE '2019%'
+GROUP BY user_id;
+```
+
+
 # Day 10: Where
 
 
