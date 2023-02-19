@@ -362,4 +362,52 @@ GROUP BY user_id;
 
 # Day 10: Where
 
+## 182. Duplicate Emails
 
+- report all the duplicate emails.
+
+```sql
+SELECT email AS 'Email'
+FROM Person
+GROUP BY email
+HAVING COUNT(*) > 1;
+```
+
+## 1050. Actors and Directors Who Cooperated At Least Three Times
+
+- report that provides the pairs (actor_id, director_id) where the actor has cooperated with the director at least three times.
+
+```sql
+SELECT actor_id, director_id
+FROM ActorDirector
+GROUP BY actor_id, director_id
+HAVING COUNT(timestamp) >= 3;
+```
+
+
+## 1587. Bank Account Summary II
+
+- report the name and balance of users with a balance higher than 10000. The balance of an account is equal to the sum of the amounts of all transactions involving that account.
+
+```sql
+SELECT 
+    u.name AS "NAME", 
+    SUM(t.amount) AS "BALANCE"
+FROM Transactions t
+LEFT JOIN Users u ON t.account = u.account
+GROUP BY t.account
+HAVING SUM(t.amount) > 10000
+```
+
+## 1084. Sales Analysis III
+
+- reports the products that were only sold in the first quarter of 2019. That is, between 2019-01-01 and 2019-03-31 inclusive.
+
+```sql
+SELECT s.product_id, product_name
+FROM Product p
+LEFT JOIN Sales s ON s.product_id = p.product_id
+GROUP BY s.product_id
+-- HAVING s.sale_date BETWEEN '2019-01-01' AND '2019-03-31'; 
+HAVING MIN(s.sale_date) >= '2019-01-01' AND MAX(sale_date) <= '2019-03-31' 
+```
