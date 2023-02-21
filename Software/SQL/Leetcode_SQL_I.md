@@ -83,6 +83,49 @@ WHERE p1.email = p2.email AND p1.id > p2.id;
 
 # Day 3: String Processing Functions
 
+## 1667. Fix Names in a Table
+
+- fix the names so that only the first character is uppercase and the rest are lowercase.
+
+```sql
+SELECT user_id, 
+CONCAT(
+    UPPER(
+        SUBSTR(name, 1, 1)
+    ),
+    LOWER(
+        SUBSTR(name, 2, LENGTH(name))
+    )
+) AS name
+FROM Users
+ORDER BY user_id;
+```
+
+## 1484. Group Sold Products By The Date
+
+- find for each date the number of different products sold and their names.
+
+```sql
+SELECT sell_date, 
+COUNT(DISTINCT product) AS num_sold,
+-- # CONCAT_WS(",", product) AS product
+GROUP_CONCAT(DISTINCT product ORDER BY product SEPARATOR ',') AS products
+FROM Activities
+GROUP BY sell_date
+ORDER BY sell_date;
+```
+
+## 1527. Patients With a Condition
+
+- report the patient_id, patient_name and conditions of the patients who have Type I Diabetes. Type I Diabetes always starts with DIAB1 prefix.
+
+```sql
+SELECT patient_id, patient_name, conditions
+FROM Patients
+WHERE conditions REGEXP '\\bDIAB1';
+```
+
+
 # Day 4: Union and Select
 
 ## 1965. Employees With Missing Information
