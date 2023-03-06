@@ -99,8 +99,37 @@ cargo install mdbook
 ```bash
 # 測試command 
 mdbook --version
-mdbook -h
+mdbook -h # 或是 mdbook help
 ```
 
-- 開始使用
+## create new book
 
+```bash
+# 移到想要放置的路徑下, name-of-book 也會是資料夾的名稱
+mdbook init [name-of-book]
+
+cd [name-of-book]
+
+mdbook serve --open # 打開瀏覽器觀看目前書的內容, 修改內容會即時更新
+
+# 終止: control + c
+```
+
+- book.toml
+  - describing how to build your book 
+  - [簡介](https://rust-lang.github.io/mdBook/guide/creating.html#booktoml) 與 [詳細設定](https://rust-lang.github.io/mdBook/format/configuration/index.html)
+- SUMMARY.md 
+  - 此檔案包含書中所有的章節, 要在這個list中才會被看到
+  - 在 serve 下, 在 SUMMARY.md 中增加不存在的檔案, mdbook會自動幫忙生成
+  - [詳細介紹](https://rust-lang.github.io/mdBook/format/summary.html)
+- src 資料夾
+  - 所有書本內容都放在這邊
+  - 裡面所有的檔案都會包含在output中, 所以如果有圖片或其他static檔案, 可以都放在 src 底下
+
+## Publishing a book
+
+```bash
+mdbook build # 在book.toml檔案那一層執行此指令
+
+# 會產生 book 資料夾, 裡面包含書本的 html 內容, 就可以把這個資料夾放在 webserver 上
+```
