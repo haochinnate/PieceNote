@@ -146,6 +146,11 @@ git clone <URL.git>
 
 - merge to master branch?
 - rebase the feature branches?
+- [介紹差別](https://www.youtube.com/watch?v=0chZFIZLR_0)
+  - git merge: complete picture of commit history and branch evolution
+  - git rebase: tidies up by moving commits to the main branch tip
+  - squashing commit: consolidate commits into one, providing a clean linear history in the main branch, but at the cost of detailed commit history
+
 
 ## merge 
 
