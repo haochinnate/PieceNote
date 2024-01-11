@@ -93,3 +93,43 @@
 * The Heap is more or less responsible for keeping track of our objects (our data, well... most of it - we'll get to that later.).  
 * The Stack is self-maintaining, meaning that it basically takes care of its own memory management. When the top box is no longer used, it's thrown out.  
 * The Heap, on the other hand, has to worry about Garbage collection (GC) - which deals with how to keep the Heap clean (no one wants dirty laundry laying around... it stinks!).
+
+
+## CV tips
+
+- 參考連結:[Preparing for Interview at Agoda](https://medium.com/agoda-engineering/preparing-for-interview-at-agoda-2c07b7d13ca5)
+
+- 用 well-structured, readable template
+- keep it concise, 目標最多兩頁
+- 專注在近 2~3 年的projects
+- add linkes to external resources
+- 在描述 projects 的時候, 專注於你的貢獻, 用數字來證明
+  - Use numbers to support your contributions and achievements wherever you can. Be specific and use well-described scenarios.
+  - Be concise and clear.
+- 自我介紹的時候: Talk about your current job and what your responsibilities are
+
+## Interview Round: coding and algorithms
+
+- Testing skills
+- critical and systematic thinking 
+- code efficiency and readability
+- 演算法, 資料結構, 計算複雜度
+
+## Interview Round: Platform
+
+- communication skills
+- level of expertise
+- Development, design, and architecture skills
+- Analytical thinking
+- Whether you are a good fit for the role
+
+### 設計一個功能
+
+- 先討論需求
+- 解釋說明你的計畫
+- Follow a "top to bottom" approach
+- 使用 structured written form
+- draw something meaningful
+- Discuss tradeoffs
+- 分享點子和如何測試你的solution
+
