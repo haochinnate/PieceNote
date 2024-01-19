@@ -244,6 +244,120 @@ top
 
 # File operation 2
 
+- /proc: (and similar) are pseudo filesystems, only exists in memory
+- /root: the home directory for root user
+- /var: may ne put in its own filesystem
+- /boot: contains the basic files needed
+- cp vs rsync
+
+# Text Editors:
+
+- Basic editors: nano, gedit
+- Advanced editors: vi, emacs
+
 ```sh
+echo line1 > file1
+# cat << EOF > file2
+
+nano about.txt
+
+vi test1 # open vi in command mode
+
+escape # command mode
+:wq
+# h, j ,$
+
+
+# /pattern
+# ?pattern
+
+```
+
+# 12. User Environment
+
+```sh
+whoami
+who
+
+# user setup file
+
+# login shell
+# ~/.bash_profile -> ~/.bash_login -> ~/.profile
+
+alias
+
+tail -15 /etc/group
+
+# create new user, -m (create home directory) 
+#     -s (specify default shell)
+sudo useradd -m -c "Eric Dolphy" -s /bin/bash edolphy
+sudo passwd edolphy
+
+# get information of this new user 
+grep edolphy /etc/passwd /etc/group
+
+ssh edolphy@localhost
+
+# delete user, -r (remove home directory)
+sudo userdel -r edolphy
+
+```
+
+```sh
+
+# adding / removing groups
+
+
+```
+
+
+```sh
+# root account 
+su # running new shell with another user
+sudo 
+
+echo $SHELL
+export VARIABLE=value
+
+
+sudo chown root:root file?
+# chgrp?
+
+```
+
+## 13, Manipulating Text
+
+```sh
+
+cat file >> existingfile
+cat file1 file2 > newfile
+
+cat > filename
+# ctrl + D to exit 
+
+# cat << EOF > file2.txt
+# 輸入文字直到 EOF
+
+tac 
+
+```
+
+
+```sh
+# large file
+less somefile
+cat somefile | less 
+
+
+sed # text processing tool?
+sed -e s/is/are/ infile.txt
+sed -e s/is/are/g infile.txt
+sed -e 1,2s/is/are/g infile.txt
+sed -e 1,2s:is:are:g infile.txt
+sed -e 1,2s:is:are:g infile.txt > outfile.txt
+
+
+awk 
+
 
 ```
