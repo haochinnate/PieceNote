@@ -184,7 +184,7 @@ apt-get install wget-dev
 apt-get remove wget2
 ```
 
-## documentation
+# 8. documentation
 
 ```sh
 
@@ -200,7 +200,7 @@ man --help # help options
 ```
 
 
-# Processes
+# 9. Processes
 
 ## Type:
 
@@ -242,7 +242,7 @@ top
 # sleep number[suffix]
 ```
 
-# File operation 2
+# 10. File operation 2
 
 - /proc: (and similar) are pseudo filesystems, only exists in memory
 - /root: the home directory for root user
@@ -250,7 +250,7 @@ top
 - /boot: contains the basic files needed
 - cp vs rsync
 
-# Text Editors:
+# 11. Text Editors:
 
 - Basic editors: nano, gedit
 - Advanced editors: vi, emacs
@@ -358,6 +358,53 @@ sed -e 1,2s:is:are:g infile.txt > outfile.txt
 
 
 awk 
+
+sort 
+
+uniq
+
+paste -d, file1 file2  # delimiter
+
+join file1 file2
+
+split
+
+grep [pattern] <filename>
+
+```
+
+# 14. Network Operations
+
+## 
+
+```sh
+
+cat /etc/hosts
+
+# ping <>
+
+host <>
+
+host linuxfoundation.org
+dig linuxfoundation.org
+
+# IP utility 
+
+/sbin/ip addr show
+/sbin/up route show
+
+# ping <hostname>
+
+# traceroute <hostname>
+
+sudo ethtool eth0
+netstat -r 
+
+ip --brief addr show # address 
+ssh student@172.17.249.129 # login 
+exit
+
+
 
 
 ```
