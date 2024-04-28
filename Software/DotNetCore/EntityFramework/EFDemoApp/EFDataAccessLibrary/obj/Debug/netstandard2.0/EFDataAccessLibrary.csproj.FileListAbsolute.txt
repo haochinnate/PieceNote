@@ -1,9 +1,0 @@
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\bin\Debug\netstandard2.0\EFDataAccessLibrary.deps.json
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\bin\Debug\netstandard2.0\EFDataAccessLibrary.dll
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\obj\Debug\netstandard2.0\EFDataAccessLibrary.csprojAssemblyReference.cache
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\obj\Debug\netstandard2.0\EFDataAccessLibrary.AssemblyInfoInputs.cache
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\obj\Debug\netstandard2.0\EFDataAccessLibrary.AssemblyInfo.cs
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\bin\Debug\netstandard2.0\EFDataAccessLibrary.pdb
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\obj\Debug\netstandard2.0\EFDataAccessLibrary.csproj.CoreCompileInputs.cache
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\obj\Debug\netstandard2.0\EFDataAccessLibrary.dll
-D:\CodingWorkspace\Github\PieceNote\DotNetCore\EntityFramework\EFDemoApp\EFDataAccessLibrary\obj\Debug\netstandard2.0\EFDataAccessLibrary.pdb
