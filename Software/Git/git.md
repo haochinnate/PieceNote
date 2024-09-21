@@ -234,3 +234,81 @@ git log # f2 -> f1 -> m3 -> m2 -> m1
 # feature branch: f2 -> f1 -> m3
 
 ```
+
+
+### 恢復被刪除且尚未合併的分支
+
+> git branch <new branch name> <commit hash>
+
+ex: git branch new_sea e46091c8
+
+- 如果不知道 commit hash 的話, 可輸入 git reflog
+ 
+> git reflog
+
+### 不想要分支上的某個 commit
+
+> git rebase -i <commit hash>
+
+1. 確定當前在要的分支上
+2. 輸入指令 git rebase -i e9987a0f
+3. 將 pick <commit hash> 
+   改為 d <commit hash>
+   按下 ESC, 輸入 :wq 並送出
+
+#### 某功能之後才需要, 目前先暫時移除
+
+> git revert <commit bash>
+
+1. 輸入指令 git revert 2a531dec
+2. 按下 ESC, 輸入 :wq 並送出
+
+
+### 想要其他分支上的某個 commit
+
+> git cherry-pick <commit bash>
+
+1. 確認目前在要增加功能的分支
+2. 輸入指令 git cherry-pick 971c705a
+
+### 將數個 commit 壓縮為 單個 commit
+
+> git rebase -i <commit hash>
+
+1. 將 pick <commit hash> 
+   改為 s <commit hash>
+   按下 ESC, 輸入 :wq 並送出
+
+### 想修改 最新commit 的訊息
+
+> git commit -m <commit messahge> --amend
+
+### 切換分支
+
+> git checkout <branch name>
+
+### stash
+
+- 還未 commit 修改的內容, 就 checkout 的話, 
+  這些修改的內容會移動到 切換後的分支, 
+  但有可能跟 切換後的分支 有衝突
+  這時候可以先用 stash 將 修改內容放到 stash 暫存後再 checkout
+
+- stash 是暫時儲存檔案修改內容的區域. stash 可以暫時儲存 工作目錄中
+  還未commit 的修改內容。在事後再取出這些內容, 應用到原先的分支或其他分支中。
+
+### merge
+
+- fast-forward, 建立 branch 後, 原分支未改動, 然後就要 merge, fast forward 
+  就直接把 原分支移到 子分支上
+- 如果參數 有加 non fast-forward, 就會多一個 merge commit 的新節點
+
+### rebase
+
+- 使用 rebase 進行 分支合併的話, 會顯示歷史紀錄
+- rebase bugfix 分支到 master 分支, bugfix 分支的歷史紀錄會增加在 master 分支的後面
+  歷史紀錄會被統一, 形成簡單的一條線
+
+- rebase 完, 要再把 master 移到跟 hotfix 同位置
+> git checkout hotfix
+> git merge master
