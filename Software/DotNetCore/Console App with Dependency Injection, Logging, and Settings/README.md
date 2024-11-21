@@ -124,3 +124,5 @@ public class GreetingService : IGreetingService
 * Serilog.MinimumLevel.Override 是設定哪個 namespace 的 message 要用什麼等級log
 
 * 在執行的時候可以去改變 appsettings.json, 原本可能是 warning/error or higher, 在有問題的時候才變成 information or higher
+
+
