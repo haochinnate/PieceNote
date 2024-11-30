@@ -39,8 +39,8 @@
 ### 
 
 - [Adapter](StructuralPatterns/Adapter.md)
-- [Bridge]()
-- [Composite]()
+- [Bridge](StructuralPatterns/Bridge.md)
+- [Composite](StructuralPatterns/Composite.md)
 - [Decorator]()
 - [Facade](StructuralPatterns/Facade.md)
 - [Flyweight]()
@@ -59,6 +59,10 @@
 - [Memento]()
 - [Observer]()
 - [State]()
-- [Strategy]()
+- [Strategy](BehavioralPatterns/Strategy.md)
 - [Template Method]()
 - [Visitor]()
+
+## 需求分析相關
+
+- [Requirements Analysis](./RequirementsAnalysis.md)

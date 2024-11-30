@@ -8,7 +8,6 @@
 | 參與者和協作者 | Adapter改變了 Adaptee的介面,使Adaptee與Adapter 的基礎類別 Target 匹配。<br/> 如此Client 就可以使用Adaptee了,好像它是Target類型 |  
 | 效果         | Adapter模式使原有物件能夠適應新的類別結構,不受其介面的限制 | 
 | 實作         | 將原有類別包含在另一個類別之中。讓包含類別與需要的介面匹配,呼叫被複合類別的方法。 | 
-| 一般性結構    |  |
 
 ## 意圖
 
@@ -57,6 +56,8 @@
 - 然而，它們解決的問題各不相同。一個設計模式不僅僅是一種用特定方式構建代碼的方案，它還能向其他開發者傳達該模式所解決的問題。
 
 ## Code Example From Guru
+
+- [source code links](https://refactoring.guru/design-patterns/adapter/csharp/example)
 
 ```csharp
 // The Target defines the domain-specific interface used by the client code.
