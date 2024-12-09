@@ -41,7 +41,7 @@
 - [Adapter](StructuralPatterns/Adapter.md)
 - [Bridge](StructuralPatterns/Bridge.md)
 - [Composite](StructuralPatterns/Composite.md)
-- [Decorator]()
+- [Decorator](StructuralPatterns/Decorator.md)
 - [Facade](StructuralPatterns/Facade.md)
 - [Flyweight]()
 - [Proxy]()
