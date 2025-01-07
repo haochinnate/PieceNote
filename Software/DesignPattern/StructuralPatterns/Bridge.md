@@ -205,6 +205,3 @@ end note
 
 @enduml
 ```
-
-
-## UML 圖

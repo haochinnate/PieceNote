@@ -27,8 +27,8 @@
 ### 
 
 - [Factory Method](CreationalPatterns/FactoryMethod.md)
-- [Abstract Factory](CreationalPatterns/AbstractFactory.md)
-- [Builder]()
+- [Abstract Factory](CreationalPatterns/AbstractFactory.md), 複雜度: 2, 人氣: 3
+- [Builder]() 
 - [Prototype]()
 - [Singleton]()
 
@@ -38,13 +38,13 @@
 
 ### 
 
-- [Adapter](StructuralPatterns/Adapter.md)
-- [Bridge](StructuralPatterns/Bridge.md)
-- [Composite](StructuralPatterns/Composite.md)
+- [Adapter](StructuralPatterns/Adapter.md), 複雜度: 1, 人氣: 3
+- [Bridge](StructuralPatterns/Bridge.md), 複雜度: 3, 人氣: 1
+- [Composite](StructuralPatterns/Composite.md), 複雜度: 2, 人氣: 2
 - [Decorator](StructuralPatterns/Decorator.md)
-- [Facade](StructuralPatterns/Facade.md)
+- [Facade](StructuralPatterns/Facade.md), 複雜度: 1, 人氣: 2
 - [Flyweight]()
-- [Proxy]()
+- [Proxy](StructuralPatterns/Proxy.md)
 
 ## Behavioral patterns
 
@@ -59,10 +59,25 @@
 - [Memento]()
 - [Observer]()
 - [State]()
-- [Strategy](BehavioralPatterns/Strategy.md)
+- [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 人氣: 3
 - [Template Method]()
 - [Visitor]()
 
 ## 需求分析相關
 
 - [Requirements Analysis](./RequirementsAnalysis.md)
+
+## 理性懷疑原則
+
+- 模式是有用的指南, 但也是危險的工具
+- 應該將它們用作一種 __思考問題的輔助手段__, 而不是解決問題的處方
+- 使用模式時, 小心以下常見錯誤
+
+| 錯誤     | 產生條件 |
+| -------- | ------- |
+| 浮於表面 | 僅對低層情況有了一些膚淺的理解, 就草草選擇一個模式 |
+| 偏見 | 對模式過於偏信。 根據已經選定的模式/模型來解釋所有資料, 不願意對自己的偏見有任何質疑 | 
+| 錯選 | 不理解模式適用的背景和條件(對各模式的分類關係理解不全), 選擇了錯誤的模式 | 
+| 誤判 | 不熟悉各種模式, 因為無知而導致誤判 | 
+| 削足適履 |  忽略了實際的, 具體實體行為中的例外情況, 因為它們似乎不符合模式中所表達的理論。<br/> 很可能會使所建模出來的物件過於僵硬, 不符合實際情況 | 
+
