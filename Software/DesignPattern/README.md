@@ -44,7 +44,7 @@
 - [Decorator](StructuralPatterns/Decorator.md)
 - [Facade](StructuralPatterns/Facade.md), 複雜度: 1, 人氣: 2
 - [Flyweight]()
-- [Proxy](StructuralPatterns/Proxy.md)
+- [Proxy](StructuralPatterns/Proxy.md), 複雜度: 2, 人氣: 1
 
 ## Behavioral patterns
 
