@@ -24,7 +24,7 @@
 
 - 不同的 object creation mechanisms
 
-### 
+### 清單
 
 - [Factory Method](CreationalPatterns/FactoryMethod.md)
 - [Abstract Factory](CreationalPatterns/AbstractFactory.md), 複雜度: 2, 人氣: 3
@@ -36,7 +36,7 @@
 
 - 如何將物件,類別組合成更大的結構
 
-### 
+### 清單
 
 - [Adapter](StructuralPatterns/Adapter.md), 複雜度: 1, 人氣: 3
 - [Bridge](StructuralPatterns/Bridge.md), 複雜度: 3, 人氣: 1
@@ -50,14 +50,14 @@
 
 - 物件之間的演算法及權責分配
 
-### 
+### 清單
 
 - [Chain of Responsibility]()
-- [Command](BehavioralPatterns/Command.md)
+- [Command](BehavioralPatterns/Command.md), 複雜度: 1, 人氣: 3
 - [Iterator]()
 - [Mediator]()
 - [Memento]()
-- [Observer]()
+- [Observer](BehavioralPatterns/Observer.md)
 - [State]()
 - [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 人氣: 3
 - [Template Method]()
