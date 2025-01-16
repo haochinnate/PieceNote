@@ -41,7 +41,7 @@
 - [Adapter](StructuralPatterns/Adapter.md), 複雜度: 1, 人氣: 3
 - [Bridge](StructuralPatterns/Bridge.md), 複雜度: 3, 人氣: 1
 - [Composite](StructuralPatterns/Composite.md), 複雜度: 2, 人氣: 2
-- [Decorator](StructuralPatterns/Decorator.md)
+- [Decorator](StructuralPatterns/Decorator.md), 複雜度: 2, 人氣: 2
 - [Facade](StructuralPatterns/Facade.md), 複雜度: 1, 人氣: 2
 - [Flyweight]()
 - [Proxy](StructuralPatterns/Proxy.md), 複雜度: 2, 人氣: 1

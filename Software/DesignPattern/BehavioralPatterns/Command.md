@@ -65,7 +65,7 @@
 
 ### Command vs. Strategy
 
-- 命令模式與策略模式（Strategy）看起來相似，因為兩者都可以用來為物件參數化某些操作。然而，它們的意圖截然不同：
+- 命令模式與策略模式(Strategy)看起來相似，因為兩者都可以用來為物件參數化某些操作。然而，它們的意圖截然不同：
 
 - **命令模式**：將任何操作轉換為一個物件，操作的參數變成該物件的fields。這種轉換允許您延遲執行操作、對操作排隊、儲存命令歷史記錄、將命令發送到遠端服務等。  
 - **策略模式**：通常描述執行 __相同操作__ 的 __不同方法__，允許您在單一上下文類中交換這些演算法。  
@@ -210,10 +210,10 @@ class Program
 
 #### Sender/Invoker class
 
-- Sender類別（又稱為Invoker）負責 __啟動(initiating)__ 請求。
+- Sender類別(又稱為Invoker)負責 __啟動(initiating)__ 請求。
 - 該類別必須有一個欄位，用於儲存對 __命令物件(command object)__ 的引用。
 - Sender 觸發該命令，而不是直接將請求發送給 Receiver。(command 內部去送給 receiver)
-- 需要注意的是，Sender 並不負責創建命令物件。通常，它通過constructor從客戶端接收一個預先創建的command。
+- 需要注意的是, Sender 並不負責創建命令物件。通常它通過constructor從客戶端接收一個預先創建的command。
 
 #### Command interface
 
