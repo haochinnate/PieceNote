@@ -30,7 +30,7 @@
 - [Abstract Factory](CreationalPatterns/AbstractFactory.md), 複雜度: 2, 人氣: 3
 - [Builder]() 
 - [Prototype]()
-- [Singleton]()
+- [Singleton](CreationalPatterns/Singleton.md)
 
 ## Structural patterns
 
@@ -60,7 +60,7 @@
 - [Observer](BehavioralPatterns/Observer.md), 複雜度: 2, 人氣: 3
 - [State]()
 - [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 人氣: 3
-- [Template Method](BehavioralPatterns/TemplateMethod.md)
+- [Template Method](BehavioralPatterns/TemplateMethod.md), 複雜度: 1, 人氣: 2
 - [Visitor]()
 
 ## 需求分析相關
