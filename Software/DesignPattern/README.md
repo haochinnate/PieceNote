@@ -54,7 +54,7 @@
 
 - [Chain of Responsibility]()
 - [Command](BehavioralPatterns/Command.md), 複雜度: 1, 人氣: 3
-- [Iterator](BehavirolPatterns/Iterator.md)
+- [Iterator](BehavirolPatterns/Iterator.md), 複雜度: 2, 人氣: 3
 - [Mediator]()
 - [Memento]()
 - [Observer](BehavioralPatterns/Observer.md), 複雜度: 2, 人氣: 3
