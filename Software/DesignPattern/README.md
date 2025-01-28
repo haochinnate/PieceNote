@@ -30,7 +30,7 @@
 - [Abstract Factory](CreationalPatterns/AbstractFactory.md), 複雜度: 2, 人氣: 3
 - [Builder]() 
 - [Prototype]()
-- [Singleton](CreationalPatterns/Singleton.md)
+- [Singleton](CreationalPatterns/Singleton.md), 複雜度: 1, 人氣: 2
 
 ## Structural patterns
 
