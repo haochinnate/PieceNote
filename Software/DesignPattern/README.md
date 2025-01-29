@@ -54,14 +54,14 @@
 
 - [Chain of Responsibility]()
 - [Command](BehavioralPatterns/Command.md), 複雜度: 1, 人氣: 3
-- [Iterator](BehavirolPatterns/Iterator.md), 複雜度: 2, 人氣: 3
+- [Iterator](BehavioralPatterns/Iterator.md), 複雜度: 2, 人氣: 3
 - [Mediator]()
 - [Memento]()
 - [Observer](BehavioralPatterns/Observer.md), 複雜度: 2, 人氣: 3
 - [State]()
 - [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 人氣: 3
 - [Template Method](BehavioralPatterns/TemplateMethod.md), 複雜度: 1, 人氣: 2
-- [Visitor]()
+- [Visitor](BehavioralPatterns/Visitor.md)
 
 ## 需求分析相關
 
