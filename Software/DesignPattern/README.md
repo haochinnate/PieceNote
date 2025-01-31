@@ -31,6 +31,7 @@
 - [Builder]() 
 - [Prototype]()
 - [Singleton](CreationalPatterns/Singleton.md), 複雜度: 1, 人氣: 2
+- [Object Pool](CreationalPatterns/ObjectPool.md)
 
 ## Structural patterns
 
