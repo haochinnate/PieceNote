@@ -59,10 +59,10 @@
 - [Mediator]()
 - [Memento]()
 - [Observer](BehavioralPatterns/Observer.md), 複雜度: 2, 人氣: 3
-- [State]()
+- [State](BehavioralPatterns/State.md)
 - [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 人氣: 3
 - [Template Method](BehavioralPatterns/TemplateMethod.md), 複雜度: 1, 人氣: 2
-- [Visitor](BehavioralPatterns/Visitor.md)
+- [Visitor](BehavioralPatterns/Visitor.md), 複雜度: 3, 人氣: 1
 
 ## 需求分析相關
 
