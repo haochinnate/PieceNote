@@ -26,12 +26,12 @@
 
 ### 清單
 
-- [Factory Method](CreationalPatterns/FactoryMethod.md)
-- [Abstract Factory](CreationalPatterns/AbstractFactory.md), 複雜度: 2, 人氣: 3
+- [Factory Method](CreationalPatterns/FactoryMethod.md), 複雜度: 1, 普及度: 3
+- [Abstract Factory](CreationalPatterns/AbstractFactory.md), 複雜度: 2, 普及度: 3
 - [Builder]() 
 - [Prototype]()
-- [Singleton](CreationalPatterns/Singleton.md), 複雜度: 1, 人氣: 2
-- [Object Pool](CreationalPatterns/ObjectPool.md)
+- [Singleton](CreationalPatterns/Singleton.md), 複雜度: 1, 普及度: 2
+- [Object Pool](CreationalPatterns/ObjectPool.md), 複雜度: N/A, 普及度: N/A
 
 ## Structural patterns
 
@@ -39,13 +39,13 @@
 
 ### 清單
 
-- [Adapter](StructuralPatterns/Adapter.md), 複雜度: 1, 人氣: 3
-- [Bridge](StructuralPatterns/Bridge.md), 複雜度: 3, 人氣: 1
-- [Composite](StructuralPatterns/Composite.md), 複雜度: 2, 人氣: 2
-- [Decorator](StructuralPatterns/Decorator.md), 複雜度: 2, 人氣: 2
-- [Facade](StructuralPatterns/Facade.md), 複雜度: 1, 人氣: 2
+- [Adapter](StructuralPatterns/Adapter.md), 複雜度: 1, 普及度: 3
+- [Bridge](StructuralPatterns/Bridge.md), 複雜度: 3, 普及度: 1
+- [Composite](StructuralPatterns/Composite.md), 複雜度: 2, 普及度: 2
+- [Decorator](StructuralPatterns/Decorator.md), 複雜度: 2, 普及度: 2
+- [Facade](StructuralPatterns/Facade.md), 複雜度: 1, 普及度: 2
 - [Flyweight]()
-- [Proxy](StructuralPatterns/Proxy.md), 複雜度: 2, 人氣: 1
+- [Proxy](StructuralPatterns/Proxy.md), 複雜度: 2, 普及度: 1
 
 ## Behavioral patterns
 
@@ -54,15 +54,15 @@
 ### 清單
 
 - [Chain of Responsibility]()
-- [Command](BehavioralPatterns/Command.md), 複雜度: 1, 人氣: 3
-- [Iterator](BehavioralPatterns/Iterator.md), 複雜度: 2, 人氣: 3
+- [Command](BehavioralPatterns/Command.md), 複雜度: 1, 普及度: 3
+- [Iterator](BehavioralPatterns/Iterator.md), 複雜度: 2, 普及度: 3
 - [Mediator]()
 - [Memento]()
-- [Observer](BehavioralPatterns/Observer.md), 複雜度: 2, 人氣: 3
+- [Observer](BehavioralPatterns/Observer.md), 複雜度: 2, 普及度: 3
 - [State](BehavioralPatterns/State.md)
-- [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 人氣: 3
-- [Template Method](BehavioralPatterns/TemplateMethod.md), 複雜度: 1, 人氣: 2
-- [Visitor](BehavioralPatterns/Visitor.md), 複雜度: 3, 人氣: 1
+- [Strategy](BehavioralPatterns/Strategy.md), 複雜度: 1, 普及度: 3
+- [Template Method](BehavioralPatterns/TemplateMethod.md), 複雜度: 1, 普及度: 2
+- [Visitor](BehavioralPatterns/Visitor.md), 複雜度: 3, 普及度: 1
 
 ## 需求分析相關
 
@@ -81,4 +81,21 @@
 | 錯選 | 不理解模式適用的背景和條件(對各模式的分類關係理解不全), 選擇了錯誤的模式 | 
 | 誤判 | 不熟悉各種模式, 因為無知而導致誤判 | 
 | 削足適履 |  忽略了實際的, 具體實體行為中的例外情況, 因為它們似乎不符合模式中所表達的理論。<br/> 很可能會使所建模出來的物件過於僵硬, 不符合實際情況 | 
+
+## 分析各個模式中的約束因素和概念
+
+- 這個模式隱藏了什麼實作? 封裝了什麼?
+  - 如此我們就可以修改它。
+
+- 這個模式中有什麼共通性? 如何使用共通性和可變性分析?
+  - 這有助於你找到共通性。
+
+- 這個模式中物件的責任是什麼? 它如何將問題領域分解為多個責任?
+  - 這可以更容易地依責任進行分解
+
+- 這些物件之間有什麼關係? 它如何指定物件之間的關係?
+  - 這將提供這些物件的約束因素的資訊。
+
+- 這個模式本身怎樣成為從背景設計的微觀範例? 它如何展示了從背景設計? 
+  - 這使我們能夠更加 理解為什麼這個模式是優秀設計
 
