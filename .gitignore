@@ -108,3 +108,6 @@ DotNetCore/EntityFramework/EFDemoApp/EFDataAccessLibrary/obj/Debug/netstandard2.
 DotNetCore/EntityFramework/EFDemoApp/EFDataAccessLibrary/obj/Debug/netstandard2.0/EFDataAccessLibrary.dll
 DotNetCore/EntityFramework/EFDemoApp/EFDataAccessLibrary/obj/Debug/netstandard2.0/EFDataAccessLibrary.pdb
 DotNetCore/EntityFramework/EFDemoApp/EFDemoWeb/obj/Debug/netcoreapp3.1/project.razor.json
+.DS_Store
+**/.DS_Store
+.DS_Store?
