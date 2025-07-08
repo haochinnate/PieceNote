@@ -95,3 +95,16 @@ conda list -n learn_da # 列出 environment 中的 packages
 3. 開發 crawler, crawler 會需要 parameter
 4. 從 response 中擷取資料
 
+# Claude
+
+```sh
+
+brew install node
+
+node -v 
+# (24.3.0)
+
+npm -v 
+# (11.4.2) 
+
+```
