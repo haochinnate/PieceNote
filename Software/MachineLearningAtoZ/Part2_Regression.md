@@ -157,13 +157,104 @@ regressor.fit(X_train, y_train)
 ```python
 y_pred = regressor.predict(X_test)
 np.set_printoptions(precision=2)
+
+# y 原本是 [a, b, c...] 所以要 reshape
+# 最後一個參數 1, 是 concatenate 的 axis 參數
 print(np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),1)),1))
+
+```
+
+- 在 Python 中，反向消除法無關緊要，因為 Scikit-Learn 函式庫在訓練模型以進行準確預測時會自動處理選擇具有統計意義的特徵。
+
+#### 取得 regresssion 的 coefficients
+
+```python
+# Getting the final linear regression equation with the values of the coefficients
+print(regressor.coef_)
+print(regressor.intercept_)
+
+# [8.66e+01 -8.73e+02  7.86e+02  7.73e-01  3.29e-02  3.66e-02]
+# 42467.52924853204
+
+# multiple linear regression model 的 equation 是
+# Profit = 86.6×Dummy State 1 − 873×Dummy State 2 + 786×Dummy State 3
+#        + 0.773×R&D Spend + 0.0329×Administration + 0.0366×Marketing Spend
+#        + 42467.53
 
 ```
 
 ## Section 8: Polynomial Regression
 
+
+### Equation
+
+- y^ = b0 + b1*X1 + b2X1^2 + ... + bnX1^n
+  - y^: dependent variable
+  - X1: independent variable
+  - b0: y-intercept (constant)
+  - bi: coefficient
+
+
+### code: PolynomialFeatures class
+
+- training the polynomial regression model on the whole dataset
+- 需要有 X1, X1^2, X1^3...X1^n
+  - 再把這些當成 multiple linear model, X1, X2, X3 ... Xn
+
+```python
+# X 只有 1 欄 (single feature, "Level" in example)
+X = dataset.iloc[:, 1:-1].values
+
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree = 4)
+# fit transform
+X_poly = poly_reg.fit_transform(X)
+
+# 再把這些(X_poly)當成 multiple linear model, X1, X2, X3 ... Xn
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly, y)
+
+```
+
+### visualising the Polynomial Regression results
+
+```python
+# real result
+plt.scatter(X, y, color = 'red')
+
+# 這個是 polynomial regression results
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)), color = 'blue')
+
+# 這個是 linear regression results
+plt.plot(X, lin_reg.predict(X), color = 'blue')
+
+# (for higher resolution and smoother curve)
+X_grid = np.arange(min(X), max(X), 0.1) # 間隔設定為 0.1
+X_grid = X_grid.reshape((len(X_grid), 1))
+plt.scatter(X, y, color = 'red')
+plt.plot(X_grid, lin_reg_2.predict(poly_reg.fit_transform(X_grid)), color = 'blue')
+
+
+```
+
+### predicting the new result 
+
+```python
+# predicting a new result with Linear Regression
+lin_reg.predict([[6.5]]) # input should be 2D array
+
+# predicting a new result with Polynomial Regression
+lin_reg2.predict(poly_reg.fit_transform([[6.5]]))
+```
+
+
 ## Section 9: Support Vector Regression (SVR)
+
+- Epsilon-insensitive tube
+
+### 
+
+
 
 ## Section 10: Decision Tree Regression
 
