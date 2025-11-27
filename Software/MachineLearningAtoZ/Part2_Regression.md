@@ -252,14 +252,89 @@ lin_reg2.predict(poly_reg.fit_transform([[6.5]]))
 
 - Epsilon-insensitive tube
 
-### 
+### 先做 feature scaling, dataset preparation
 
+```python
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+sc_y = StandardScaler()
+# 這邊對 X, y 都做了 feature scaling, 讓 y 的值在合理範圍?
+# y 需要轉為 2D array y = y.shape(len(y), 1)
+X = sc_X.fit_transform(X) 
+y = sc_y.fit_transform(y)
 
+```
+
+### Training the SVR model 
+
+```python
+
+from sklearn.svm import SVR
+regressor = SVR(kernel='rbf')
+regressor.fit(X, y)
+
+# predicting a new result 
+# .reshape(-1, 1) 是為了避免 format error
+sc_y.inverse_transform(regressor.predict(sc_X.transform([[6.5]])).reshape(-1,1))
+
+```
+
+### visualising the SVR result 
+
+```python
+# 紅色是原本的點
+plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red')
+# 藍色是估計的線
+plt.plot(sc_X.inverse_transform(X), sc_y.inverse_transform(regressor.predict(X).reshape(-1,1)), color = 'blue')
+
+# higher resolution and smoother curve
+X_grid = np.arange(min(sc_X.inverse_transform(X)), max(sc_X.inverse_transform(X)), 0.1)
+X_grid = X_grid.reshape((len(X_grid), 1))
+plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red')
+plt.plot(X_grid, sc_y.inverse_transform(regressor.predict(sc_X.transform(X_grid)).reshape(-1,1)), color = 'blue')
+
+```
 
 ## Section 10: Decision Tree Regression
 
+- CART 有 Classification Trees 和 Regression Trees
+
+- information entropy
+- split 1,2,3...各區分條件。變為 tree 的 nore 當作判斷條件
+
+### code 
+
+```python
+# Decison Tree Regression 不用做 feature scaling 
+
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state = 0)
+regressor.fit(X, y)
+
+# predict 
+regressor.predict([[6.5]])
+
+```
+
+### visualising the results(higher resolution)
+
+```python
+X_grid = np.arange(min(X), max(X), 0.01)
+X_grid = X_grid.reshape((len(X_grid), 1))
+plt.scatter(X, y, color = 'red')
+plt.plot(X_grid, regressor.predict(X_grid), color = 'blue')
+plt.title('Truth or Bluff (Decision Tree Regression)')
+plt.xlabel('Position level')
+plt.ylabel('Salary')
+plt.show()
+```
+
 ## Section 11: Random Forest Regression
+
+
 
 ## Section 12: Evaluating Regression Models Performance
 
 ## Section 13: Regression Model Selection in Python
+
+### 
