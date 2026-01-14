@@ -331,10 +331,49 @@ plt.show()
 
 ## Section 11: Random Forest Regression
 
+```python
 
+from sklearn.ensemble import RandomForestRegressor
+
+regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)
+regressor.fit(X, y)
+
+regressor.predict([[6.5]])
+
+```
 
 ## Section 12: Evaluating Regression Models Performance
 
+### R Squared 
+
+- R^2 = 1 - (SS_res - SS_tot)
+  - SS_res = SUM(y_i - yi_reg)^2 (跟回歸線的距離)
+  - SS_tot = SUM(y_i - y_avg)^2 (跟平均的距離)  
+
+- Rule of thumb
+  - 1.0 = Perfect fit
+  - ~ 0.9 = Very good
+  - < 0.7 = Not great
+  - < 0.4 = Terrible
+  - < 0 = Model makes no sense for this data
+
+### Adjusted R Squared
+
+- 原 y^ = b0 + b1X1 + b2X2
+- 如果 y^ 多了一個變數 ex: + b3X3, 會降低 SS_res
+- Adj R^2 = 1 - (1-R^2) * [(n-1)/(n-k-1)]
+  - k 是 independent variables 的數目
+  - n 是 sample size
+
+
 ## Section 13: Regression Model Selection in Python
 
-### 
+- /QinMaterials/MachineLearningAtoZ/Machine Learning A-Z (Model Selection)/Regression
+
+
+```python
+# Evaluating the Model Performance
+
+from sklearn.metrics import r2_score
+r2_score(y_test, y_pred)
+```
